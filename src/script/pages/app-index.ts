@@ -20,7 +20,7 @@ export class AppIndex extends LitElement {
   }
 
   firstUpdated() {
-    const router = new Router(this.shadowRoot?.querySelector('#routerOutlet'), { baseUrl: '/build/' });
+    const router = new Router(this.shadowRoot?.querySelector('#routerOutlet'));
     router.setRoutes([
       { path: '/', component: 'app-home' },
       {

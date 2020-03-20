@@ -14,21 +14,19 @@
   <meta name="apple-mobile-web-app-title" content="PWA Starter">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <link rel="manifest" href="./manifest.json">
+  <link rel="manifest" href="manifest.json">
 
-  <link href="./global.css" rel="stylesheet">
+  <link href="global.css" rel="stylesheet">
 
-  <script type="module" src="./script/pages/app-index.js"></script>
+  <script type="module" src="script/app-index.js"></script>
 </head>
 
 <body>
   <app-index></app-index>
 
-  <!--
-    un-comment this code to register your Service Worker, more info can be found here https://github.com/pwa-builder/pwa-update#pwa-update
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate"></script>
-    <pwa-update swpath="./pwabuilder-sw.js"></pwa-update>
-  -->
+  
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate"></script>
+  <pwa-update swpath="/pwabuilder-sw.js"></pwa-update>
 </body>
 
 </html>

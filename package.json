@@ -8,8 +8,8 @@
     "build": "tsc",
     "build:watch": "tsc --watch",
     "build:prod": "tsc && rollup -c",
-    "start": "es-dev-server --app-index build/index.html --node-resolve --watch --open",
-    "dev": "concurrently \"tsc --watch\" \"es-dev-server --app-index build/index.html --node-resolve --watch --open/\""
+    "start": "es-dev-server --app-index index.html --node-resolve --watch --open",
+    "dev": "concurrently \"tsc --watch\" \"es-dev-server --app-index index.html --node-resolve --watch --open\""
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +25,7 @@
     "lit-analyzer": "^1.1.10",
     "rollup": "^2.1.0",
     "rollup-plugin-babel-minify": "^10.0.0",
+    "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-minify-html-literals": "^1.2.3",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^5.3.0",

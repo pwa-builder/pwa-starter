@@ -18,7 +18,7 @@ let AppIndex = class AppIndex extends LitElement {
     }
     firstUpdated() {
         var _a;
-        const router = new Router((_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.querySelector('#routerOutlet'), { baseUrl: '/build/' });
+        const router = new Router((_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.querySelector('#routerOutlet'));
         router.setRoutes([
             { path: '/', component: 'app-home' },
             {
