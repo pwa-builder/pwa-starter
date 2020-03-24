@@ -7,6 +7,27 @@ export class AppHome extends LitElement {
 
   static get styles() {
     return css`
+      #welcomeBlock {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      #welcomeBlock h2 {
+        margin-bottom: 0;
+      }
+
+      #welcomeBlock p {
+        max-width: 22em;
+      }
+
+      @media(spanning: single-fold-vertical) {
+        #welcomeBlock {
+          width: 50%;
+        }
+      }
     `;
   }
 
@@ -17,7 +38,19 @@ export class AppHome extends LitElement {
   render() {
     return html`
       <div>
-        <h2>Home Page</h2>
+
+        <div id="welcomeBlock">
+          <h2>Welcome!</h2>
+
+          <p>
+            Welcome to the lit-element edition of the <a href="https://pwabuilder.com">PWABuilder</a> pwa-starter!
+
+            Be sure to head back to <a href="https://pwabuilder.com">PWABuilder</a> when you are ready to ship this PWA to the Microsoft, Google Play and Samsung Galaxy stores! PWABuilder allows you to easily
+            generate packages for these stores. 
+
+
+          </p>
+        </div>
 
         <pwa-install>Install PWA Starter</pwa-install>
       </div>
