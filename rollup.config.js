@@ -32,6 +32,7 @@ export default {
       globDirectory: 'dist/',
       globPatterns: [
         '*.css',
+        '**/*/*.svg',
         '*/**.js',
         '*.html',
         'assets/**',
