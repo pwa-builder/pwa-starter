@@ -23,6 +23,10 @@ export class AppHome extends LitElement {
         max-width: 22em;
       }
 
+      #welcomeBlock img {
+        width: 6em;
+      }
+
       @media(spanning: single-fold-vertical) {
         #welcomeBlock {
           width: 50%;
@@ -40,6 +44,8 @@ export class AppHome extends LitElement {
       <div>
 
         <div id="welcomeBlock">
+
+          <img src="assets/icons/icon_512.png">
           <h2>Welcome!</h2>
 
           <p>
@@ -47,8 +53,6 @@ export class AppHome extends LitElement {
 
             Be sure to head back to <a href="https://pwabuilder.com">PWABuilder</a> when you are ready to ship this PWA to the Microsoft, Google Play and Samsung Galaxy stores! PWABuilder allows you to easily
             generate packages for these stores. 
-
-
           </p>
         </div>
 
