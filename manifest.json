@@ -27,5 +27,20 @@
       "sizes": "24x24"
     }
   ],
-  "screenshots": []
+  "screenshots": [
+    {
+      "src": "assets/screenshots/screen.png"
+    },
+    {
+      "src": "assets/screenshots/screen.png"
+    },
+    {
+      "src": "assets/screenshots/screen.png"
+    }
+  ],
+  "features": [
+    "Cross Platform",
+    "fast",
+    "simple"
+  ]
 }
