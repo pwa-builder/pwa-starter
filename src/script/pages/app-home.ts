@@ -1,5 +1,6 @@
 import { LitElement, css, html, customElement } from 'lit-element';
 
+// For more info on the @pwabuilder/pwainstall component click here https://github.com/pwa-builder/pwa-install
 import '@pwabuilder/pwainstall';
 
 @customElement('app-home')
