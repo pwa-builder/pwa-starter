@@ -28,6 +28,12 @@ export class AppHome extends LitElement {
         width: 6em;
       }
 
+      pwa-install {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+      }
+
       @media(spanning: single-fold-vertical) {
         #welcomeBlock {
           width: 50%;
