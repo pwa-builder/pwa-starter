@@ -25,7 +25,7 @@ We recommend the following tools for your dev setup:
 
 * Editor: [VSCode](https://code.visualstudio.com/)
 * Terminal: [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab) or [hyper](https://hyper.is/)
-* VSCode extension:[PWABuilder VSCode extension](https://marketplace.visualstudio.com/items?itemName=PWABuilder.pwabuilder-extension)
+* VSCode extension: [PWABuilder VSCode extension](https://marketplace.visualstudio.com/items?itemName=PWABuilder.pwabuilder-extension)
 
 ### Development
 
@@ -34,6 +34,18 @@ Run `npm install` and then run `npm run dev`, the starter should open in your de
 ### Building for Production
 
 Make sure the `index.prod.html` and `manifest.json` files are updated to your liking and then run `npm run build:prod`, the `dist/` folder will contain your built PWA. The production build will also generate a pre-caching service worker using [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-precaching) and handles that service worker using the [PWABuilder pwa-update component](https://github.com/pwa-builder/pwa-update#pwa-update) web component. 
+
+## Deployment and Packaging
+
+### Deployment
+
+Once your PWA is ready to deploy we recommend [Azure static site hosting](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-how-to?tabs=azure-portal) for deploying your PWA.
+
+
+### Packaging
+
+Many app stores, including the Microsoft Store and the Google Play Store support PWAs. To package your PWA for deployment to these app stores head back to https://pwabuilder.com/, put in your URL and hit `Build My PWA`.
+
 
 ## Folder Structure
 
