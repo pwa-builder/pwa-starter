@@ -52,7 +52,7 @@ export class AppHome extends LitElement {
 
         <div id="welcomeBlock">
 
-          <img src="assets/icons/icon_512.png">
+          <img src="assets/icons/icon_512.png" alt="app icon">
           <h2>Welcome!</h2>
 
           <p>
