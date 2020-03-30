@@ -8,6 +8,8 @@ Welcome to the [lit-element](https://lit-element.polymer-project.org/) edition o
 - Includes the [PWABuilder pwa-install component](https://github.com/pwa-builder/pwa-install#pwa-install) for an app store like PWA install experience.
 - [Workbox](https://developers.google.com/web/tools/workbox/) for service workers along with the [PWABuilder pwa-update component](https://github.com/pwa-builder/pwa-update#pwa-update) to give your PWA a great offline experience.
 
+** [Live Demo](https://pwa-starter-demo.glitch.me/) **
+
 ## Getting Started
 
 ### Prequisites
