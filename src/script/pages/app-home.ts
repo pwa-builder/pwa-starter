@@ -34,6 +34,10 @@ export class AppHome extends LitElement {
         right: 16px;
       }
 
+      button {
+        cursor: pointer;
+      }
+
       @media(spanning: single-fold-vertical) {
         #welcomeBlock {
           width: 50%;
@@ -44,6 +48,16 @@ export class AppHome extends LitElement {
 
   constructor() {
     super();
+  }
+
+  share() {
+    if ((navigator as any).share) {
+      (navigator as any).share({
+        title: 'PWABuilder pwa-starter',
+        text: 'Check out the PWABuilder pwa-starter!',
+        url: 'https://github.com/pwa-builder/pwa-starter',
+      })
+    }
   }
 
   render() {
@@ -61,6 +75,8 @@ export class AppHome extends LitElement {
             Be sure to head back to <a href="https://pwabuilder.com">PWABuilder</a> when you are ready to ship this PWA to the Microsoft, Google Play and Samsung Galaxy stores! PWABuilder allows you to easily
             generate packages for these stores. 
           </p>
+
+          ${'share' in navigator ? html`<button @click="${this.share}">Share this Starter!</button>` : null}
         </div>
 
         <pwa-install>Install PWA Starter</pwa-install>
