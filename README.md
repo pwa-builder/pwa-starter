@@ -12,6 +12,12 @@ Welcome to the [lit-element](https://lit-element.polymer-project.org/) edition o
 
 ## Getting Started
 
+### Supported Browsers
+- Edge
+- Chrome
+- Firefox
+- Safari
+
 ### Prequisites
 
 You will need the following things properly installed on your computer.
