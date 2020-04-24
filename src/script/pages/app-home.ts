@@ -72,8 +72,7 @@ export class AppHome extends LitElement {
           <p>
             Welcome to the lit-element edition of the <a href="https://pwabuilder.com">PWABuilder</a> pwa-starter!
 
-            Be sure to head back to <a href="https://pwabuilder.com">PWABuilder</a> when you are ready to ship this PWA to the Microsoft, Google Play and Samsung Galaxy stores! PWABuilder allows you to easily
-            generate packages for these stores. 
+            Be sure to head back to <a href="https://pwabuilder.com">PWABuilder</a> when you are ready to ship this PWA to the Microsoft, Google Play and Samsung Galaxy stores!
           </p>
 
           ${'share' in navigator ? html`<button @click="${this.share}">Share this Starter!</button>` : null}
