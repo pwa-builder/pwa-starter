@@ -42,13 +42,13 @@ Run `npm install` and then run `npm run dev`, the starter should open in your de
 
 ### Building for Production
 
-Make sure the `index.prod.html` and `manifest.json` files are updated to your liking and then run `npm run build:prod`, the `dist/` folder will contain your built PWA. The production build will also generate a pre-caching service worker using [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-precaching) and handles that service worker using the [PWABuilder pwa-update component](https://github.com/pwa-builder/pwa-update#pwa-update) web component. 
+Make sure the `index.prod.html` and `manifest.json` files are updated to your liking and then run `npm run build`, the `dist/` folder will contain your built PWA. The production build will also generate a pre-caching service worker using [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-precaching) and handles that service worker using the [PWABuilder pwa-update component](https://github.com/pwa-builder/pwa-update#pwa-update) web component. 
 
 ## Deployment and Packaging
 
 ### Deployment
 
-Once your PWA is ready to deploy we recommend [Azure static site hosting](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-how-to?tabs=azure-portal) for deploying your PWA.
+Once your PWA is ready to deploy we recommend [Azure static website hosting](https://docs.microsoft.com/en-us/learn/modules/publish-app-service-static-web-app-api/) for deploying your PWA.
 
 
 ### Packaging
