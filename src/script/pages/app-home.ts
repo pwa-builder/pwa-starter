@@ -1,10 +1,14 @@
-import { LitElement, css, html, customElement } from 'lit-element';
+import { LitElement, css, html, customElement, property } from 'lit-element';
 
 // For more info on the @pwabuilder/pwainstall component click here https://github.com/pwa-builder/pwa-install
 import '@pwabuilder/pwainstall';
 
 @customElement('app-home')
 export class AppHome extends LitElement {
+
+  // For more information on using properties in lit-element
+  // check out this link https://lit-element.polymer-project.org/guide/properties#declare-with-decorators
+  @property() message: string = "Welcome!";
 
   static get styles() {
     return css`
@@ -50,6 +54,12 @@ export class AppHome extends LitElement {
     super();
   }
 
+  firstUpdated() {
+    // this method is a lifecycle even in lit-element
+    // for more info check out the lit-element docs https://lit-element.polymer-project.org/guide/lifecycle
+    console.log('This is your home page');
+  }
+
   share() {
     if ((navigator as any).share) {
       (navigator as any).share({
@@ -67,10 +77,10 @@ export class AppHome extends LitElement {
         <div id="welcomeBlock">
 
           <img src="assets/icons/icon_512.png" alt="app icon">
-          <h2>Welcome!</h2>
+          <h2>${this.message}</h2>
 
           <p>
-            Welcome to the lit-element edition of the <a href="https://pwabuilder.com">PWABuilder</a> pwa-starter!
+            Welcome to the <a href="https://pwabuilder.com">PWABuilder</a> pwa-starter!
 
             Be sure to head back to <a href="https://pwabuilder.com">PWABuilder</a> when you are ready to ship this PWA to the Microsoft, Google Play and Samsung Galaxy stores!
           </p>
