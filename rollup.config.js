@@ -1,43 +1,41 @@
 import resolve from 'rollup-plugin-node-resolve';
 import { terser } from "rollup-plugin-terser";
-import { injectManifest } from 'rollup-plugin-workbox';
-import minifyHTML from 'rollup-plugin-minify-html-literals';
+import { generateSW } from 'rollup-plugin-workbox';
+import html from '@open-wc/rollup-plugin-html';
 import strip from '@rollup/plugin-strip';
 import copy from 'rollup-plugin-copy';
 
 export default {
-  input: ['build/script/pages/app-index.js'],
+  input: 'index.html',
   output: {
-    dir: 'dist/script/',
+    dir: 'dist',
     format: 'es',
   },
   plugins: [
     resolve(),
-    minifyHTML(),
+    html(),
     terser(),
     strip({
       functions: ['console.log']
     }),
     copy({
       targets: [
-        { src: 'index.prod.html', dest: 'dist/', rename: 'index.html' },
         { src: 'assets/**/*', dest: 'dist/assets/' },
-        { src: 'src/global.css', dest: 'dist/'},
+        { src: 'styles/global.css', dest: 'dist/styles/'},
         { src: 'manifest.json', dest: 'dist/'}
       ]
     }),
-    injectManifest({
-      swSrc: 'pwabuilder-sw.js',
+    generateSW({
       swDest: 'dist/pwabuilder-sw.js',
       globDirectory: 'dist/',
       globPatterns: [
-        '*.css',
+        'styles/*.css',
         '**/*/*.svg',
-        '*/**.js',
+        '*.js',
         '*.html',
         'assets/**',
         '*.json'
       ]
-    })
+    }),
   ]
 };
