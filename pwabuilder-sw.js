@@ -5,5 +5,3 @@ self.addEventListener("message", (event) => {
     self.skipWaiting();
   }
 });
-
-workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);
