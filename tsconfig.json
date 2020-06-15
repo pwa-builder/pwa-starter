@@ -16,7 +16,7 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "outDir": "./build/src/script/",
+    "outDir": "./build/",
     // Only necessary because @types/uglify-js can't find types for source-map
     "skipLibCheck": true,
     "experimentalDecorators": true,
