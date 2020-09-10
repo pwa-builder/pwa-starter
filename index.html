@@ -11,7 +11,7 @@
   <meta name="viewport"
     content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <meta name="description" content="This is a PWA Starter app">
-  <meta name="theme-color" content="#686bd2">
+  <meta name="theme-color" content="#E1477E">
 
   <!-- These meta tags are Apple-specific, and set the web application to run in full-screen mode with a black status bar. Learn more at https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -24,6 +24,9 @@
   <!-- Imports the manifest to represent the web application. A web app must have a manifest to be a PWA. -->
   <link rel="manifest" href="manifest.json">
 
+  <!-- Microsoft Fast Components https://www.fast.design/docs/components/getting-started-->
+  <script type="module" src="https://unpkg.com/@microsoft/fast-components"></script>
+
   <!-- A stylesheet to design the pages. -->
   <link href="styles/global.css" rel="stylesheet">
 
@@ -33,11 +36,13 @@
 
 <body>
   <!-- Our app-index web component. This component is defined in src/pages/app-index.ts-->
-  <app-index></app-index>
+  <fast-design-system-provider use-defaults>
+    <app-index></app-index>
+  </fast-design-system-provider>
 
-   <!-- For more info on the pwa-update component click here https://github.com/pwa-builder/pwa-update -->
-   <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate"></script>
-   <pwa-update offlineToastDuration="0" swpath="pwabuilder-sw.js"></pwa-update>
+  <!-- For more info on the pwa-update component click here https://github.com/pwa-builder/pwa-update -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate"></script>
+  <pwa-update offlineToastDuration="0" swpath="pwabuilder-sw.js"></pwa-update>
 </body>
 
 </html>
