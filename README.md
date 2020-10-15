@@ -11,7 +11,7 @@ Welcome to the [PWABuilder](https://www.pwabuilder.com/) pwa-starter! Looking to
 - [Workbox](https://developers.google.com/web/tools/workbox/) for service workers along with the [PWABuilder pwa-update component](https://github.com/pwa-builder/pwa-update#pwa-update) to give your PWA a great offline experience.
 - [FAST Components](https://www.fast.design/docs/components/getting-started/) for awesome, pre-built components using the Fluent Design Language.
 
-** [Live Demo](https://pwa-starter-demo.glitch.me/) **
+**[Live Demo](https://pwa-starter-demo.glitch.me/)**
 
 ## Getting Started
 
