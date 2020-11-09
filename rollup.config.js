@@ -1,4 +1,4 @@
-import resolve from 'rollup-plugin-node-resolve';
+import resolve from '@rollup/plugin-node-resolve';
 import { terser } from "rollup-plugin-terser";
 import { generateSW } from 'rollup-plugin-workbox';
 import html from '@open-wc/rollup-plugin-html';

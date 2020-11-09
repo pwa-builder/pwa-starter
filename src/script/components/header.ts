@@ -22,20 +22,18 @@ export class AppHeader extends LitElement {
       header h1 {
         margin-top: 0;
         margin-bottom: 0;
-        font-size: 24px;
-        font-weight: normal;
+        font-size: 20px;
+        font-weight: bold;
       }
 
       nav {
-        width: 7em;
+        width: 9em;
         display: flex;
         justify-content: space-between;
       }
 
-      nav a {
-        color: white;
-        font-size: 18px;
-        font-weight: bold;
+      nav fast-anchor {
+        margin-left: 10px;
       }
     `;
   }
@@ -50,8 +48,8 @@ export class AppHeader extends LitElement {
         <h1>${this.title}</h1>
 
         <nav>
-          <a href="./">Home</a>
-          <a href="./about">About</a>
+          <fast-anchor href="./" appearance="button">Home</fast-anchor>
+          <fast-anchor href="./about" appearance="button">About</fast-anchor>
         </nav>
       </header>
     `;

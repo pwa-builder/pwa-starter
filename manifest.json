@@ -3,10 +3,10 @@
   "display": "standalone",
   "start_url": "/",
   "short_name": "starter",
-  "theme_color": "#686bd2",
+  "theme_color": "#E1477E",
   "description": "This is a PWA Starter app",
   "orientation": "any",
-  "background_color": "#686bd2",
+  "background_color": "#E1477E",
   "related_applications": [],
   "prefer_related_applications": false,
   "icons": [
@@ -42,5 +42,8 @@
     "Cross Platform",
     "fast",
     "simple"
+  ],
+  "categories": [
+    "utility"
   ]
 }

@@ -12,24 +12,20 @@ export class AppHome extends LitElement {
 
   static get styles() {
     return css`
-      #welcomeBlock {
+      #welcomeBar {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-        text-align: center;
+        flex-direction: column;
       }
 
-      #welcomeBlock h2 {
-        margin-bottom: 0;
+      #welcomeBar fast-card {
+        margin-bottom: 12px;
       }
 
-      #welcomeBlock p {
-        max-width: 22em;
-      }
-
-      #welcomeBlock img {
-        width: 6em;
+      #welcomeCard, #infoCard {
+        padding: 18px;
+        padding-top: 0px;
       }
 
       pwa-install {
@@ -42,9 +38,21 @@ export class AppHome extends LitElement {
         cursor: pointer;
       }
 
-      @media(spanning: single-fold-vertical) {
-        #welcomeBlock {
-          width: 50%;
+      @media(min-width: 1200px) {
+        #welcomeCard, #infoCard {
+          width: 40%;
+        }
+      }
+
+      @media(screen-spanning: single-fold-vertical) {
+        #welcomeBar {
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: space-between;
+        }
+
+        #welcomeCard {
+          margin-right: 64px;
         }
       }
     `;
@@ -73,21 +81,50 @@ export class AppHome extends LitElement {
   render() {
     return html`
       <div>
+      
+        <div id="welcomeBar">
+          <fast-card id="welcomeCard">
+      
+            <h2>${this.message}</h2>
 
-        <div id="welcomeBlock">
+            <p>
+              For more information on the PWABuilder pwa-starter, check out the <fast-anchor href="https://github.com/pwa-builder/pwa-starter/blob/master/README.md" appearance="hypertext">README</fast-anchor>.
+            </p>
+      
+            <p>
+              Welcome to the <fast-anchor href="https://pwabuilder.com" appearance="hypertext">PWABuilder</fast-anchor> pwa-starter!
+      
+              Be sure to head back to <fast-anchor href="https://pwabuilder.com" appearance="hypertext">PWABuilder</fast-anchor> when you are ready to ship this PWA to
+              the
+              Microsoft, Google Play and Samsung Galaxy stores!
+            </p>
+      
+            ${'share' in navigator ? html`<fast-button appearance="primary" @click="${this.share}">Share this Starter!</fast-button>` : null}
+          </fast-card>
 
-          <img src="assets/icons/icon_512.png" alt="app icon">
-          <h2>${this.message}</h2>
+          <fast-card id="infoCard">
+            <h2>Technology Used</h2>
 
-          <p>
-            Welcome to the <a href="https://pwabuilder.com">PWABuilder</a> pwa-starter!
+            <ul>
+              <li>
+                <fast-anchor href="https://www.typescriptlang.org/" appearance="hypertext">TypeScript</fast-anchor>
+              </li>
 
-            Be sure to head back to <a href="https://pwabuilder.com">PWABuilder</a> when you are ready to ship this PWA to the Microsoft, Google Play and Samsung Galaxy stores!
-          </p>
+              <li>
+                <fast-anchor href="https://lit-element.polymer-project.org/" appearance="hypertext">lit-element</fast-anchor>
+              </li>
 
-          ${'share' in navigator ? html`<button @click="${this.share}">Share this Starter!</button>` : null}
+              <li>
+                <fast-anchor href="https://www.fast.design/docs/components/getting-started" appearance="hypertext">FAST Components</fast-anchor>
+              </li>
+
+              <li>
+                <fast-anchor href="https://vaadin.github.io/vaadin-router/vaadin-router/demo/#vaadin-router-getting-started-demos" appearance="hypertext">Vaadin Router</fast-anchor>
+              </li>
+            </ul>
+          </fast-card>
         </div>
-
+      
         <pwa-install>Install PWA Starter</pwa-install>
       </div>
     `;
