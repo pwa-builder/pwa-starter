@@ -1,9 +1,10 @@
 import resolve from '@rollup/plugin-node-resolve';
 import { terser } from "rollup-plugin-terser";
-import { generateSW } from 'rollup-plugin-workbox';
+import { injectManifest } from 'rollup-plugin-workbox';
 import html from '@open-wc/rollup-plugin-html';
 import strip from '@rollup/plugin-strip';
 import copy from 'rollup-plugin-copy';
+import replace from '@rollup/plugin-replace';
 
 export default {
   input: 'index.html',
@@ -14,6 +15,11 @@ export default {
   plugins: [
     resolve(),
     html(),
+    replace(
+      {
+        'process.env.NODE_ENV': JSON.stringify('production')
+      }
+    ),
     terser(),
     strip({
       functions: ['console.log']
@@ -25,7 +31,8 @@ export default {
         { src: 'manifest.json', dest: 'dist/'}
       ]
     }),
-    generateSW({
+    injectManifest({
+      swSrc: 'dev/pwabuilder-sw.js',
       swDest: 'dist/pwabuilder-sw.js',
       globDirectory: 'dist/',
       globPatterns: [
