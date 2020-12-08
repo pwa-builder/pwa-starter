@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist/ && tsc && rollup -c",
     "build:watch": "tsc --watch",
-    "build:dev": "tsc",
-    "start": "concurrently \"tsc --watch\" \"es-dev-server --app-index index.html --compatibility none --node-resolve --watch --open\"",
+    "build:dev": "tsc && rollup --config rollup.dev.config.js",
+    "start": "concurrently \"tsc --watch\" \"rollup --config rollup.dev.config.js --watch\" \"web-dev-server --node-resolve --root-dir dev/ --open\"",
     "dev": "concurrently \"tsc --watch\" \"rollup --config rollup.dev.config.js --watch\" \"web-dev-server --node-resolve --root-dir dev/ --open\""
   },
   "author": "",
