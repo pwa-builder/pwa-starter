@@ -6,3 +6,6 @@ registerRoute(
              url.origin === 'https://fonts.gstatic.com',
   new StaleWhileRevalidate({}),
 );
+
+// @ts-ignore
+// precacheAndRoute(self.__WB_MANIFEST);
