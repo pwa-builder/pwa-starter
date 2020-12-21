@@ -21,12 +21,13 @@ export default {
     copy({
       targets: [
         { src: 'assets/**/*', dest: 'dist/assets/' },
-        { src: 'styles/global.css', dest: 'dist/styles/'},
-        { src: 'manifest.json', dest: 'dist/'}
+        { src: 'styles/global.css', dest: 'dist/styles/' },
+        { src: 'manifest.json', dest: 'dist/' }
       ]
     }),
     generateSW({
       swDest: 'dist/pwabuilder-sw.js',
+      importScripts: ['pwabuilder-sw.js'],
       globDirectory: 'dist/',
       globPatterns: [
         'styles/*.css',
