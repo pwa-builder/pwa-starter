@@ -7,5 +7,13 @@ self.addEventListener("message", (event: any) => {
   }
 });
 
-//@ts-ignore
-precacheAndRoute(self.__WB_MANIFEST);
+
+try {
+  //@ts-ignore
+  precacheAndRoute(self.__WB_MANIFEST);
+}
+catch (err) {
+  console.info("if you are in development mode this error is expected: ", err);
+}
+
+

@@ -16,14 +16,14 @@ export default {
   },
   plugins: [
     resolve(),
-    html(),
-    typescript({
-      tsconfig: "tsconfig.json"
-    }),
     replace({
       "process.env.NODE_ENV": JSON.stringify(
         process.env.NODE_ENV || "production"
       ),
+    }),
+    html(),
+    typescript({
+      tsconfig: "tsconfig.json"
     }),
     terser(),
     strip({
