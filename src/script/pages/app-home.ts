@@ -8,7 +8,7 @@ export class AppHome extends LitElement {
 
   // For more information on using properties in lit-element
   // check out this link https://lit-element.polymer-project.org/guide/properties#declare-with-decorators
-  @property() message: string = "Welcome 2!";
+  @property() message: string = "Welcome!";
 
   static get styles() {
     return css`
