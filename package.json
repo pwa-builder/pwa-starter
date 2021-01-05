@@ -24,6 +24,7 @@
     "@rollup/plugin-replace": "^2.3.3",
     "@rollup/plugin-strip": "^2.0.0",
     "@rollup/plugin-typescript": "^8.1.0",
+    "@types/service_worker_api": "0.0.9",
     "concurrently": "^5.3.0",
     "es-dev-server": "^1.46.5",
     "lit-analyzer": "^1.2.1",
