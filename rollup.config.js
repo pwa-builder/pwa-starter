@@ -1,42 +1,51 @@
-import resolve from '@rollup/plugin-node-resolve';
+import resolve from "@rollup/plugin-node-resolve";
 import { terser } from "rollup-plugin-terser";
-import { generateSW } from 'rollup-plugin-workbox';
-import html from '@open-wc/rollup-plugin-html';
-import strip from '@rollup/plugin-strip';
-import copy from 'rollup-plugin-copy';
+import html from "@open-wc/rollup-plugin-html";
+import replace from "@rollup/plugin-replace";
+import strip from "@rollup/plugin-strip";
+import copy from "rollup-plugin-copy";
+import typescript from "@rollup/plugin-typescript";
+
+const workbox = require('rollup-plugin-workbox-inject');
 
 export default {
-  input: 'index.html',
+  input: "build/index.html",
   output: {
-    dir: 'dist',
-    format: 'es',
+    dir: "dist",
+    format: "es",
   },
   plugins: [
     resolve(),
     html(),
+    typescript({
+      tsconfig: "tsconfig.json"
+    }),
+    replace({
+      "process.env.NODE_ENV": JSON.stringify(
+        process.env.NODE_ENV || "production"
+      ),
+    }),
     terser(),
     strip({
-      functions: ['console.log']
+      functions: ["console.log"],
     }),
     copy({
       targets: [
-        { src: 'assets/**/*', dest: 'dist/assets/' },
-        { src: 'styles/global.css', dest: 'dist/styles/' },
-        { src: 'manifest.json', dest: 'dist/' }
-      ]
+        { src: "assets/**/*", dest: "dist/assets/" },
+        { src: "styles/global.css", dest: "dist/styles/" },
+        { src: "manifest.json", dest: "dist/" },
+      ],
     }),
-    generateSW({
-      swDest: 'dist/pwabuilder-sw.js',
-      importScripts: ['pwabuilder-sw.js'],
-      globDirectory: 'dist/',
+    workbox({
+      globDirectory: "dist/",
       globPatterns: [
-        'styles/*.css',
-        '**/*/*.svg',
-        '*.js',
-        '*.html',
-        'assets/**',
-        '*.json'
-      ]
+        "styles/*.css",
+        "**/*/*.svg",
+        "*.js",
+        "*.html",
+        "assets/**",
+        "*.json",
+      ],
     }),
-  ]
+  ],
 };

@@ -8,7 +8,7 @@ export class AppHome extends LitElement {
 
   // For more information on using properties in lit-element
   // check out this link https://lit-element.polymer-project.org/guide/properties#declare-with-decorators
-  @property() message: string = "Welcome!";
+  @property() message: string = "Welcome 2!";
 
   static get styles() {
     return css`
@@ -62,7 +62,7 @@ export class AppHome extends LitElement {
     super();
   }
 
-  firstUpdated() {
+  async firstUpdated() {
     // this method is a lifecycle even in lit-element
     // for more info check out the lit-element docs https://lit-element.polymer-project.org/guide/lifecycle
     console.log('This is your home page');
