@@ -55,6 +55,12 @@ export class AppHome extends LitElement {
           margin-right: 64px;
         }
       }
+
+      @media(prefers-color-scheme: light) {
+        fast-card {
+          --background-color: white;
+        }
+      }
     `;
   }
 

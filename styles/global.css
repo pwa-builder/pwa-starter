@@ -21,6 +21,7 @@ html, body {
   }
 
   fast-design-system-provider {
+    color: black;
     --background-color: #edebe9;
     --neutral-foreground-rest: #e5e5e5;
     --neutral-fill-input-rest: #e5e5e5;
@@ -31,4 +32,5 @@ html, body {
 
     --neutral-fill-input-active: #e5e5e5;
   }
+
 }
