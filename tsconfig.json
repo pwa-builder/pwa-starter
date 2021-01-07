@@ -48,10 +48,6 @@
       }
     ]
   },
-  "include": [
-    ".eslintrc.js",
-    "src/**/*.ts"
-  ],
   "exclude": [
     "node_modules",
     "**/*.spec.ts"
