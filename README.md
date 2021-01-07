@@ -45,7 +45,7 @@ Run `npm install` and then run `npm run dev`, the starter should open in your de
 
 ### Building for Production
 
-Make sure the `index.prod.html` and `manifest.json` files are updated to your liking and then run `npm run build`, the `dist/` folder will contain your built PWA. The production build will also generate a pre-caching service worker using [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-precaching) and handles that service worker using the [PWABuilder pwa-update component](https://github.com/pwa-builder/pwa-update#pwa-update) web component. 
+Make sure the `index.prod.html` and `manifest.json` files are updated to your liking and then run `npm run build`, the `dist/` folder will contain your built PWA. The production build will also generate a pre-caching service worker using [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-precaching) and handles that service worker using the [PWABuilder pwa-update component](https://github.com/pwa-builder/pwa-update#pwa-update) web component.
 
 ## Deployment and Packaging
 
@@ -61,7 +61,7 @@ Many app stores, including the Microsoft Store and the Google Play Store support
 
 ## Dual Screen support
 
-The default layout of this starter is dual screen friendly. We do this [here](https://github.com/pwa-builder/pwa-starter/blob/master/src/script/pages/app-home.ts#L41) by using the [CSS Spanning API](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/Foldables/explainer.md#proposal-css-primitives-for-building-dual-screen-layouts) to adjust the layout when the app is spanned on a dual screen device. As you start to build your PWA you can use these CSS features to ensure that your PWA looks good in all of the [dual screen postures](https://docs.microsoft.com/en-us/dual-screen/introduction#dual-screen-overview). For more info on developing PWAs for dual screen devices you can check out the [Microsoft docs here](https://docs.microsoft.com/en-us/dual-screen/cross-platform/#build-web-experiences). 
+The default layout of this starter is dual screen friendly. We do this [here](https://github.com/pwa-builder/pwa-starter/blob/master/src/script/pages/app-home.ts#L41) by using the [CSS Spanning API](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/Foldables/explainer.md#proposal-css-primitives-for-building-dual-screen-layouts) to adjust the layout when the app is spanned on a dual screen device. As you start to build your PWA you can use these CSS features to ensure that your PWA looks good in all of the [dual screen postures](https://docs.microsoft.com/en-us/dual-screen/introduction#dual-screen-overview). For more info on developing PWAs for dual screen devices you can check out the [Microsoft docs here](https://docs.microsoft.com/en-us/dual-screen/cross-platform/#build-web-experiences).
 
 
 ## Addons
@@ -85,7 +85,7 @@ For Authentication you can use the [PWABuilder pwa-auth](https://github.com/pwa-
 ```
 pwa-starter
 │   README.md (docs)
-│   rollup.config.js (bundler config https://rollupjs.org/)  
+│   rollup.config.js (bundler config https://rollupjs.org/)
 |   tsconfig.json (TypeScript config https://www.typescriptlang.org/)
 |   pwabuilder-sw.js (Service Worker https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
 |   package.json (https://docs.npmjs.com/creating-a-package-json-file)
