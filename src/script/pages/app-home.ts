@@ -55,6 +55,12 @@ export class AppHome extends LitElement {
           margin-right: 64px;
         }
       }
+
+      @media(prefers-color-scheme: light) {
+        fast-card {
+          --background-color: white;
+        }
+      }
     `;
   }
 
@@ -62,7 +68,7 @@ export class AppHome extends LitElement {
     super();
   }
 
-  firstUpdated() {
+  async firstUpdated() {
     // this method is a lifecycle even in lit-element
     // for more info check out the lit-element docs https://lit-element.polymer-project.org/guide/lifecycle
     console.log('This is your home page');
