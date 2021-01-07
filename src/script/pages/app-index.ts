@@ -6,10 +6,8 @@ import { Router } from '@vaadin/router';
 
 import '../components/header';
 
-
 @customElement('app-index')
 export class AppIndex extends LitElement {
-
   static get styles() {
     return css`
       main {
@@ -23,26 +21,26 @@ export class AppIndex extends LitElement {
       #routerOutlet > .leaving {
         animation: 160ms fadeOut ease-in-out;
       }
-    
+
       #routerOutlet > .entering {
         animation: 160ms fadeIn linear;
       }
-    
+
       @keyframes fadeOut {
         from {
           opacity: 1;
         }
-    
+
         to {
           opacity: 0;
         }
       }
-    
+
       @keyframes fadeIn {
         from {
           opacity: 0.2;
         }
-    
+
         to {
           opacity: 1;
         }
@@ -62,20 +60,20 @@ export class AppIndex extends LitElement {
     const router = new Router(this.shadowRoot?.querySelector('#routerOutlet'));
     router.setRoutes([
       // temporarily cast to any because of a Type bug with the router
-      ({
-        path: "",
+      {
+        path: '',
         animate: true,
         children: [
           { path: '/', component: 'app-home' },
           {
-            path: "/about",
-            component: "app-about",
+            path: '/about',
+            component: 'app-about',
             action: async () => {
               await import('./app-about.js');
             },
-          }
-        ]
-      } as any)
+          },
+        ],
+      } as any,
     ]);
   }
 
@@ -83,7 +81,7 @@ export class AppIndex extends LitElement {
     return html`
       <div>
         <app-header></app-header>
-      
+
         <main>
           <div id="routerOutlet"></div>
         </main>
