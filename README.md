@@ -45,7 +45,7 @@ Run `npm install` and then run `npm run dev`, the starter should open in your de
 
 ### Building for Production
 
-Make sure the `index.prod.html` and `manifest.json` files are updated to your liking and then run `npm run build`, the `dist/` folder will contain your built PWA. The production build will also generate a pre-caching service worker using [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-precaching) and handles that service worker using the [PWABuilder pwa-update component](https://github.com/pwa-builder/pwa-update#pwa-update) web component.
+Run `npm run build`, the `dist/` folder will contain your built PWA. The production build will also generate a pre-caching service worker using [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-precaching).
 
 ## Deployment and Packaging
 

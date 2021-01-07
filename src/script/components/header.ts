@@ -33,6 +33,12 @@ export class AppHeader extends LitElement {
       nav fast-anchor {
         margin-left: 10px;
       }
+
+      @media(prefers-color-scheme: light) {
+        header {
+          color: black;
+        }
+      }
     `;
   }
 

@@ -17,7 +17,7 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "outDir": "./build/",
+    "outDir": "./dist/",
     // Only necessary because @types/uglify-js can't find types for source-map
     "skipLibCheck": true,
     "experimentalDecorators": true,
@@ -48,8 +48,10 @@
       }
     ]
   },
+  "include": ["pwabuilder-sw.ts"],
   "exclude": [
     "node_modules",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "build/pwabuilder-sw.js"
   ]
 }
