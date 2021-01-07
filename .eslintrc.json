@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
