@@ -12,8 +12,9 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitReturns": true,
+    "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
     "outDir": "./build/",
@@ -47,6 +48,10 @@
       }
     ]
   },
+  "include": [
+    ".eslintrc.js",
+    "src/**/*.ts"
+  ],
   "exclude": [
     "node_modules",
     "**/*.spec.ts"
