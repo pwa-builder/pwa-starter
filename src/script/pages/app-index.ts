@@ -1,4 +1,5 @@
-import { LitElement, css, html, customElement } from 'lit-element';
+import { LitElement, css, html } from 'lit';
+import { customElement } from 'lit/decorators';
 
 import './app-home';
 
@@ -53,8 +54,8 @@ export class AppIndex extends LitElement {
   }
 
   firstUpdated() {
-    // this method is a lifecycle even in lit-element
-    // for more info check out the lit-element docs https://lit-element.polymer-project.org/guide/lifecycle
+    // this method is a lifecycle even in lit
+    // for more info check out the lit docs https://lit.dev/docs/components/lifecycle/
 
     // For more info on using the @vaadin/router check here https://vaadin.com/router
     const router = new Router(this.shadowRoot?.querySelector('#routerOutlet'));

@@ -6,8 +6,6 @@ import strip from "@rollup/plugin-strip";
 import copy from "rollup-plugin-copy";
 import typescript from "@rollup/plugin-typescript";
 
-const workbox = require('rollup-plugin-workbox-inject');
-
 export default {
   input: "build/index.html",
   output: {
@@ -35,17 +33,6 @@ export default {
         { src: "styles/global.css", dest: "dist/styles/" },
         { src: "manifest.json", dest: "dist/" },
       ],
-    }),
-    workbox({
-      globDirectory: "dist/",
-      globPatterns: [
-        "styles/*.css",
-        "**/*/*.svg",
-        "*.js",
-        "*.html",
-        "assets/**",
-        "*.json",
-      ],
-    }),
+    })
   ],
 };
