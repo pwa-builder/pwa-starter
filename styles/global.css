@@ -12,12 +12,18 @@ html, body {
   padding: 0;
   margin: 0;
   background: #181818;
+  color: white;
+}
+
+fast-design-system-provider {
+  color: black;
 }
 
 @media (prefers-color-scheme: light) {
   html,
   body {
     background: #edebe9;
+    color: black;
   }
 
   fast-design-system-provider {
