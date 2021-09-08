@@ -1,6 +1,6 @@
 # pwa-starter
 
-<img loading="lazy" alt="an image of what the starter looks like" src="https://github.com/pwa-builder/pwa-starter/raw/master/assets/readme/intro.png"/>
+<img loading="lazy" alt="an image of what the starter looks like" src="https://github.com/pwa-builder/pwa-starter/blob/main/assets/readme/intro.png"/>
 
 Welcome to the [PWABuilder](https://www.pwabuilder.com/) pwa-starter! Looking to build a new [Progressive Web App](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) and not sure where to get started? This is what you are looking for! The pwa-starter includes everything you need to start building a production ready PWA and follows all best practices. You get:
 
