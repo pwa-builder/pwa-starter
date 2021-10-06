@@ -1,12 +1,13 @@
-import { LitElement, css, html, customElement, property } from 'lit-element';
+import { LitElement, css, html } from 'lit';
+import { property, customElement } from 'lit/decorators';
 
 // For more info on the @pwabuilder/pwainstall component click here https://github.com/pwa-builder/pwa-install
 import '@pwabuilder/pwainstall';
 
 @customElement('app-home')
 export class AppHome extends LitElement {
-  // For more information on using properties in lit-element
-  // check out this link https://lit-element.polymer-project.org/guide/properties#declare-with-decorators
+  // For more information on using properties and state in lit
+  // check out this link https://lit.dev/docs/components/properties/
   @property() message = 'Welcome!';
 
   static get styles() {
@@ -70,8 +71,8 @@ export class AppHome extends LitElement {
   }
 
   async firstUpdated() {
-    // this method is a lifecycle even in lit-element
-    // for more info check out the lit-element docs https://lit-element.polymer-project.org/guide/lifecycle
+    // this method is a lifecycle even in lit
+    // for more info check out the lit docs https://lit.dev/docs/components/lifecycle/
     console.log('This is your home page');
   }
 
@@ -135,9 +136,9 @@ export class AppHome extends LitElement {
 
               <li>
                 <fast-anchor
-                  href="https://lit-element.polymer-project.org/"
+                  href="https://lit.dev"
                   appearance="hypertext"
-                  >lit-element</fast-anchor
+                  >lit</fast-anchor
                 >
               </li>
 
