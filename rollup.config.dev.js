@@ -11,7 +11,9 @@ export default {
     format: "es",
   },
   plugins: [
-    resolve(),
+    resolve({
+      exportConditions: ['development']
+    }),
     html(),
     typescript({
       tsconfig: "tsconfig.dev.json",
