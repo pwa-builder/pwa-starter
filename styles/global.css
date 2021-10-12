@@ -16,7 +16,7 @@ html, body {
 }
 
 fast-design-system-provider {
-  color: black;
+  color: white;
 }
 
 @media (prefers-color-scheme: light) {
