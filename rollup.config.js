@@ -7,14 +7,17 @@ import copy from "rollup-plugin-copy";
 import typescript from "@rollup/plugin-typescript";
 
 export default {
-  input: "build/index.html",
+  input: "index.html",
   output: {
     dir: "dist",
     format: "es",
   },
   plugins: [
-    resolve(),
+    resolve({
+      exportConditions: ['production']
+    }),
     replace({
+      "preventAssignment": true,
       "process.env.NODE_ENV": JSON.stringify(
         process.env.NODE_ENV || "production"
       ),
@@ -35,4 +38,5 @@ export default {
       ],
     })
   ],
+  preserveEntrySignatures: 'strict',
 };
