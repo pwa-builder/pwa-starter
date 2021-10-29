@@ -60,7 +60,7 @@ export class AppHome extends LitElement {
 
       @media(prefers-color-scheme: light) {
         fast-card {
-          --background-color: white;
+          --fill-color: #edebe9;
         }
       }
     `;
