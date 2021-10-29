@@ -12,9 +12,10 @@ export class AppIndex extends LitElement {
   static get styles() {
     return css`
       main {
-        padding: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 16px;
       }
-
       #routerOutlet > * {
         width: 100% !important;
       }
@@ -81,8 +82,6 @@ export class AppIndex extends LitElement {
   render() {
     return html`
       <div>
-        <app-header></app-header>
-
         <main>
           <div id="routerOutlet"></div>
         </main>
