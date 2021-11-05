@@ -5,14 +5,14 @@ import { property, customElement } from 'lit/decorators.js';
 export class AppHeader extends LitElement {
   @property({ type: String }) title = 'PWA Starter';
 
+  @property() enableBack: boolean = false;
+
   static get styles() {
     return css`
       header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-left: 16px;
-        padding-right: 16px;
         background: var(--app-color-primary);
         color: white;
         height: 4em;
@@ -25,14 +25,15 @@ export class AppHeader extends LitElement {
         font-weight: bold;
       }
 
-      nav {
-        width: 9em;
-        display: flex;
-        justify-content: space-between;
-      }
-
       nav fast-anchor {
         margin-left: 10px;
+      }
+
+      #back-button-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 11em;
       }
 
       @media(prefers-color-scheme: light) {
@@ -47,15 +48,22 @@ export class AppHeader extends LitElement {
     super();
   }
 
+  updated(changedProperties: any) {
+    if (changedProperties.has('enableBack')) {
+      console.log('enableBack', this.enableBack);
+    }
+  }
+
   render() {
     return html`
       <header>
-        <h1>${this.title}</h1>
+        <div id="back-button-block">
+          ${this.enableBack ? html`<fast-anchor href="/">
+            Back
+          </fast-anchor>` : null}
 
-        <nav>
-          <fast-anchor href="./" appearance="button">Home</fast-anchor>
-          <fast-anchor href="./about" appearance="button">About</fast-anchor>
-        </nav>
+          <h1>${this.title}</h1>
+        </div>
       </header>
     `;
   }
