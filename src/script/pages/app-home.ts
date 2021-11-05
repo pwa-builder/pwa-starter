@@ -60,7 +60,7 @@ export class AppHome extends LitElement {
 
       @media(prefers-color-scheme: light) {
         fast-card {
-          --background-color: white;
+          --fill-color: #edebe9;
         }
       }
     `;
@@ -88,6 +88,8 @@ export class AppHome extends LitElement {
 
   render() {
     return html`
+      <app-header></app-header>
+
       <div>
         <div id="welcomeBar">
           <fast-card id="welcomeCard">
@@ -96,9 +98,9 @@ export class AppHome extends LitElement {
             <p>
               For more information on the PWABuilder pwa-starter, check out the
               <fast-anchor
-                href="https://github.com/pwa-builder/pwa-starter/blob/master/README.md"
+                href="https://github.com/pwa-builder/pwa-starter/wiki/Getting-Started
                 appearance="hypertext"
-                >README</fast-anchor
+                >Documentation on Github</fast-anchor
               >.
             </p>
 
@@ -111,8 +113,8 @@ export class AppHome extends LitElement {
               <fast-anchor href="https://pwabuilder.com" appearance="hypertext"
                 >PWABuilder</fast-anchor
               >
-              when you are ready to ship this PWA to the Microsoft, Google Play
-              and Samsung Galaxy stores!
+              when you are ready to ship this PWA to the Microsoft Store, Google Play
+              and the Apple App Store!
             </p>
 
             ${'share' in navigator
@@ -159,6 +161,8 @@ export class AppHome extends LitElement {
               </li>
             </ul>
           </fast-card>
+
+          <fast-anchor href="/about">Navigate to About</fast-anchor>
         </div>
 
         <pwa-install>Install PWA Starter</pwa-install>

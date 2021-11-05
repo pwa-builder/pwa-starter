@@ -12,23 +12,30 @@ html, body {
   padding: 0;
   margin: 0;
   background: #181818;
-  color: white;
 }
 
-fast-design-system-provider {
-  color: white;
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background: #181818;
+  }
+
+  fast-design-system-provider {
+    color: white;
+  }
 }
 
 @media (prefers-color-scheme: light) {
   html,
   body {
-    background: #edebe9;
+    background: white;
     color: black;
   }
 
   fast-design-system-provider {
     color: black;
-    --background-color: #edebe9;
+    --fill-color: #edebe9;
+    --background-color: white;
     --neutral-foreground-rest: #e5e5e5;
     --neutral-fill-input-rest: #e5e5e5;
     --neutral-fill-input-hover: white;
