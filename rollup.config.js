@@ -11,6 +11,7 @@ export default {
   output: {
     dir: "dist",
     format: "es",
+    sourcemap: false
   },
   plugins: [
     resolve({

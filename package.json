@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist/ && rollup --config rollup.config.js && node workbox.mjs",
     "start": "concurrently \"rollup --config rollup.config.dev.js --watch\" \"web-dev-server --app-index build/index.html --root-dir build/ --compatibility none --node-resolve --watch --open /\"",
-    "dev": "concurrently \"rollup --config rollup.config.dev.js --watch\" \"web-dev-server --app-index build/index.html --root-dir build/ --compatibility none --node-resolve --watch --open /\""
+    "dev": "concurrently \"rollup --config rollup.config.dev.js --watch\" \"web-dev-server --app-index build/index.html --root-dir build/ --compatibility none --node-resolve --watch --open /\"",
+    "dev-task": "concurrently \"rollup --config rollup.config.dev.js --watch\" \"web-dev-server --app-index build/index.html --root-dir build/ --compatibility none --node-resolve --watch /\""
   },
   "author": "",
   "license": "ISC",
