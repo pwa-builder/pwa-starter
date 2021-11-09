@@ -9,6 +9,7 @@ export default {
   output: {
     dir: "build",
     format: "es",
+    sourcemap: true
   },
   plugins: [
     resolve({
