@@ -1,6 +1,8 @@
 import { LitElement, css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
+import { allComponents, provideFluentDesignSystem } from '@fluentui/web-components';
+
 import './app-home';
 
 import { Router } from '@vaadin/router';
@@ -52,6 +54,8 @@ export class AppIndex extends LitElement {
 
   constructor() {
     super();
+
+    provideFluentDesignSystem().register(allComponents);
   }
 
   firstUpdated() {

@@ -19,7 +19,7 @@ export class AppHome extends LitElement {
         flex-direction: column;
       }
 
-      #welcomeBar fast-card {
+      #welcomeBar fluent-card {
         margin-bottom: 12px;
       }
 
@@ -59,8 +59,16 @@ export class AppHome extends LitElement {
       }
 
       @media(prefers-color-scheme: light) {
-        fast-card {
+        fluent-card {
           --fill-color: #edebe9;
+        }
+      }
+
+      @media(prefers-color-scheme: dark) {
+        fluent-card {
+          --fill-color: #4e4e4e;
+          color: white;
+          border: none;
         }
       }
     `;
@@ -92,77 +100,77 @@ export class AppHome extends LitElement {
 
       <div>
         <div id="welcomeBar">
-          <fast-card id="welcomeCard">
+          <fluent-card id="welcomeCard">
             <h2>${this.message}</h2>
 
             <p>
               For more information on the PWABuilder pwa-starter, check out the
-              <fast-anchor
+              <fluent-anchor
                 href="https://github.com/pwa-builder/pwa-starter/wiki/Getting-Started
                 appearance="hypertext"
-                >Documentation on Github</fast-anchor
+                >Documentation on Github</fluent-anchor
               >.
             </p>
 
             <p>
               Welcome to the
-              <fast-anchor href="https://pwabuilder.com" appearance="hypertext"
-                >PWABuilder</fast-anchor
+              <fluent-anchor href="https://pwabuilder.com" appearance="hypertext"
+                >PWABuilder</fluent-anchor
               >
               pwa-starter! Be sure to head back to
-              <fast-anchor href="https://pwabuilder.com" appearance="hypertext"
-                >PWABuilder</fast-anchor
+              <fluent-anchor href="https://pwabuilder.com" appearance="hypertext"
+                >PWABuilder</fluent-anchor
               >
               when you are ready to ship this PWA to the Microsoft Store, Google Play
               and the Apple App Store!
             </p>
 
             ${'share' in navigator
-              ? html`<fast-button appearance="primary" @click="${this.share}"
-                  >Share this Starter!</fast-button
+              ? html`<fluent-button appearance="primary" @click="${this.share}"
+                  >Share this Starter!</fluent-button
                 >`
               : null}
-          </fast-card>
+          </fluent-card>
 
-          <fast-card id="infoCard">
+          <fluent-card id="infoCard">
             <h2>Technology Used</h2>
 
             <ul>
               <li>
-                <fast-anchor
+                <fluent-anchor
                   href="https://www.typescriptlang.org/"
                   appearance="hypertext"
-                  >TypeScript</fast-anchor
+                  >TypeScript</fluent-anchor
                 >
               </li>
 
               <li>
-                <fast-anchor
+                <fluent-anchor
                   href="https://lit.dev"
                   appearance="hypertext"
-                  >lit</fast-anchor
+                  >lit</fluent-anchor
                 >
               </li>
 
               <li>
-                <fast-anchor
+                <fluent-anchor
                   href="https://www.fast.design/docs/components/getting-started"
                   appearance="hypertext"
-                  >FAST Components</fast-anchor
+                  >FAST Components</fluent-anchor
                 >
               </li>
 
               <li>
-                <fast-anchor
+                <fluent-anchor
                   href="https://vaadin.github.io/vaadin-router/vaadin-router/demo/#vaadin-router-getting-started-demos"
                   appearance="hypertext"
-                  >Vaadin Router</fast-anchor
+                  >Vaadin Router</fluent-anchor
                 >
               </li>
             </ul>
-          </fast-card>
+          </fluent-card>
 
-          <fast-anchor href="/about">Navigate to About</fast-anchor>
+          <fluent-anchor href="/about">Navigate to About</fluent-anchor>
         </div>
 
         <pwa-install>Install PWA Starter</pwa-install>
