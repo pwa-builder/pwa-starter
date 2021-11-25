@@ -31,6 +31,7 @@ export default {
         { src: "styles/global.css", dest: "build/styles/" },
         { src: "manifest.json", dest: "build/" },
       ],
+      copyOnce: true
     }),
   ],
 };
