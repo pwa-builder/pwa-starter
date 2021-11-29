@@ -159,9 +159,9 @@ export class AppHome extends LitElement {
 
               <li>
                 <fluent-anchor
-                  href="https://www.fast.design/docs/components/getting-started"
+                  href="https://docs.microsoft.com/en-us/fluent-ui/web-components/"
                   appearance="hypertext"
-                  >FAST Components</fluent-anchor
+                  >Fluent Web Components</fluent-anchor
                 >
               </li>
 
