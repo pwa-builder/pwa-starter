@@ -35,14 +35,15 @@ export class AppHome extends LitElement {
         right: 16px;
       }
 
-      button {
-        cursor: pointer;
+
+      #mainInfo fluent-anchor::part(control), #infoCard fluent-anchor::part(control) {
+        color: white;
       }
 
-      @media (min-width: 1200px) {
+      @media (min-width: 1024px) {
         #welcomeCard,
         #infoCard {
-          width: 40%;
+          width: 54%;
         }
       }
 
@@ -61,6 +62,10 @@ export class AppHome extends LitElement {
       @media(prefers-color-scheme: light) {
         fluent-card {
           --fill-color: #edebe9;
+        }
+
+        #mainInfo fluent-anchor::part(control), #infoCard fluent-anchor::part(control) {
+          color: initial;
         }
       }
 
@@ -112,7 +117,7 @@ export class AppHome extends LitElement {
               >.
             </p>
 
-            <p>
+            <p id="mainInfo">
               Welcome to the
               <fluent-anchor href="https://pwabuilder.com" appearance="hypertext"
                 >PWABuilder</fluent-anchor
@@ -170,7 +175,7 @@ export class AppHome extends LitElement {
             </ul>
           </fluent-card>
 
-          <fluent-anchor href="/about">Navigate to About</fluent-anchor>
+          <fluent-anchor href="/about" appearance="accent">Navigate to About</fluent-anchor>
         </div>
 
         <pwa-install>Install PWA Starter</pwa-install>

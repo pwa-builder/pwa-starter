@@ -13,7 +13,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@fluentui/web-components": "^2.0.2",
     "@pwabuilder/pwainstall": "^1.6.7",
     "@vaadin/router": "^1.7.4",
     "lit": "^2.0.2",
