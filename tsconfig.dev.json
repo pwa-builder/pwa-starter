@@ -10,6 +10,7 @@
         "dom"
       ],
       "strict": true,
+      "incremental": true,
       "noUnusedLocals": true,
       "noUnusedParameters": true,
       "noImplicitReturns": true,
