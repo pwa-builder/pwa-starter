@@ -20,8 +20,10 @@ html, body {
     background: #181818;
   }
 
-  fast-design-system-provider {
+  fluent-design-system-provider {
     color: white;
+
+    --accent-foreground-rest: white;
   }
 }
 
@@ -32,7 +34,7 @@ html, body {
     color: black;
   }
 
-  fast-design-system-provider {
+  fluent-design-system-provider {
     color: black;
     --fill-color: #edebe9;
     --background-color: white;

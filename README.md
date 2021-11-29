@@ -5,6 +5,7 @@
 The PWABuilder pwa-starter is our opinionated, best practices, production tested starter that we use to build all of our PWAs, including [PWABuilder itself](https://blog.pwabuilder.com/posts/introducing-the-brand-new-pwa-builder/). The pwa-starter is a starter codebase, just like create-react-app or the Angular CLI can generate, that uses the PWABuilder team&#39;s preferred front-end tech stack:
 
 - [**lit**](https://lit.dev/): Our framework of choice. Lit gives us a way to write code that feels remarkably familiar to popular frameworks like React but that compiles down to browser native Web Components with a tiny runtime that provides things such as performant asynchronous rendering. Put plainly, Lit provides that great developer experience that we may be used too but without any sacrifice in either load-time performance or runtime performance.
+- [@fluent/web-components](https://docs.microsoft.com/fluent-ui/web-components/): The Fluent Web Components are a set of UI components, just like [Ionic](https://ionicframework.com/), or the [Material Design Web Components](https://material.io/develop/web). These components help your app achieve the Fluent look and feel, ensuring your PWA feels native on Windows!
 - [Vaadin Router](https://vaadin.github.io/router/vaadin-router/demo/#vaadin-router-getting-started-demos): For routing, we use the Vaadin router. It is built with web components, has a tiny package size and all the features you expect from modern routers.
 - [**Shadow DOM, CSS Variables, Shadow Parts**](https://lit-element.polymer-project.org/guide/styles#shadow-dom): Modern CSS is incredibly powerful, especially when combining the Shadow DOM, CSS variables and the Shadow Parts APIs. This provides a lot of the features we normally use a CSS pre-processor for, but without the extra complication that a CSS pre-processor adds to your build steps!
 - [**Rollup**](https://www.rollupjs.org/guide/en/): Rollup is a &quot;bundler&quot; or build tool that will make working with NPM modules easy while also helping ensure our code is ready for production. Bundlers allows us to both optimize our app for production, such as minfiying our code for a faster load time, and to do things such as compile our TypeScript during development.
@@ -63,7 +64,7 @@ The default layout of this starter is dual screen friendly. We do this [here](ht
 Any NPM module should work with the pwa-starter! Feel free top open an issue if a critical package you use does not work in the starter.
 
 ### UI Libraries
-Any UI library can be used with the PWABuilder pwa-starter! It is important to remember however that your choice of UI toolkit / components will have an effect on overall performance. Because of this, the team recommends choosing UI libraries that are built mainly as CSS classes (such as Bootstrap) or libraries built with Web Components such as the default UI toolkit for this starter, [fast-components](https://www.fast.design/docs/components/getting-started/). Other UI libraries that we recommend checking out:
+Any UI library can be used with the PWABuilder pwa-starter! It is important to remember however that your choice of UI toolkit / components will have an effect on overall performance. Because of this, the team recommends choosing UI libraries that are built mainly as CSS classes (such as Bootstrap) or libraries built with Web Components such as the default UI toolkit for this starter, [fluent-components](https://docs.microsoft.com/fluent-ui/web-components/). Other UI libraries that we recommend checking out:
 
 - [Ionic UI Components](https://ionicframework.com/docs/components)
 - [Material Components](https://material.io/develop/web)
@@ -71,7 +72,7 @@ Any UI library can be used with the PWABuilder pwa-starter! It is important to r
 
 ### Microsoft Graph Toolkit
 
-The [Microsoft Graph Toolkit](https://docs.microsoft.com/en-us/graph/toolkit/overview) is a collection of reusable, framework-agnostic web components and helpers for accessing and working with Microsoft Graph. The components are fully functional right of out of the box, with built in providers that authenticate with and fetch data from Microsoft Graph.
+The [Microsoft Graph Toolkit](https://docs.microsoft.com/graph/toolkit/overview) is a collection of reusable, framework-agnostic web components and helpers for accessing and working with Microsoft Graph. The components are fully functional right of out of the box, with built in providers that authenticate with and fetch data from Microsoft Graph.
 
 ### Authentication
 
