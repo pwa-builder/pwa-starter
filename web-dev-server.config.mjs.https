@@ -1,0 +1,15 @@
+// If you want https, which is necessary for some Safari features,
+// you need to install mkcert, which you can get here:
+// https://github.com/FiloSottile/mkcert#installation
+// and create a cert for your IP address or localhost
+// and finally edit this file to reflect those values.
+// Last step is to rename this file, just remove .https from the end.
+
+export default {
+  protocol: 'https',
+  hostname: 'yourHostnameOrIP',
+  port: 8000,
+  http2: true,
+  sslKey: './pathTo-key.pem',
+  sslCert: './pathTo.pem'
+};
