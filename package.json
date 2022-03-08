@@ -14,14 +14,14 @@
   "dependencies": {
     "@pwabuilder/pwainstall": "^1.6.7",
     "@vaadin/router": "^1.7.4",
-    "lit": "^2.0.2",
-    "workbox-build": "^6.4.2",
-    "workbox-core": "^6.4.2",
-    "workbox-precaching": "^6.4.2"
+    "lit": "^2.2.0",
+    "workbox-build": "^6.5.1",
+    "workbox-core": "^6.5.1",
+    "workbox-precaching": "^6.5.1"
   },
   "devDependencies": {
     "typescript": "^4.6.2",
-    "vite": "^2.8.0",
+    "vite": "^2.8.6",
     "vite-plugin-pwa": "^0.11.13"
   },
   "prettier": {
