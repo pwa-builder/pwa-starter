@@ -16,7 +16,7 @@
                 "../../src": "${workspaceFolder}/src",
                 "../../src/*": "${workspaceFolder}/src/*"
             },
-            "preLaunchTask": "npm run dev-task",
+            "preLaunchTask": "npm run dev",
             "postDebugTask": "postdebugKill"
         },
         {
