@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { Router } from '@vaadin/router';
+import { registerSW } from 'virtual:pwa-register';
 
 import './script/pages/app-home';
 import './script/components/header';
@@ -76,6 +77,7 @@ export class AppIndex extends LitElement {
         ],
       } as any,
     ]);
+    registerSW({ immediate: true });
   }
 
   render() {

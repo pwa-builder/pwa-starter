@@ -16,7 +16,10 @@
       "experimentalDecorators": true,
       "forceConsistentCasingInFileNames": true,
       "useDefineForClassFields": false,
-      "isolatedModules": true
+      "isolatedModules": true,
+      "types": [
+          "vite-plugin-pwa/client"
+      ]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
