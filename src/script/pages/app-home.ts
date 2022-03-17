@@ -6,6 +6,7 @@ import '@pwabuilder/pwainstall';
 
 @customElement('app-home')
 export class AppHome extends LitElement {
+
   // For more information on using properties and state in lit
   // check out this link https://lit.dev/docs/components/properties/
   @property() message = 'Welcome!';
@@ -102,7 +103,6 @@ export class AppHome extends LitElement {
   render() {
     return html`
       <app-header></app-header>
-
       <div>
         <div id="welcomeBar">
           <fluent-card id="welcomeCard">
