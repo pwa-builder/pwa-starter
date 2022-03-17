@@ -103,7 +103,6 @@ export class AppHome extends LitElement {
   render() {
     return html`
       <app-header></app-header>
-      <pwa-install id="installId" manifestpath="/manifest.webmanifest"></pwa-install>
       <div>
         <div id="welcomeBar">
           <fluent-card id="welcomeCard">
