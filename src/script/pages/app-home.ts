@@ -48,7 +48,7 @@ export class AppHome extends LitElement {
         }
       }
 
-      @media (screen-spanning: single-fold-vertical) {
+      @media (horizontal-viewport-segments: 2) {
         #welcomeBar {
           flex-direction: row;
           align-items: flex-start;
