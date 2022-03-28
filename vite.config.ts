@@ -6,9 +6,6 @@ export default defineConfig({
   build: {
     sourcemap: true,
     assetsDir: "code",
-    // rollupOptions: {
-    //   external: [/^lit/,  /^@fluentui/, /^@microsoft\/fast/ ]
-    // }
   },
   plugins: [
     VitePWA({
