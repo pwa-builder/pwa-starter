@@ -111,7 +111,7 @@ export class AppHome extends LitElement {
             <p>
               For more information on the PWABuilder pwa-starter, check out the
               <fluent-anchor
-                href="https://github.com/pwa-builder/pwa-starter/wiki/Getting-Started
+                href="https://github.com/pwa-builder/pwa-starter/wiki/Getting-Started"
                 appearance="hypertext"
                 >Documentation on Github</fluent-anchor
               >.
