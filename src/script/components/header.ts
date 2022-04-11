@@ -5,7 +5,7 @@ import { property, customElement } from 'lit/decorators.js';
 export class AppHeader extends LitElement {
   @property({ type: String }) title = 'PWA Starter';
 
-  @property() enableBack: boolean = false;
+  @property({ type: Boolean}) enableBack: boolean = false;
 
   static get styles() {
     return css`
