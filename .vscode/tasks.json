@@ -2,9 +2,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "npm run dev",
+            "label": "npm run dev-task",
             "type": "npm",
-            "script": "dev",
+            "script": "dev-task",
             "isBackground": true,
             "problemMatcher": {
                 "owner": "custom",
@@ -14,7 +14,7 @@
                 "background": {
                     "activeOnStart": true,
                     "beginsPattern": ".*",
-                    "endsPattern": "created build in .+"
+                    "endsPattern": "ready in .+"
                 }
             },
         },
