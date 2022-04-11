@@ -38,7 +38,7 @@ export class AppAbout extends LitElement {
 
   render() {
     return html`
-      <app-header enableBack="${true}"></app-header>
+      <app-header ?enableBack="${true}"></app-header>
 
       <div>
         <h2>About Page</h2>
