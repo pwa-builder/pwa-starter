@@ -14,7 +14,7 @@
                 "background": {
                     "activeOnStart": true,
                     "beginsPattern": ".*",
-                    "endsPattern": "created build in .+"
+                    "endsPattern": "ready in .+"
                 }
             },
         },
