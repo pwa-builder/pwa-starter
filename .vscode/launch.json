@@ -8,15 +8,14 @@
             "type": "pwa-msedge",
             "request": "launch",
             "name": "Run PWA",
-            "webRoot": "${workspaceFolder}/build",
+            "webRoot": "${workspaceFolder}/",
             "runtimeArgs": [
-                "--app=http://localhost:8000"
+                "--app=http://localhost:3000"
             ],
             "sourceMapPathOverrides": {
                 "../../src": "${workspaceFolder}/src",
                 "../../src/*": "${workspaceFolder}/src/*"
             },
-            "preLaunchTask": "npm run dev",
             "postDebugTask": "postdebugKill"
         },
         {
