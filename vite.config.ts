@@ -13,6 +13,7 @@ export default defineConfig({
       base: "/",
       scope: "/",
       registerType: "autoUpdate",
+      injectRegister: false,
       manifest: false,
       workbox: {
         globDirectory: 'dist',
