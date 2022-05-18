@@ -3,19 +3,22 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>PWA Starter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Il Baratto Annunci Gratuiti - dal 1980 gli annunci gratuiti in Sardegna</title>
+  <link rel="stylesheet" href="css/framework7.bundle.min.css">
+	<link rel="stylesheet" href="css/style.css">
 
   <base href="/" />
 
   <!-- This meta viewport ensures the webpage's dimensions change according to the device it's on. This is called Responsive Web Design.-->
   <meta name="viewport"
     content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-  <meta name="description" content="This is a PWA Starter app" />
+  <meta name="description" content="Il Baratto Annunci Gratuiti" />
   <meta name="theme-color" content="#E1477E" />
 
   <!-- These meta tags are Apple-specific, and set the web application to run in full-screen mode with a black status bar. Learn more at https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-title" content="PWA Starter" />
+  <meta name="apple-mobile-web-app-title" content="Il Baratto Annunci Gratuiti" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
   <!-- Imports an icon to represent the document. -->
@@ -42,6 +45,1153 @@
       );
     }
   </script>
+
+
+  <div id="app">
+
+		<div class="view view-main view-init ios-edges" data-url="/">
+			<div class="page page-home page-with-subnavbar">
+
+				<div class="toolbar tabbar tabbar-labels toolbar-bottom elevation-6 bg-white">
+					<div class="toolbar-inner">
+						<a href="#tab-home" class="tab-link tab-link-active">
+							<ion-icon name="home-outline"></ion-icon>
+							<span class="tabbar-label">Home</span>
+						</a>
+						<a href="#tab-favorite" class="tab-link">
+							<ion-icon name="heart-outline"></ion-icon>
+							<span class="tabbar-label">Favorites</span>
+						</a>
+						<a href="#tab-add" class="tab-link addding-ads">
+							<span class="adding-ads">
+								<ion-icon name="add-outline"></ion-icon>
+							</span>
+						</a>
+						<a href="#tab-search" class="tab-link">
+							<ion-icon name="search-outline"></ion-icon>
+							<span class="tabbar-label">Search</span>
+						</a>
+						<a href="#tab-profile" class="tab-link">
+							<ion-icon name="person-outline"></ion-icon>
+							<span class="tabbar-label">Profile</span>
+						</a>
+					</div>
+				</div>
+
+				<div class="tabs">
+					<div id="tab-home" class="tab tab-home tab-active">
+						<!-- ===== TAB HOME ===== -->
+
+						<!-- navbar -->
+						<div class="navbar navbar-transparent">
+							<div class="navbar-bg"></div>
+							<div class="navbar-inner sliding">
+								<div class="left">
+									<a href="#" class="link panel-open" data-panel=".sidebar-left">
+										<ion-icon name="menu-outline"></ion-icon>
+									</a>
+								</div>
+								<div class="right">
+									<a href="/notifications/" data-transition="f7-dive" class="link">
+										<ion-icon name="notifications-outline"></ion-icon>
+									</a>
+								</div>
+							</div>
+						</div>
+						<!-- end navbar -->
+
+						<!-- sidebar / panel -->
+						<div class="panel-backdrop"></div>
+						<div class="panel panel-left sidebar-left panel-cover panel-init">
+
+							<!-- separator -->
+							<div class="separator-large"></div>
+							<!-- end separator -->
+
+							<div class="panel-header">
+								<div class="container">
+									<div class="content">
+										<img src="images/avatar6.jpg" alt="">
+										<div class="title-name">
+											<h5>Philips Ramsey</h5>
+											<p class="text-small">Member Since 2020</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="list">
+								<ul>
+									<li>
+										<a href="/my-ads/" data-transition="f7-dive" class="item-link item-content panel-close">
+											<div class="item-media">
+												<ion-icon name="duplicate-outline" class="color-blue"></ion-icon>
+											</div>
+											<div class="item-inner">
+												<div class="item-title">My Ads</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="/favorites/" data-transition="f7-dive" class="item-link item-content panel-close">
+											<div class="item-media">
+												<ion-icon name="heart-outline" class="color-purple"></ion-icon>
+											</div>
+											<div class="item-inner">
+												<div class="item-title">Favorites</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="/chat/" data-transition="f7-dive" class="item-link item-content panel-close">
+											<div class="item-media">
+												<ion-icon name="chatbox-outline" class="color-orange"></ion-icon>
+											</div>
+											<div class="item-inner">
+												<div class="item-title">Chat</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="/notifications/" data-transition="f7-dive" class="item-link item-content panel-close">
+											<div class="item-media">
+												<ion-icon name="notifications-outline" class="color-red"></ion-icon>
+											</div>
+											<div class="item-inner">
+												<div class="item-title">Notification</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="/pages/" data-transition="f7-dive" class="item-link item-content panel-close">
+											<div class="item-media">
+												<ion-icon name="documents-outline" class="color-blue"></ion-icon>
+											</div>
+											<div class="item-inner">
+												<div class="item-title">Pages</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="/blank-page/" data-transition="f7-dive" class="item-link item-content panel-close">
+											<div class="item-media">
+												<ion-icon name="document-outline" class="color-dark"></ion-icon>
+											</div>
+											<div class="item-inner">
+												<div class="item-title">Blank Page</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="/settings/" data-transition="f7-dive" class="item-link item-content panel-close">
+											<div class="item-media">
+												<ion-icon name="settings-outline" class="color-green"></ion-icon>
+											</div>
+											<div class="item-inner">
+												<div class="item-title">Settings</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="" class="item-link item-content panel-close">
+											<div class="item-media">
+												<ion-icon name="log-out-outline" class="color-red"></ion-icon>
+											</div>
+											<div class="item-inner">
+												<div class="item-title">Logout</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+						<!-- end sidebar / panel -->
+
+						<!-- hader page -->
+						<div class="header-title">
+							<div class="container">
+								<h3>Discover</h3>
+							</div>
+						</div>
+						<!-- end hader page -->
+
+						<!-- separator -->
+						<div class="separator-small"></div>
+						<!-- end separator -->
+
+						<!-- header searchbar -->
+						<div class="header-searchbar">
+							<form class="searchbar">
+								<div class="searchbar-inner">
+									<div class="searchbar-input-wrap">
+										<input type="search" placeholder="Find Laptop, Handphone, and other">
+										<i class="searchbar-icon"></i>
+										<span class="input-clear-button"></span>
+									</div>
+									<span class="searchbar-disable-button">Cancel</span>
+								</div>
+							</form>
+						</div>
+						<!-- end header searchbar -->
+
+						<!-- categories -->
+						<div class="categories">
+							<div class="block-title">
+								<h3>Categories</h3>
+							</div>
+							<div class="container">
+								<div class="row">
+									<div class="col-33">
+										<a href="/category-details/" data-transition="f7-dive">
+											<div class="content">
+												<ion-icon name="car-sport-outline" class="color-blue"></ion-icon>
+												<h6 class="second-title">Cars</h6>
+											</div>
+										</a>
+									</div>
+									<div class="col-33">
+										<a href="/category-details/" data-transition="f7-dive">
+											<div class="content">
+												<ion-icon name="bicycle-outline" class="color-purple"></ion-icon>
+												<h6 class="second-title">Bikes</h6>
+											</div>
+										</a>
+									</div>
+									<div class="col-33">
+										<a href="/category-details/" data-transition="f7-dive">
+											<div class="content">
+												<ion-icon name="home-outline" class="color-orange"></ion-icon>
+												<h6 class="second-title">Properties</h6>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-33">
+										<a href="/category-details/" data-transition="f7-dive">
+											<div class="content">
+												<ion-icon name="tv-outline" class="color-red"></ion-icon>
+												<h6 class="second-title">Electronics</h6>
+											</div>
+										</a>
+									</div>
+									<div class="col-33">
+										<a href="/category-details/" data-transition="f7-dive">
+											<div class="content">
+												<ion-icon name="phone-portrait-outline" class="color-green"></ion-icon>
+												<h6 class="second-title">Handphone</h6>
+											</div>
+										</a>
+									</div>
+									<div class="col-33">
+										<a href="/categories/" data-transition="f7-dive">
+											<div class="content">
+												<ion-icon name="grid-outline" class="color-brown"></ion-icon>
+												<h6 class="second-title">Show All</h6>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end categories -->
+
+						<!-- featured ads -->
+						<div class="featured">
+							<div class="block-title">
+								<h3>Featured</h3>
+							</div>
+							<div class="container">
+								<div class="swiper-container swiper-init" data-slides-per-view="auto" data-space-between="15">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<a href="/ads-details/" data-transition="f7-dive">
+												<div class="content-item radius-default bg-white">
+													<div class="featured-symbol"><ion-icon name="flash-outline"></ion-icon></div>
+													<img class="full-width radius-top-only" src="images/cars1.jpg" alt="">
+													<div class="text-desc">
+														<p class="title-item">Greeny-c2 1992</p>
+														<p class="price-item">$9142</p>
+														<p class="location-item"><ion-icon name="map-outline"></ion-icon>NEW YORK, US</p>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a href="/ads-details/" data-transition="f7-dive">
+												<div class="content-item radius-default bg-white">
+													<div class="featured-symbol"><ion-icon name="flash-outline"></ion-icon></div>
+													<img class="full-width radius-top-only" src="images/properties1.jpg" alt="">
+													<div class="text-desc">
+														<p class="title-item">House type 36/4</p>
+														<p class="price-item">$8012</p>
+														<p class="location-item"><ion-icon name="map-outline"></ion-icon>NEW YORK, US</p>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a href="/ads-details/" data-transition="f7-dive">
+												<div class="content-item radius-default bg-white">
+													<div class="featured-symbol"><ion-icon name="flash-outline"></ion-icon></div>
+													<img class="full-width radius-top-only" src="images/bike1.jpg" alt="">
+													<div class="text-desc">
+														<p class="title-item">Motobee c1000</p>
+														<p class="price-item">$2150</p>
+														<p class="location-item"><ion-icon name="map-outline"></ion-icon>NEW YORK, US</p>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end featured ads -->
+
+						<!-- separator -->
+						<div class="separator-large"></div>
+						<!-- end separator -->
+
+						<!-- promo banner -->
+						<div class="promo-banner">
+							<div class="container">
+								<a href="">
+									<div class="content-box">
+										<div class="content color-white content-left">
+											<h5 class="title-item color-white">Ceo cars 2015</h5>
+											<p class="text-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										</div>
+										<div class="content content-right">
+											<div class="button button-icon-large">
+												<ion-icon name="arrow-forward-outline"></ion-icon>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<!-- end promo banner -->
+
+						<!-- latest ads -->
+						<div class="latest-ads">
+							<div class="block-title">
+								<h3>Latest Ads <a href="/ads/" data-transition="f7-dive" class="right-link">Show All</a></h3>
+							</div>
+							<div class="container">
+								<div class="row">
+									<div class="col-50">
+										<div class="content-item radius-default bg-white">
+											<a href="" data-transition="f7-dive">
+												<div class="favorite-symbol"><ion-icon name="heart-outline"></ion-icon></div>
+											</a>
+											<a href="/ads-details/">
+												<img class="full-width radius-top-only" src="images/properties2.jpg" alt="">
+												<div class="text-desc">
+													<p class="title-item">House 200 M2</p>
+													<p class="price-item">$9541</p>
+													<p class="location-item"><ion-icon name="map-outline"></ion-icon>NEW YORK, US</p>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="col-50">
+										<div class="content-item radius-default bg-white">
+											<a href="" data-transition="f7-dive">
+												<div class="favorite-symbol active-symbol"><ion-icon name="heart-outline"></ion-icon></div>
+											</a>
+											<a href="/ads-details/">
+												<img class="full-width radius-top-only" src="images/cars2.jpg" alt="">
+												<div class="text-desc">
+													<p class="title-item">Ceo cars 2016</p>
+													<p class="price-item">$8002</p>
+													<p class="location-item"><ion-icon name="map-outline"></ion-icon>NEW YORK, US</p>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-50">
+										<div class="content-item radius-default bg-white">
+											<a href="" data-transition="f7-dive">
+												<div class="favorite-symbol"><ion-icon name="heart-outline"></ion-icon></div>
+											</a>
+											<a href="/ads-details/">
+												<img class="full-width radius-top-only" src="images/cars9.jpg" alt="">
+												<div class="text-desc">
+													<p class="title-item">Mini red cara</p>
+													<p class="price-item">$8999</p>
+													<p class="location-item"><ion-icon name="map-outline"></ion-icon>NEW YORK, US</p>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="col-50">
+										<div class="content-item radius-default bg-white">
+											<a href="" data-transition="f7-dive">
+												<div class="favorite-symbol"><ion-icon name="heart-outline"></ion-icon></div>
+											</a>
+											<a href="/ads-details/">
+												<img class="full-width radius-top-only" src="images/computer1.jpg" alt="">
+												<div class="text-desc">
+													<p class="title-item">Dual monitor 24inch</p>
+													<p class="price-item">$1020</p>
+													<p class="location-item"><ion-icon name="map-outline"></ion-icon>NEW YORK, US</p>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end latest ads -->
+
+						<!-- separator -->
+						<div class="separator-large"></div>
+						<!-- end separator -->
+
+						<!-- ===== END TAB HOME ===== -->
+					</div>
+
+					<div id="tab-favorite" class="tab tab-favorite">
+						<!-- ===== TAB FAVORITES ===== -->
+
+						<!-- navbar -->
+						<div class="navbar">
+							<div class="navbar-inner sliding">
+								<div class="left"></div>
+								<div class="title">Favorites</div>
+								<div class="right">
+									<a href="" class="link">
+										<ion-icon name="search-outline"></ion-icon>
+									</a>
+								</div>
+							</div>
+						</div>
+						<!-- end navbar -->
+
+						<!-- separator -->
+						<div class="separator-small"></div>
+						<!-- end separator -->
+
+						<div class="favorites">
+							<div class="container">
+								<div class="content-wrapper">
+									<a href="#">
+										<div class="favorite-symbol active-symbol"><ion-icon name="heart-outline"></ion-icon></div>
+									</a>
+									<div class="content-image">
+										<img class="radius-default" src="images/cars5.jpg" alt="">
+									</div>
+									<div class="boxed">
+										<p class="title-item">Mobilus gray</p>
+										<p class="price-item">$8888</p>
+										<ul class="rating-item">
+											<li><ion-icon name="star-sharp"></ion-icon></li>
+											<li><ion-icon name="star-sharp"></ion-icon></li>
+											<li><ion-icon name="star-sharp"></ion-icon></li>
+											<li><ion-icon name="star-sharp"></ion-icon></li>
+											<li><ion-icon name="star-outline"></ion-icon></li>
+										</ul>
+										<p class="location-item"><ion-icon name="map-outline"></ion-icon>NEW YORK, US</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- separator -->
+						<div class="separator-medium"></div>
+						<!-- end separator -->
+
+						<div class="favorites">
+							<div class="container">
+								<div class="content-wrapper">
+									<a href="#">
+										<div class="favorite-symbol active-symbol"><ion-icon name="heart-outline"></ion-icon></div>
+									</a>
+									<div class="content-image">
+										<img class="radius-default" src="images/cars1.jpg" alt="">
+									</div>
+									<div class="boxed">
+										<p class="title-item">Greeny-c2 1992</p>
+										<p class="price-item">$9142</p>
+										<ul class="rating-item">
+											<li><ion-icon name="star-sharp"></ion-icon></li>
+											<li><ion-icon name="star-sharp"></ion-icon></li>
+											<li><ion-icon name="star-sharp"></ion-icon></li>
+											<li><ion-icon name="star-sharp"></ion-icon></li>
+											<li><ion-icon name="star-outline"></ion-icon></li>
+										</ul>
+										<p class="location-item"><ion-icon name="map-outline"></ion-icon>NEW YORK, US</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- separator -->
+						<div class="separator-medium"></div>
+						<!-- end separator -->
+
+						<div class="favorites">
+							<div class="container">
+								<div class="content-wrapper">
+									<a href="#">
+										<div class="favorite-symbol active-symbol"><ion-icon name="heart-outline"></ion-icon></div>
+									</a>
+									<div class="content-image">
+										<img class="radius-default" src="images/properties2.jpg" alt="">
+									</div>
+									<div class="boxed">
+										<p class="title-item">House 200 M2</p>
+										<p class="price-item">$9541</p>
+										<ul class="rating-item">
+											<li><ion-icon name="star-sharp"></ion-icon></li>
+											<li><ion-icon name="star-sharp"></ion-icon></li>
+											<li><ion-icon name="star-sharp"></ion-icon></li>
+											<li><ion-icon name="star-sharp"></ion-icon></li>
+											<li><ion-icon name="star-outline"></ion-icon></li>
+										</ul>
+										<p class="location-item"><ion-icon name="map-outline"></ion-icon>NEW YORK, US</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- separator -->
+						<div class="separator-medium"></div>
+						<!-- end separator -->
+
+						<div class="favorites">
+							<div class="container">
+								<div class="content-wrapper">
+									<a href="#">
+										<div class="favorite-symbol active-symbol"><ion-icon name="heart-outline"></ion-icon></div>
+									</a>
+									<div class="content-image">
+										<img class="radius-default" src="images/cars8.jpg" alt="">
+									</div>
+									<div class="boxed">
+										<p class="title-item">redma c1 2019</p>
+										<p class="price-item">$7020</p>
+										<ul class="rating-item">
+											<li><ion-icon name="star-sharp"></ion-icon></li>
+											<li><ion-icon name="star-sharp"></ion-icon></li>
+											<li><ion-icon name="star-sharp"></ion-icon></li>
+											<li><ion-icon name="star-sharp"></ion-icon></li>
+											<li><ion-icon name="star-outline"></ion-icon></li>
+										</ul>
+										<p class="location-item"><ion-icon name="map-outline"></ion-icon>NEW YORK, US</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- separator -->
+						<div class="separator-large"></div>
+						<!-- end separator -->
+
+						<!-- ===== END TAB FAVORITES ===== -->
+					</div>
+
+					<div id="tab-add" class="tab tab-add">
+						<!-- ===== TAB ADD ADS ===== -->
+
+						<div class="choose-categories">
+							<div class="block-title">
+								<h3>Choose Categories</h3>
+							</div>
+							<div class="container">
+								<a href="/add-ads-product-details/" data-transition="f7-dive">
+									<div class="category-list">
+										<div class="category-icon">
+											<ion-icon name="car-sport-outline" class="color-blue"></ion-icon>
+										</div>
+										<div class="category-list-label">
+											<div class="category-list-title">
+												<h5>Cars</h5>
+											</div>
+											<div class="category-list-after">
+												<ion-icon name="chevron-forward-outline"></ion-icon>
+											</div>
+										</div>
+									</div>
+								</a>
+
+								<!-- separator -->
+								<div class="separator-medium"></div>
+								<!-- end separator -->
+
+								<a href="/add-ads-product-details/" data-transition="f7-dive">
+									<div class="category-list">
+										<div class="category-icon">
+											<ion-icon name="bicycle-outline" class="color-purple"></ion-icon>
+										</div>
+										<div class="category-list-label">
+											<div class="category-list-title">
+												<h5>Bikes</h5>
+											</div>
+											<div class="category-list-after">
+												<ion-icon name="chevron-forward-outline"></ion-icon>
+											</div>
+										</div>
+									</div>
+								</a>
+
+								<!-- separator -->
+								<div class="separator-medium"></div>
+								<!-- end separator -->
+
+								<a href="/add-ads-product-details/" data-transition="f7-dive">
+									<div class="category-list">
+										<div class="category-icon">
+											<ion-icon name="home-outline" class="color-orange"></ion-icon>
+										</div>
+										<div class="category-list-label">
+											<div class="category-list-title">
+												<h5>Properties</h5>
+											</div>
+											<div class="category-list-after">
+												<ion-icon name="chevron-forward-outline"></ion-icon>
+											</div>
+										</div>
+									</div>
+								</a>
+
+								<!-- separator -->
+								<div class="separator-medium"></div>
+								<!-- end separator -->
+
+								<a href="/add-ads-product-details/" data-transition="f7-dive">
+									<div class="category-list">
+										<div class="category-icon">
+											<ion-icon name="tv-outline" class="color-red"></ion-icon>
+										</div>
+										<div class="category-list-label">
+											<div class="category-list-title">
+												<h5>Electronics</h5>
+											</div>
+											<div class="category-list-after">
+												<ion-icon name="chevron-forward-outline"></ion-icon>
+											</div>
+										</div>
+									</div>
+								</a>
+
+								<!-- separator -->
+								<div class="separator-medium"></div>
+								<!-- end separator -->
+
+								<a href="/add-ads-product-details/" data-transition="f7-dive">
+									<div class="category-list">
+										<div class="category-icon">
+											<ion-icon name="phone-portrait-outline" class="color-green"></ion-icon>
+										</div>
+										<div class="category-list-label">
+											<div class="category-list-title">
+												<h5>Handphone</h5>
+											</div>
+											<div class="category-list-after">
+												<ion-icon name="chevron-forward-outline"></ion-icon>
+											</div>
+										</div>
+									</div>
+								</a>
+
+								<!-- separator -->
+								<div class="separator-medium"></div>
+								<!-- end separator -->
+
+								<a href="/add-ads-product-details/" data-transition="f7-dive">
+									<div class="category-list">
+										<div class="category-icon">
+											<ion-icon name="bed-outline" class="color-brown"></ion-icon>
+										</div>
+										<div class="category-list-label">
+											<div class="category-list-title">
+												<h5>Furniture</h5>
+											</div>
+											<div class="category-list-after">
+												<ion-icon name="chevron-forward-outline"></ion-icon>
+											</div>
+										</div>
+									</div>
+								</a>
+
+								<!-- separator -->
+								<div class="separator-medium"></div>
+								<!-- end separator -->
+
+								<a href="/add-ads-product-details/" data-transition="f7-dive">
+									<div class="category-list">
+										<div class="category-icon">
+											<ion-icon name="briefcase-outline" class="color-blue"></ion-icon>
+										</div>
+										<div class="category-list-label">
+											<div class="category-list-title">
+												<h5>Jobs</h5>
+											</div>
+											<div class="category-list-after">
+												<ion-icon name="chevron-forward-outline"></ion-icon>
+											</div>
+										</div>
+									</div>
+								</a>
+
+							</div>
+						</div>
+
+						<!-- separator -->
+						<div class="separator-large"></div>
+						<!-- end separator -->
+
+						<!-- ===== END TAB ADD ADS ===== -->
+					</div>
+
+					<div id="tab-search" class="tab tab-search">
+						<!-- ===== TAB SEARCH ===== -->
+
+						<!-- navbar -->
+						<div class="navbar">
+							<div class="navbar-inner sliding">
+								<div class="left"></div>
+								<div class="title">Search</div>
+								<div class="right"></div>
+								<div class="subnavbar">
+									<form class="searchbar searchbar-init" data-search-container=".search-list" data-search-in=".item-title">
+										<div class="searchbar-inner">
+											<div class="searchbar-input-wrap">
+												<input type="search" placeholder="Find Laptop, Handphone, and other">
+												<i class="searchbar-icon"></i>
+												<span class="input-clear-button"></span>
+											</div>
+											<span class="searchbar-disable-button">Cancel</span>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<!-- end navbar -->
+
+						<!-- separator -->
+						<div class="separator-large separator-top-large"></div>
+						<!-- end separator -->
+
+						<div class="search-action">
+							<div class="container">
+								<div class="row">
+									<div class="col-50">
+										<a class="sheet-open" href="#" data-sheet=".my-sheet-swipe-to-close">
+											<div class="content">
+												<ion-icon name="funnel-outline"></ion-icon><span>Sort</span>
+											</div>
+										</a>
+									</div>
+									<div class="col-50">
+										<a href="#" class="panel-open" data-panel=".sidebar-right">
+											<div class="content">
+												<ion-icon name="filter-outline"></ion-icon><span>Filter</span>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- sheet modal for sort by -->
+						<div class="sheet-modal my-sheet-swipe-to-close">
+							<div class="sheet-modal-inner">
+								<div class="block-title">
+									<h3>Sort by: <a href="" class="right-link sheet-close"><ion-icon name="close-circle-outline"></ion-icon></a></h3>
+								</div>
+								<div class="list">
+									<ul>
+										<li>
+											<a href="" class="item-link item-content">
+												<div class="item-media">
+													<ion-icon name="shield-checkmark-outline"></ion-icon>
+												</div>
+												<div class="item-inner">
+													<div class="item-title">Relevance</div>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="" class="item-link item-content">
+												<div class="item-media">
+													<ion-icon name="calendar-outline"></ion-icon>
+												</div>
+												<div class="item-inner">
+													<div class="item-title">Date</div>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="" class="item-link item-content">
+												<div class="item-media">
+													<ion-icon name="arrow-up-outline"></ion-icon>
+												</div>
+												<div class="item-inner">
+													<div class="item-title">Price: Low to high</div>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="" class="item-link item-content">
+												<div class="item-media">
+													<ion-icon name="arrow-down-outline"></ion-icon>
+												</div>
+												<div class="item-inner">
+													<div class="item-title">Price: High to low</div>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- end sheet modal for sort by -->
+
+						<!-- sidebar / panel for filter -->
+						<div class="panel-backdrop"></div>
+						<div class="panel panel-right sidebar-right panel-cover panel-init">
+							<div class="block-title title-small">
+								<h3>Sort by</h3>
+							</div>
+							<form class="list">
+								<ul>
+									<li class="item-content item-input">
+										<div class="item-inner">
+											<div class="item-input-wrap input-dropdown-wrap">
+												<select>
+													<option value="Relevance">Relevance</option>
+													<option value="Date">Date</option>
+													<option value="Price">Price: Low to high</option>
+													<option value="Price">Price: High to low</option>
+												</select>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</form>
+
+							<div class="block-title title-small">
+								<h3>Ratings</h3>
+							</div>
+							<div class="rating-filter">
+								<div class="container">
+									<ul>
+										<li class="rating-active"><a href=""><ion-icon name="star-sharp"></ion-icon>5</a></li>
+										<li><a href=""><ion-icon name="star-sharp"></ion-icon>4</a></li>
+										<li><a href=""><ion-icon name="star-sharp"></ion-icon>3</a></li>
+										<li><a href=""><ion-icon name="star-sharp"></ion-icon>2</a></li>
+										<li><a href=""><ion-icon name="star-sharp"></ion-icon>1</a></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="block-title title-small">
+								<h3>Location</h3>
+							</div>
+							<form class="list">
+								<ul>
+									<li class="item-content item-input">
+										<div class="item-inner">
+											<div class="item-input-wrap">
+												<input type="text" placeholder="Current location">
+												<span class="input-clear-button"></span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</form>
+
+							<div class="block-title title-small">
+								<h3>Price Range</h3>
+							</div>
+							<div class="container">
+								<form class="list">
+									<ul>
+										<li>
+											<div class="row">
+												<div class="col-50">
+													<div class="item-content item-input">
+														<div class="item-inner">
+															<div class="item-input-wrap">
+																<input type="text" placeholder="Minimum">
+																<span class="input-clear-button"></span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-50">
+													<div class="item-content item-input">
+														<div class="item-inner">
+															<div class="item-input-wrap">
+																<input type="text" placeholder="Maximum">
+																<span class="input-clear-button"></span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</form>
+							</div>
+
+							<!-- separator -->
+							<div class="separator-large"></div>
+							<!-- end separator -->
+
+							<div class="fitler-execution">
+								<div class="container">
+									<button class="button secondary-button panel-close">Cancel</button>
+									<!-- separator -->
+									<div class="separator-medium"></div>
+									<!-- end separator -->
+									<button class="button">Apply Filters</button>
+								</div>
+							</div>
+
+							<!-- separator -->
+							<div class="separator-large"></div>
+							<!-- end separator -->
+
+						</div>
+						<!-- end sidebar / panel for filter -->
+
+						<div class="searchbar-backdrop"></div>
+						<div class="searchbar-found">
+							<div class="search-by-category">
+								<div class="block-title">
+									<h3 class="title-extra-small">By Categories <a href="#" class="right-link">Show All</a></h3>
+								</div>
+								<div class="list">
+									<ul>
+										<li>
+											<a href="" class="item-link item-content">
+												<div class="item-media">
+													<ion-icon name="car-sport-outline" class="color-blue"></ion-icon>
+												</div>
+												<div class="item-inner">
+													<div class="item-title">Cars</div>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="" class="item-link item-content">
+												<div class="item-media">
+													<ion-icon name="bicycle-outline" class="color-purple"></ion-icon>
+												</div>
+												<div class="item-inner">
+													<div class="item-title">Bikes</div>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="" class="item-link item-content">
+												<div class="item-media">
+													<ion-icon name="home-outline" class="color-orange"></ion-icon>
+												</div>
+												<div class="item-inner">
+													<div class="item-title">Properties</div>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="" class="item-link item-content">
+												<div class="item-media">
+													<ion-icon name="tv-outline" class="color-red"></ion-icon>
+												</div>
+												<div class="item-inner">
+													<div class="item-title">Electronics</div>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="" class="item-link item-content">
+												<div class="item-media">
+													<ion-icon name="phone-portrait-outline" class="color-green"></ion-icon>
+												</div>
+												<div class="item-inner">
+													<div class="item-title">Handphone</div>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="popular-search">
+								<div class="block-title">
+									<h3 class="title-extra-small">Popular Search</h3>
+								</div>
+								<div class="container">
+									<ul>
+										<li><a href="#"><span>electric</span></a></li>
+										<li><a href="#"><span>manual</span></a></li>
+										<li><a href="#"><span>minimalist</span></a></li>
+										<li><a href="#"><span>mobile</span></a></li>
+										<li><a href="#"><span>motor</span></a></li>
+										<li><a href="#"><span>shop</span></a></li>
+										<li><a href="#"><span>automatic</span></a></li>
+										<li><a href="#"><span>spare part</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!-- separator -->
+						<div class="separator-large"></div>
+						<!-- end separator -->
+
+						<!-- ===== END TAB SEARCH ===== -->
+					</div>
+
+					<div id="tab-profile" class="tab tab-profile">
+
+						<!-- separator -->
+						<div class="separator-extra-large"></div>
+						<!-- end separator -->
+
+						<!-- ===== TAB PROFILE ===== -->
+						<div class="container">
+							<div class="header-profile">
+								<img src="images/avatar6.jpg" alt="">
+								<div class="title-name">
+									<h4 class="">Philips Ramsey</h4>
+									<p class="text-small">Member Since 2020</p>
+								</div>
+
+								<!-- separator -->
+								<div class="separator-medium"></div>
+								<!-- end separator -->
+
+								<div class="profile-statistic">
+									<div class="row">
+										<div class="col-33">
+											<div class="content">
+												<h4>1.5K</h4>
+												<span>Followers</span>
+											</div>
+										</div>
+										<div class="col-33">
+											<span class="line-divider"></span>
+										</div>
+										<div class="col-33">
+											<div class="content">
+												<h4>80</h4>
+												<span>Following</span>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- separator -->
+								<div class="separator-medium"></div>
+								<!-- end separator -->
+
+								<div class="contact-button">
+									<button class="button">Contact Seller</button>
+								</div>
+
+								<!-- separator -->
+								<div class="separator-medium"></div>
+								<!-- end separator -->
+
+								<div class="profile-media">
+									<ul>
+										<li><a href="#" class="bg-gray"><ion-icon name="person-add-outline"></ion-icon></a></li>
+										<li><a href="#" class="bg-red"><ion-icon name="mail-outline"></ion-icon></a></li>
+										<li><a href="#" class="bg-blue"><ion-icon name="chatbox-outline"></ion-icon></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="list">
+							<ul>
+								<li>
+									<a href="/my-ads/" data-transition="f7-dive" class="item-link item-content">
+										<div class="item-media">
+											<ion-icon name="duplicate-outline" class="color-blue"></ion-icon>
+										</div>
+										<div class="item-inner">
+											<div class="item-title">My Ads</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="/favorites/" data-transition="f7-dive" class="item-link item-content">
+										<div class="item-media">
+											<ion-icon name="heart-outline" class="color-purple"></ion-icon>
+										</div>
+										<div class="item-inner">
+											<div class="item-title">Favorites</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="/chat/" data-transition="f7-dive" class="item-link item-content">
+										<div class="item-media">
+											<ion-icon name="chatbox-outline" class="color-orange"></ion-icon>
+										</div>
+										<div class="item-inner">
+											<div class="item-title">Chat</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="/notifications/" data-transition="f7-dive" class="item-link item-content">
+										<div class="item-media">
+											<ion-icon name="notifications-outline" class="color-red"></ion-icon>
+										</div>
+										<div class="item-inner">
+											<div class="item-title">Notification</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="/settings/" data-transition="f7-dive" class="item-link item-content">
+										<div class="item-media">
+											<ion-icon name="settings-outline" class="color-green"></ion-icon>
+										</div>
+										<div class="item-inner">
+											<div class="item-title">Settings</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="" class="item-link item-content">
+										<div class="item-media">
+											<ion-icon name="log-out-outline" class="color-red"></ion-icon>
+										</div>
+										<div class="item-inner">
+											<div class="item-title">Logout</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<!-- ===== END TAB PROFILE ===== -->
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+
+<!-- script -->
+<script src="js/framework7.bundle.min.js"></script>
+<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+<script src="js/routes.js"></script>
+<script src="js/app.js"></script>
+<!-- end script -->
+
 </body>
 
 </html>
