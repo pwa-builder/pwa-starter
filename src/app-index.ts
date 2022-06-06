@@ -66,7 +66,7 @@ export class AppIndex extends LitElement {
         path: (import.meta as any).env.BASE_URL,
         animate: true,
         children: [
-          { path: (import.meta as any).env.BASE_URL , component: 'app-home' },
+          { path: '', component: 'app-home' },
           {
             path: 'about',
             component: 'app-about',
