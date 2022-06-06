@@ -3,15 +3,13 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/",
   build: {
     sourcemap: true,
     assetsDir: "code",
   },
   plugins: [
     VitePWA({
-      // you can remove base and scope pwa plugin will use the base on vite: defaults to /
-      base: "/",
-      scope: "/",
       registerType: "autoUpdate",
       injectRegister: false,
       manifest: false,

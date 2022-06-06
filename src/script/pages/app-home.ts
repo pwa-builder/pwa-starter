@@ -175,7 +175,7 @@ export class AppHome extends LitElement {
             </ul>
           </fluent-card>
 
-          <fluent-anchor href="/about" appearance="accent">Navigate to About</fluent-anchor>
+          <fluent-anchor href="about" appearance="accent">Navigate to About</fluent-anchor>
         </div>
 
         <pwa-install>Install PWA Starter</pwa-install>

@@ -61,8 +61,9 @@ export class AppHeader extends LitElement {
   render() {
     return html`
       <header>
+
         <div id="back-button-block">
-          ${this.enableBack ? html`<fluent-anchor appearance="accent" href="/">
+          ${this.enableBack ? html`<fluent-anchor appearance="accent" href="${(import.meta as any).env.BASE_URL}">
             Back
           </fluent-anchor>` : null}
 

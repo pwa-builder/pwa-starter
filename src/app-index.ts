@@ -63,17 +63,17 @@ export class AppIndex extends LitElement {
     router.setRoutes([
       // temporarily cast to any because of a Type bug with the router
       {
-        path: '',
+        path: (import.meta as any).env.BASE_URL,
         animate: true,
         children: [
-          { path: '/', component: 'app-home' },
+          { path: '', component: 'app-home' },
           {
-            path: '/about',
+            path: 'about',
             component: 'app-about',
             action: async () => {
               await import('./script/pages/app-about.js');
             },
-          },
+          }
         ],
       } as any,
     ]);
