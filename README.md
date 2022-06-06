@@ -2,7 +2,7 @@
 
 Please use our [main repository for any issues/bugs/features suggestion](https://github.com/pwa-builder/PWABuilder/issues/new/choose).
 
-[Documentation](https://github.com/pwa-builder/pwa-starter/wiki/)
+[Documentation](https://docs.pwabuilder.com/#/starter/quick-start)
 
 The PWABuilder pwa-starter is our opinionated, best practices, production tested starter that we use to build all of our PWAs, including [PWABuilder itself](https://blog.pwabuilder.com/posts/introducing-the-brand-new-pwa-builder/)! The pwa-starter is a starter codebase, just like create-react-app or the Angular CLI can generate, that uses the PWABuilder team&#39;s preferred front-end tech stack.
 
@@ -18,7 +18,7 @@ With it you get an app that:
 
 and all with just a few button clicks 😊.
 
-[Get Started!](https://github.com/pwa-builder/pwa-starter/wiki/Getting-Started#getting-started)
+[Get Started!](https://docs.pwabuilder.com/#/starter/quick-start)
 
 ## Sample PWAs built with the starter!
 
@@ -34,4 +34,4 @@ and all with just a few button clicks 😊.
   - Microsoft Store: https://www.microsoft.com/store/productId/9NQW566N4866
 
 ## More Resources
-- [The pwa-starter wiki](https://github.com/pwa-builder/pwa-starter/wiki/)
+- [The pwa-starter docs](https://docs.pwabuilder.com/#/starter/quick-start)
