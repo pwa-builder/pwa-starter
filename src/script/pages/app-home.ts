@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { LitElement, css, html } from 'lit';
 import { property, customElement } from 'lit/decorators.js';
 
@@ -103,7 +101,6 @@ export class AppHome extends LitElement {
   }
 
   render() {
-
     return html`
       <app-header></app-header>
       <div>
