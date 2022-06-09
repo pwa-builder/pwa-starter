@@ -1,0 +1,28 @@
+name: Deploy PWA Starter to GitHub Pages
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.13'
+          
+      - name: Install Dependencies
+        run: npm install
+        
+      - name: Vite Build
+        run: npm run build -- --base=${{ github.event.repository.name }}
+        
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3.7.3
+        with:
+          publish_dir: ./dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
