@@ -7,6 +7,7 @@ import './script/pages/app-home';
 import './script/components/header';
 import './styles/global.css';
 
+
 @customElement('app-index')
 export class AppIndex extends LitElement {
   static get styles() {
@@ -74,6 +75,48 @@ export class AppIndex extends LitElement {
               await import('./script/pages/app-about.js');
             },
           },
+          {
+            path: '/education',
+            component: 'app-education',
+            action: async () => {
+              await import('./script/pages/app-education.js');
+            },
+          },
+          {
+            path: '/experience',
+            component: 'app-experience',
+            action: async () => {
+              await import('./script/components/app-experience.js');
+            },
+          },
+          {
+            path: '/resume',
+            component: 'app-resume',
+            action: async () => {
+              await import('./script/pages/app-resume.js');
+            },
+          },
+          {
+            path: '/projects',
+            component: 'app-projects',
+            action: async () => {
+              await import('./script/pages/app-projects.js');
+            },
+          },
+          {
+            path: '/art',
+            component: 'app-art',
+            action: async () => {
+              await import('./script/pages/app-art.js');
+            },
+          },
+          {
+            path: '/extra',
+            component: 'app-extra',
+            action: async () => {
+              await import('./script/pages/app-extra.js');
+            },
+          },
         ],
       } as any,
     ]);
@@ -82,7 +125,11 @@ export class AppIndex extends LitElement {
 
   render() {
     return html`
+
+
+
       <div>
+
         <main>
           <div id="routerOutlet"></div>
         </main>

@@ -3,49 +3,99 @@
   This file is used for all of your global styles and CSS variables.
   Check here https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties for more info on using CSS variables.
 */
+  @font-face {
+    font-family: 'Mincho-Regular';
+    src: url(public/assets/Shippori_Mincho/ShipporiMincho-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Mincho-Medium';
+    src: url(public/assets/Shippori_Mincho/ShipporiMincho-Medium.ttf);
+    font-weight: 400;
+    font-style: medium;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Mincho-Bold';
+    src: url(public/assets/Shippori_Mincho/ShipporiMincho-Bold.ttf);
+    font-weight: 700;
+    font-style: bold;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Mincho-SemiBold';
+    src: url(public/assets/Shippori_Mincho/ShipporiMincho-SemiBold.ttf);
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Mincho-ExtraBold';
+    src: url(public/assets/Shippori_Mincho/ShipporiMincho-ExtraBold.ttf);
+    font-weight: 800;
+    font-style: Bolder;
+    font-display: swap;
+  }
 :root {
   --font-family: sans-serif;
+  /*
+  You only wanna have one of these set as your font family
+  --font-family: Mincho-Regular;
+  -font-family: Mincho-Medium;
+  --font-family: Mincho-Bold;
+  --font-family: Mincho-SemiBold;
+  --font-family: Mincho-ExtraBold; */
+
+  --col-black: #1e1f1f;
+  --col-black2: #1c1d1d;
+  --col-black3: #141414;
+  --col-gray: #6D7179;
+  --col-white: #dbd6d0;
+  --col-orange: #dc5648;
+
+  --col-green: #16463f;
+  --col-pink: #EAC1C6;
+  --col-paper:#E7E1D5;
+  color: #000000;
 }
 
 html, body {
   font-family: var(--font-family);
   padding: 0;
   margin: 0;
-  background: #181818;
-}
-
-@media (prefers-color-scheme: dark) {
-  html,
-  body {
-    background: #181818;
-  }
-
-  fluent-design-system-provider {
-    color: white;
-
-    --accent-foreground-rest: white;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  html,
-  body {
-    background: white;
-    color: black;
-  }
-
-  fluent-design-system-provider {
-    color: black;
-    --fill-color: #edebe9;
-    --background-color: white;
-    --neutral-foreground-rest: #e5e5e5;
-    --neutral-fill-input-rest: #e5e5e5;
-    --neutral-fill-input-hover: white;
-    --neutral-fill-stealth-rest: #e5e5e5;
-
-    --neutral-fill-rest: #5d5d5d;
-
-    --neutral-fill-input-active: #e5e5e5;
-  }
+  background-color: #e7e1d5;
 
 }
+
+h1 {
+  color:#16463f;
+}
+
+.container{
+  padding: 70px;
+}
+
+.content-1 {
+  font-family: apercu_mono, 'Courier New', Courier, monospace;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 1px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #000000;
+  }
+  .content-2 {
+  font-family: 'Larish Neue Semibold', Georgia, serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: -1px;
+  line-height: 44px;
+  text-transform: none;
+  color: #ff4546;
+  }

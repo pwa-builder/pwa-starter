@@ -15,6 +15,8 @@
   "dependencies": {
     "@pwabuilder/pwainstall": "^1.6.7",
     "@vaadin/router": "^1.7.4",
+    "bootstrap": "^5.2.0-beta1",
+    "fa-icons": "^0.2.0",
     "lit": "^2.2.1",
     "workbox-build": "^6.5.2",
     "workbox-core": "^6.5.2",
