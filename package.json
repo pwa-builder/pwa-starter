@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev-server": "vite --open",
-    "dev": "npx @azure/static-web-apps-cli start http://localhost:3000 --run 'npm run dev-server'",
+    "dev": "npx @azure/static-web-apps-cli start http://localhost:3000 --run \"npm run dev-server\"",
     "dev-task": "vite",
     "deploy": " npx @azure/static-web-apps-cli login --no-use-keychain && npx @azure/static-web-apps-cli deploy",
     "build": "tsc && vite build",
