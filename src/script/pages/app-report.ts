@@ -13,7 +13,6 @@ import {classMap} from 'lit/directives/class-map.js';
 import { styleMap } from 'lit/directives/style-map.js';
 
 import '../components/app-header';
-import '../components/app-modal';
 import '../components/todo-list-item';
 import '../components/manifest-editor-frame';
 import '../components/publish-pane';
@@ -106,7 +105,7 @@ export class AppReport extends LitElement {
   // will be used to control the state of the "Package for store" button.
   @state() runningTests: boolean = false;
   @state() canPackageList: boolean[] = [];
-  @state() canPackage: boolean = false;
+  @state() canPackage: boolean = true;
   @state() manifestEditorOpened: boolean = false;
 
   @state() swSelectorOpen: boolean = false;

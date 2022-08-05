@@ -11,6 +11,8 @@ import {
 import { getManifestContext } from '../services/app-info';
 import { SigningMode } from '../utils/oculus-validation';
 import { maxSigningKeySizeInBytes } from '../utils/android-validation';
+import { AnalyticsBehavior } from '@pwabuilder/site-analytics';
+import { recordPWABuilderProcessStep } from '../utils/analytics';
 
 @customElement('oculus-form')
 export class OculusForm extends AppPackageFormBase {
@@ -28,7 +30,7 @@ export class OculusForm extends AppPackageFormBase {
           display: flex;
           flex-direction: column;
         }
-    
+
         .basic-settings, .adv-settings {
           display: flex;
           flex-direction: column;
@@ -40,6 +42,49 @@ export class OculusForm extends AppPackageFormBase {
           flex-direction: column;
           margin-top: auto;
           padding: 1em;
+        }
+
+        sl-details {
+          margin-top: 1em;
+        }
+
+        sl-details::part(base){
+          border: none;
+        }
+
+        sl-details::part(summary-icon){
+          display: none;
+        }
+
+        .dropdown_icon {
+          transform: rotate(0deg);
+          transition: transform .5s;
+          height: 30px;
+        }
+
+        #generate-submit::part(base) {
+          background-color: black;
+          color: white;
+          font-size: 14px;
+          height: 3em;
+          width: 100%;
+          border-radius: 50px;
+      }
+
+        sl-details::part(header){
+          padding: 0 10px;
+        }
+
+        .details-summary {
+          display: flex;
+          align-items: center;
+          width: 100%;
+        }
+
+        .details-summary p {
+          margin: 0;
+          font-size: 18px;
+          font-weight: bold;
         }
         `;
     return [super.styles, localStyles];
@@ -71,14 +116,17 @@ export class OculusForm extends AppPackageFormBase {
     );
   }
 
-  toggleSettings(settingsToggleValue: 'basic' | 'advanced') {
-    if (settingsToggleValue === 'advanced') {
-      this.showAllSettings = true;
-    } else if (settingsToggleValue === 'basic') {
-      this.showAllSettings = false;
-    } else {
-      this.showAllSettings = false;
-    }
+  rotateZero(){
+    recordPWABuilderProcessStep("android_form_all_settings_expanded", AnalyticsBehavior.ProcessCheckpoint);
+    let icon: any = this.shadowRoot!.querySelector('.dropdown_icon');
+    icon!.style.transform = "rotate(0deg)";
+    console.log("hello?")
+  }
+
+  rotateNinety(){
+    recordPWABuilderProcessStep("android_form_all_settings_collapsed", AnalyticsBehavior.ProcessCheckpoint);
+    let icon: any = this.shadowRoot!.querySelector('.dropdown_icon');
+    icon!.style.transform = "rotate(90deg)";
   }
 
   render() {
@@ -163,18 +211,12 @@ export class OculusForm extends AppPackageFormBase {
             </div>
           </div>
 
-          <fast-accordion>
-            <fast-accordion-item
-              @click="${(ev: Event) => this.toggleAccordion(ev.target)}"
-            >
-              <div id="all-settings-header" slot="heading">
-                <span>All Settings</span>
 
-                <fast-button class="flipper-button" mode="stealth">
-                  <ion-icon name="caret-forward-outline"></ion-icon>
-                </fast-button>
-              </div>
-
+          <sl-details @click="${(ev: Event) => this.toggleAccordion(ev.target)}" @sl-show=${() => this.rotateNinety()} @sl-hide=${() => this.rotateZero()}>
+            <div class="details-summary" slot="summary">
+              <p>All Settings</p>
+              <img class="dropdown_icon" src="/assets/new/dropdownIcon.svg" alt="dropdown toggler"/>
+            </div>
               <div class="adv-settings">
                 <div class="form-group">
                   ${this.renderFormInput({
@@ -243,8 +285,7 @@ export class OculusForm extends AppPackageFormBase {
                   ${this.renderSigningKeyFields()}
                 </div>
               </div>
-            </fast-accordion-item>
-          </fast-accordion>
+            </sl-details>
         </div>
 
         <div id="form-extras">
@@ -255,9 +296,9 @@ export class OculusForm extends AppPackageFormBase {
           </div>
 
           <div id="form-options-actions" class="modal-actions">
-            <loading-button .loading="${this.generating}">
-              <input id="generate-submit" type="submit" value="Generate Package" />
-            </loading-button>
+            <sl-button  id="generate-submit" type="submit" ?loading="${this.generating}" >
+              Generate Package
+            </sl-button>
           </div>
         </div>
       </form>
