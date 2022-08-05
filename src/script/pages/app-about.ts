@@ -1,57 +1,55 @@
 import { LitElement, css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
+import { runAllTests } from '../services/tests';
+
+// double import needed to get full impl
+// and type
+import '../components/app-alert';
+import { AppAlert } from '../components/app-alert';
 
 @customElement('app-about')
 export class AppAbout extends LitElement {
   static get styles() {
-    return css`
-
-    fluent-card {
-      padding: 0px 18px 18px;
-    }
-
-    @media(prefers-color-scheme: light) {
-      fluent-card {
-        --fill-color: #edebe9;
-      }
-    }
-
-    @media(prefers-color-scheme: dark) {
-      fluent-card {
-        --fill-color: #4e4e4e;
-        color: white;
-        border: none;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      fluent-card {
-        width: 54%;
-      }
-    }
-    `;
+    return css``;
   }
 
   constructor() {
     super();
   }
 
+  async firstUpdated() {
+    const search = new URLSearchParams(location.search);
+    const site = search.get('site');
+
+    if (site) {
+      await runAllTests(site);
+    }
+  }
+
+  testAlert(ev: PointerEvent) {
+    const alert: AppAlert | null | undefined =
+      this.shadowRoot?.querySelector('app-alert');
+
+    if (alert) {
+      alert.openAlert(ev.clientX, ev.clientY);
+    }
+  }
+
   render() {
     return html`
-      <app-header ?enableBack="${true}"></app-header>
-
       <div>
         <h2>About Page</h2>
-
-        <fluent-card>
-          <h2>Did you know?</h2>
-
-          <p>PWAs have access to many useful APIs in modern browsers! These
-            APIs have enabled many new types of apps that can be built as PWAs, such as advanced graphics editing apps, games, apps that use machine learning and more!
+      
+        <fast-button @click="${(ev: PointerEvent) => this.testAlert(ev)}">test alert</fast-button>
+      
+        <app-alert title="Test Alert">
+          <p>
+            Info description. Lorem ipsum dolor sit amet, consectetur elit
+            adipiscing, sed do eiusm tem. Ipsum dolor sit.
           </p>
-
-          <p>Check out <fluent-anchor href="https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/handle-files">these docs</fluent-anchor> to learn more about the advanced features that you can use in your PWA</p>
-        </fluent-card>
+      
+          <fast-anchor slot="actions">Test</fast-anchor>
+        </app-alert>
       </div>
     `;
   }

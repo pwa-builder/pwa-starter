@@ -1,38 +1,89 @@
-# pwa-starter
+# PWABuilder
 
-Please use our [main repository for any issues/bugs/features suggestion](https://github.com/pwa-builder/PWABuilder/issues/new/choose).
+### Built with the [PWABuilder PWA Starter](https://github.com/pwa-builder/pwa-starter)
 
-[Documentation](https://docs.pwabuilder.com/#/starter/quick-start)
+Welcome to [PWABuilder](https://www.pwabuilder.com/) v3.0! Read our launch blog [here](https://blog.pwabuilder.com/posts/introducing-the-brand-new-pwa-builder/) for all the details! 
 
-The PWABuilder pwa-starter is our opinionated, best practices, production tested starter that we use to build all of our PWAs, including [PWABuilder itself](https://blog.pwabuilder.com/posts/introducing-the-brand-new-pwa-builder/)! The pwa-starter is a starter codebase, just like create-react-app or the Angular CLI can generate, that uses the PWABuilder team&#39;s preferred front-end tech stack.
+[Try It](https://www.pwabuilder.com)
 
-[![Get started with the pwa-starter!](https://img.youtube.com/vi/u3pWKpmic_k/0.jpg)](https://www.youtube.com/watch?v=u3pWKpmic_k)
+Want to help us build PWABuilder? Check out the info below and our [developer's wiki](https://github.com/pwa-builder/PWABuilder/wiki) to get started!
 
-With it you get an app that:
-- Has no build system to set up and no boilerplate code to add. Everything is included out of the box.
-- Has a Service Worker system using [Workbox](https://developers.google.com/web/tools/workbox/)
-- Scores close to 100 on Lighthouse out of the box
-- Using the fluent Web Components, you can build native looking PWAs on Windows
-- Has everything needed to be installable in the browser
-- Is ready to be package for the app stores using [PWABuilder](https://www.pwabuilder.com)
-- Uses the [Azure Static Web Apps CLI](https://azure.github.io/static-web-apps-cli) which enables emulating your production environment locally, and gets you ready for deploying to Azure Static Web Apps!
+### Prerequisites
 
-and all with just a few button clicks 😊.
+You will need the following things properly installed on your computer.
 
-[Get Started!](https://docs.pwabuilder.com/#/starter/quick-start)
+* [Node.js](http://nodejs.org/) (with NPM)
+* [NPM](https://www.npmjs.com/get-npm)
 
-## Sample PWAs built with the starter!
+You should also be familiar with [TypeScript](https://www.typescriptlang.org/) which we use for this project. This helps give you more guidance as you code from [intellisense](https://code.visualstudio.com/docs/editor/intellisense) when using [VSCode](https://code.visualstudio.com/).
 
-- SimpleEdit: Simple Image editing and collage making app!
-   - Github: https://github.com/jgw96/simple-edit-2
-   - Web: https://gray-pond-01ccec410.azurestaticapps.net/
-   - Microsoft Store: https://www.microsoft.com/store/productId/9P53Q9BF3MV6
-   - Google Play: https://play.google.com/store/apps/details?id=net.azurestaticapps.thankful_tree_07da4921e.twa&hl=en&gl=US
+### Recommended Development setup
 
-- Mail GO: Full featured email client. This app aims to show the power of the web by integrating many of the advanced APIs now avilable to PWAs, such as [receiving content shared from another app](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/share#receiving-shared-content), [a custom titlebar](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/window-controls-overlay), [sycing data in the background](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/background-syncs) and more!
-  - Github: https://github.com/jgw96/graph-app
-  - Web: https://www.memosapp.app
-  - Microsoft Store: https://www.microsoft.com/store/productId/9NQW566N4866
+We recommend the following tools for your dev setup:
 
-## More Resources
-- [The pwa-starter docs](https://docs.pwabuilder.com/#/starter/quick-start)
+* Editor: [VSCode](https://code.visualstudio.com/)
+* Terminal: [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab) or [hyper](https://hyper.is/)
+
+Additionally, when you open the project in VS Code, you'll be prompted to install recommended extensions.
+
+### Development
+
+Run `npm install` and then run `npm run dev`, the project should open in your default browser. From here you can start developing, your changes will be rebuilt and reloaded in the browser as you develop.
+
+### Running Tests
+We currently have E2E tests that are run using the [Playwright test-runner](https://playwright.dev/docs/test-intro).
+Currently they can be run by running the following commands:
+- npm run dev (We are going to run the E2E tests on your latest local changes)
+- npm run test (This will make sure the needed dependences are installed and will start running the tests)
+
+The output of the tests can be found in the console.
+
+*Notes*
+- If a test fails it will retry twice. The reason this is needed is our tests are relying on network requests, of which many are happening at once as tests run which can cause false positives.
+- Playwright spins up workers for tests to try to spread the load on your CPU and avoid false positives. I have set this to 2 when running in a CI (recommended), when running locally it will use your number of CPU cores - 1. So on a Surface Pro X with 8 cores it will attempt to spin up 7 workers.
+- I have also set a timeout of a minute for each test.
+
+### Debugging in VS Code
+
+In VS Code, install [Debugger for Microsoft Edge extension](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge).
+
+In VSCode, set a breakpoint in a TypeScript file. Then press F5 to launch debugging.
+
+### Building for Production
+
+Run `npm run build`, the `dist/` folder will contain your built PWA. The production build will also generate a pre-caching service worker using [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-precaching).
+
+
+## Folder Structure
+
+```
+PWABuilder
+│   README.md (docs)
+│   rollup.config.js (bundler config https://rollupjs.org/)
+|   tsconfig.json (TypeScript config https://www.typescriptlang.org/)
+|   pwabuilder-sw.js (Service Worker https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+|   package.json (https://docs.npmjs.com/creating-a-package-json-file)
+|   package-lock.json (https://docs.npmjs.com/files/package-lock.json)
+|   manifest.json (web manifest https://developer.mozilla.org/en-US/docs/Web/Manifest)
+|   index.prod.html (index.html file used for production builds)
+|   index.html (index.html for dev builds)
+|   *note*: The index.prod.html registers a service worker which caches assets, so index.html is used for dev builds
+|   .gitignore (git config file https://git-scm.com/docs/gitignore)
+│
+└───src (most of your development will happen here)
+│   │   global.css (used for global CSS styles and CSS variables)
+│   │
+│   └───script
+│       │
+│       |
+|       └───components
+|           |   header.ts (header component)
+|           |   more components
+|       |
+|       |
+|       └───pages
+|           |   app-index.ts (app-index component)
+|           |   app-home.ts (app-home component)
+|           |   app-about.ts (app-about component)
+|           |   more pages
+```
