@@ -18,22 +18,6 @@ export default defineConfig({
         globPatterns: [
           '**/*.{html,js,css,png,webp,jpg}'
         ],
-        runtimeCaching: [
-          {
-            urlPattern: /^https:\/\/unpkg\.com\/.*/i,
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'unpkg-libs-cache',
-              expiration: {
-                maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24 * 365 // <== 365 days
-              },
-              cacheableResponse: {
-                statuses: [0, 200]
-              }
-            }
-          }
-        ]
       },
       devOptions: {
         enabled: true
