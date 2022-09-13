@@ -11,21 +11,22 @@ html, body {
   font-family: var(--font-family);
   padding: 0;
   margin: 0;
-  background: #181818;
 }
 
 @media (prefers-color-scheme: dark) {
+
   html,
   body {
-    background: #181818;
+    background-color: #0f0d23;
+    color: white;
   }
 }
 
 @media (prefers-color-scheme: light) {
+
   html,
   body {
-    background: white;
+    background-color: white;
     color: black;
   }
-
 }

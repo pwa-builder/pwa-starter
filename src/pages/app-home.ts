@@ -4,6 +4,9 @@ import { property, customElement } from 'lit/decorators.js';
 // For more info on the @pwabuilder/pwainstall component click here https://github.com/pwa-builder/pwa-install
 import '@pwabuilder/pwainstall';
 
+import '@shoelace-style/shoelace/dist/components/card/card.js';
+import '@shoelace-style/shoelace/dist/components/button/button.js';
+
 @customElement('app-home')
 export class AppHome extends LitElement {
 
@@ -32,13 +35,17 @@ export class AppHome extends LitElement {
         right: 16px;
       }
 
+      sl-card::part(footer) {
+        display: flex;
+        justify-content: flex-end;
+      }
 
-      @media (min-width: 1024px) {
-        #welcomeCard,
-        #infoCard {
-          width: 54%;
+      @media(min-width: 1000px) {
+        sl-card {
+          width: 60vw;
         }
       }
+
 
       @media (horizontal-viewport-segments: 2) {
         #welcomeBar {
@@ -77,10 +84,13 @@ export class AppHome extends LitElement {
   render() {
     return html`
       <app-header></app-header>
+
       <div>
         <div id="welcomeBar">
-          <div id="welcomeCard">
-            <h2>${this.message}</h2>
+          <sl-card id="welcomeCard">
+            <div slot="header">
+              <h2>${this.message}</h2>
+            </div>
 
             <p>
               For more information on the PWABuilder pwa-starter, check out the
@@ -98,11 +108,11 @@ export class AppHome extends LitElement {
             </p>
 
             ${'share' in navigator
-              ? html`<button appearance="primary" @click="${this.share}">Share this Starter!</button>`
+              ? html`<sl-button slot="footer" appearance="primary" @click="${this.share}">Share this Starter!</sl-button>`
               : null}
-          </div>
+          </sl-card>
 
-          <div id="infoCard">
+          <sl-card id="infoCard">
             <h2>Technology Used</h2>
 
             <ul>
@@ -116,12 +126,12 @@ export class AppHome extends LitElement {
 
               <li>
                 <a href="https://vaadin.github.io/vaadin-router/vaadin-router/demo/#vaadin-router-getting-started-demos"
-                  appearance="hypertext">Vaadin Router</a>
+                  >Vaadin Router</a>
               </li>
             </ul>
-          </div>
+          </sl-card>
 
-          <a href="${(import.meta as any).env.BASE_URL}about" appearance="accent">Navigate to About</a>
+          <sl-button href="${(import.meta as any).env.BASE_URL}about" appearance="accent">Navigate to About</sl-button>
         </div>
 
         <pwa-install>Install PWA Starter</pwa-install>

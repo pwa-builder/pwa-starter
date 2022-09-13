@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev-server": "vite --open",
-    "dev": "npx @azure/static-web-apps-cli start http://localhost:3000 --run \"npm run dev-server\"",
+    "dev": "npm run dev-server",
     "dev-task": "vite",
     "deploy": " npx @azure/static-web-apps-cli login --no-use-keychain && npx @azure/static-web-apps-cli deploy",
     "build": "tsc && vite build",
@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@pwabuilder/pwainstall": "^1.6.7",
+    "@shoelace-style/shoelace": "^2.0.0-beta.82",
     "@vaadin/router": "^1.7.4",
     "lit": "^2.2.1",
     "workbox-build": "^6.5.2",
