@@ -25,7 +25,7 @@ export class AppHeader extends LitElement {
         font-weight: bold;
       }
 
-      nav fluent-anchor {
+      nav a {
         margin-left: 10px;
       }
 
@@ -41,7 +41,7 @@ export class AppHeader extends LitElement {
           color: black;
         }
 
-        nav fluent-anchor::part(control) {
+        nav a {
           color: initial;
         }
       }
@@ -63,9 +63,9 @@ export class AppHeader extends LitElement {
       <header>
 
         <div id="back-button-block">
-          ${this.enableBack ? html`<fluent-anchor appearance="accent" href="${(import.meta as any).env.BASE_URL}">
+          ${this.enableBack ? html`<a href="${(import.meta as any).env.BASE_URL}">
             Back
-          </fluent-anchor>` : null}
+          </a>` : null}
 
           <h1>${this.title}</h1>
         </div>

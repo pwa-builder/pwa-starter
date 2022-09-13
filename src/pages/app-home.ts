@@ -20,10 +20,6 @@ export class AppHome extends LitElement {
         flex-direction: column;
       }
 
-      #welcomeBar fluent-card {
-        margin-bottom: 12px;
-      }
-
       #welcomeCard,
       #infoCard {
         padding: 18px;
@@ -36,10 +32,6 @@ export class AppHome extends LitElement {
         right: 16px;
       }
 
-
-      #mainInfo fluent-anchor::part(control), #infoCard fluent-anchor::part(control) {
-        color: white;
-      }
 
       @media (min-width: 1024px) {
         #welcomeCard,
@@ -57,24 +49,6 @@ export class AppHome extends LitElement {
 
         #welcomeCard {
           margin-right: 64px;
-        }
-      }
-
-      @media(prefers-color-scheme: light) {
-        fluent-card {
-          --fill-color: #edebe9;
-        }
-
-        #mainInfo fluent-anchor::part(control), #infoCard fluent-anchor::part(control) {
-          color: initial;
-        }
-      }
-
-      @media(prefers-color-scheme: dark) {
-        fluent-card {
-          --fill-color: #4e4e4e;
-          color: white;
-          border: none;
         }
       }
     `;
@@ -105,77 +79,49 @@ export class AppHome extends LitElement {
       <app-header></app-header>
       <div>
         <div id="welcomeBar">
-          <fluent-card id="welcomeCard">
+          <div id="welcomeCard">
             <h2>${this.message}</h2>
 
             <p>
               For more information on the PWABuilder pwa-starter, check out the
-              <fluent-anchor
-                href="https://github.com/pwa-builder/pwa-starter/wiki/Getting-Started"
-                appearance="hypertext"
-                >Documentation on Github</fluent-anchor
-              >.
+              <a href="https://github.com/pwa-builder/pwa-starter/wiki/Getting-Started" appearance="hypertext">
+                Documentation on Github</a>.
             </p>
 
             <p id="mainInfo">
               Welcome to the
-              <fluent-anchor href="https://pwabuilder.com" appearance="hypertext"
-                >PWABuilder</fluent-anchor
-              >
+              <a href="https://pwabuilder.com" appearance="hypertext">PWABuilder</a>
               pwa-starter! Be sure to head back to
-              <fluent-anchor href="https://pwabuilder.com" appearance="hypertext"
-                >PWABuilder</fluent-anchor
-              >
+              <a href="https://pwabuilder.com" appearance="hypertext">PWABuilder</a>
               when you are ready to ship this PWA to the Microsoft Store, Google Play
               and the Apple App Store!
             </p>
 
             ${'share' in navigator
-              ? html`<fluent-button appearance="primary" @click="${this.share}"
-                  >Share this Starter!</fluent-button
-                >`
+              ? html`<button appearance="primary" @click="${this.share}">Share this Starter!</button>`
               : null}
-          </fluent-card>
+          </div>
 
-          <fluent-card id="infoCard">
+          <div id="infoCard">
             <h2>Technology Used</h2>
 
             <ul>
               <li>
-                <fluent-anchor
-                  href="https://www.typescriptlang.org/"
-                  appearance="hypertext"
-                  >TypeScript</fluent-anchor
-                >
+                <a href="https://www.typescriptlang.org/" appearance="hypertext">TypeScript</a>
               </li>
 
               <li>
-                <fluent-anchor
-                  href="https://lit.dev"
-                  appearance="hypertext"
-                  >lit</fluent-anchor
-                >
+                <a href="https://lit.dev" appearance="hypertext">lit</a>
               </li>
 
               <li>
-                <fluent-anchor
-                  href="https://docs.microsoft.com/en-us/fluent-ui/web-components/"
-                  appearance="hypertext"
-                  >Fluent Web Components</fluent-anchor
-                >
-              </li>
-
-              <li>
-                <fluent-anchor
-                  href="https://vaadin.github.io/vaadin-router/vaadin-router/demo/#vaadin-router-getting-started-demos"
-                  appearance="hypertext"
-                  >Vaadin Router</fluent-anchor
-                >
+                <a href="https://vaadin.github.io/vaadin-router/vaadin-router/demo/#vaadin-router-getting-started-demos"
+                  appearance="hypertext">Vaadin Router</a>
               </li>
             </ul>
-          </fluent-card>
+          </div>
 
-          <fluent-anchor href="${(import.meta as any).env.BASE_URL}about" appearance="accent">Navigate to About</fluent-anchor>
+          <a href="${(import.meta as any).env.BASE_URL}about" appearance="accent">Navigate to About</a>
         </div>
 
         <pwa-install>Install PWA Starter</pwa-install>

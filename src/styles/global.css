@@ -19,12 +19,6 @@ html, body {
   body {
     background: #181818;
   }
-
-  fluent-design-system-provider {
-    color: white;
-
-    --accent-foreground-rest: white;
-  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -32,20 +26,6 @@ html, body {
   body {
     background: white;
     color: black;
-  }
-
-  fluent-design-system-provider {
-    color: black;
-    --fill-color: #edebe9;
-    --background-color: white;
-    --neutral-foreground-rest: #e5e5e5;
-    --neutral-fill-input-rest: #e5e5e5;
-    --neutral-fill-input-hover: white;
-    --neutral-fill-stealth-rest: #e5e5e5;
-
-    --neutral-fill-rest: #5d5d5d;
-
-    --neutral-fill-input-active: #e5e5e5;
   }
 
 }

@@ -24,16 +24,12 @@
   <!-- Imports the manifest to represent the web application. A web app must have a manifest to be a PWA. -->
   <link rel="manifest" href="/manifest.json" />
 
-  <script type="module" src="https://unpkg.com/@fluentui/web-components" crossorigin="anonymous"></script>
-
   <script type="module" src="/src/app-index.ts"></script>
 </head>
 
 <body>
   <!-- Our app-index web component. This component is defined in src/pages/app-index.ts-->
-  <fluent-design-system-provider>
-    <app-index></app-index>
-  </fluent-design-system-provider>
+  <app-index></app-index>
 
   <script>
     if ('serviceWorker' in navigator) {

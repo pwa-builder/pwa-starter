@@ -1,10 +1,9 @@
 import { LitElement, css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { Router } from '@vaadin/router';
-import { registerSW } from 'virtual:pwa-register';
 
-import './script/pages/app-home';
-import './script/components/header';
+import './pages/app-home';
+import './components/header';
 import './styles/global.css';
 
 @customElement('app-index')
@@ -16,6 +15,7 @@ export class AppIndex extends LitElement {
         padding-right: 16px;
         padding-bottom: 16px;
       }
+
       #routerOutlet > * {
         width: 100% !important;
       }
@@ -71,13 +71,12 @@ export class AppIndex extends LitElement {
             path: 'about',
             component: 'app-about',
             action: async () => {
-              await import('./script/pages/app-about.js');
+              await import('./pages/app-about.js');
             },
           }
         ],
       } as any,
     ]);
-    registerSW({ immediate: true });
   }
 
   render() {
