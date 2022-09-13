@@ -108,7 +108,7 @@ export class AppHome extends LitElement {
             </p>
 
             ${'share' in navigator
-              ? html`<sl-button slot="footer" appearance="primary" @click="${this.share}">Share this Starter!</sl-button>`
+              ? html`<sl-button slot="footer" variant="primary" @click="${this.share}">Share this Starter!</sl-button>`
               : null}
           </sl-card>
 
@@ -131,7 +131,7 @@ export class AppHome extends LitElement {
             </ul>
           </sl-card>
 
-          <sl-button href="${(import.meta as any).env.BASE_URL}about" appearance="accent">Navigate to About</sl-button>
+          <sl-button href="${(import.meta as any).env.BASE_URL}about" variant="primary">Navigate to About</sl-button>
         </div>
 
         <pwa-install>Install PWA Starter</pwa-install>

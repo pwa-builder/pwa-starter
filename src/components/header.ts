@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit';
 import { property, customElement } from 'lit/decorators.js';
 
+import '@shoelace-style/shoelace/dist/components/button/button.js';
 @customElement('app-header')
 export class AppHeader extends LitElement {
   @property({ type: String }) title = 'PWA Starter';
@@ -33,7 +34,7 @@ export class AppHeader extends LitElement {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 11em;
+        width: 12em;
       }
 
       @media(prefers-color-scheme: light) {
@@ -52,20 +53,14 @@ export class AppHeader extends LitElement {
     super();
   }
 
-  updated(changedProperties: any) {
-    if (changedProperties.has('enableBack')) {
-      console.log('enableBack', this.enableBack);
-    }
-  }
-
   render() {
     return html`
       <header>
 
         <div id="back-button-block">
-          ${this.enableBack ? html`<a href="${(import.meta as any).env.BASE_URL}">
+          ${this.enableBack ? html`<sl-button href="${(import.meta as any).env.BASE_URL}">
             Back
-          </a>` : null}
+          </sl-button>` : null}
 
           <h1>${this.title}</h1>
         </div>
