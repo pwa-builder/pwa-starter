@@ -7,6 +7,8 @@ import '@pwabuilder/pwainstall';
 import '@shoelace-style/shoelace/dist/components/card/card.js';
 import '@shoelace-style/shoelace/dist/components/button/button.js';
 
+import { styles } from '../styles/shared-styles';
+
 @customElement('app-home')
 export class AppHome extends LitElement {
 
@@ -15,7 +17,9 @@ export class AppHome extends LitElement {
   @property() message = 'Welcome!';
 
   static get styles() {
-    return css`
+    return [
+      styles,
+      css`
       #welcomeBar {
         display: flex;
         justify-content: center;
@@ -40,9 +44,9 @@ export class AppHome extends LitElement {
         justify-content: flex-end;
       }
 
-      @media(min-width: 1000px) {
+      @media(min-width: 750px) {
         sl-card {
-          width: 60vw;
+          width: 70vw;
         }
       }
 
@@ -58,7 +62,7 @@ export class AppHome extends LitElement {
           margin-right: 64px;
         }
       }
-    `;
+    `];
   }
 
   constructor() {
@@ -85,7 +89,7 @@ export class AppHome extends LitElement {
     return html`
       <app-header></app-header>
 
-      <div>
+      <main>
         <div id="welcomeBar">
           <sl-card id="welcomeCard">
             <div slot="header">
@@ -94,15 +98,15 @@ export class AppHome extends LitElement {
 
             <p>
               For more information on the PWABuilder pwa-starter, check out the
-              <a href="https://github.com/pwa-builder/pwa-starter/wiki/Getting-Started" appearance="hypertext">
+              <a href="https://github.com/pwa-builder/pwa-starter/wiki/Getting-Started">
                 Documentation on Github</a>.
             </p>
 
             <p id="mainInfo">
               Welcome to the
-              <a href="https://pwabuilder.com" appearance="hypertext">PWABuilder</a>
+              <a href="https://pwabuilder.com">PWABuilder</a>
               pwa-starter! Be sure to head back to
-              <a href="https://pwabuilder.com" appearance="hypertext">PWABuilder</a>
+              <a href="https://pwabuilder.com">PWABuilder</a>
               when you are ready to ship this PWA to the Microsoft Store, Google Play
               and the Apple App Store!
             </p>
@@ -117,11 +121,15 @@ export class AppHome extends LitElement {
 
             <ul>
               <li>
-                <a href="https://www.typescriptlang.org/" appearance="hypertext">TypeScript</a>
+                <a href="https://www.typescriptlang.org/">TypeScript</a>
               </li>
 
               <li>
-                <a href="https://lit.dev" appearance="hypertext">lit</a>
+                <a href="https://lit.dev">lit</a>
+              </li>
+
+              <li>
+                <a href="https://shoelace.style/">Shoelace</a>
               </li>
 
               <li>
@@ -135,7 +143,7 @@ export class AppHome extends LitElement {
         </div>
 
         <pwa-install>Install PWA Starter</pwa-install>
-      </div>
+      </main>
     `;
   }
 }

@@ -17,6 +17,15 @@ export class AppHeader extends LitElement {
         background: var(--app-color-primary);
         color: white;
         height: 4em;
+        padding-left: 16px;
+        padding-top: 12px;
+
+        position: fixed;
+        left: env(titlebar-area-x, 0);
+        top: env(titlebar-area-y, 0);
+        height: env(titlebar-area-height, 50px);
+        width: env(titlebar-area-width, 100%);
+        -webkit-app-region: drag;
       }
 
       header h1 {

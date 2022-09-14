@@ -8,4 +8,8 @@ export const styles = css`
       max-width: 70vw;
     }
   }
+
+  main {
+    margin-top: 80px;
+  }
 `;
