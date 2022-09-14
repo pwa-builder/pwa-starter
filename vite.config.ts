@@ -10,13 +10,13 @@ export default defineConfig({
   },
   plugins: [
     VitePWA({
-      registerType: "autoUpdate",
-      injectRegister: false,
-      manifest: false,
-      workbox: {
+      strategies: "injectManifest",
+      injectManifest: {
+        swSrc: 'public/sw.js',
+        swDest: 'dist/sw.js',
         globDirectory: 'dist',
         globPatterns: [
-          '**/*.{html,js,css,png,webp,jpg}'
+          '**/*.{html,js,css,json, png}',
         ],
       },
       devOptions: {
