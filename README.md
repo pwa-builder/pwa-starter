@@ -12,7 +12,6 @@ With it you get an app that:
 - Has no build system to set up and no boilerplate code to add. Everything is included out of the box.
 - Has a Service Worker system using [Workbox](https://developers.google.com/web/tools/workbox/)
 - Scores close to 100 on Lighthouse out of the box
-- Using the fluent Web Components, you can build native looking PWAs on Windows
 - Has everything needed to be installable in the browser
 - Is ready to be package for the app stores using [PWABuilder](https://www.pwabuilder.com)
 - Uses the [Azure Static Web Apps CLI](https://azure.github.io/static-web-apps-cli) which enables emulating your production environment locally, and gets you ready for deploying to Azure Static Web Apps!

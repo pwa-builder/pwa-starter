@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit';
 import { property, customElement } from 'lit/decorators.js';
 
+import '@shoelace-style/shoelace/dist/components/button/button.js';
 @customElement('app-header')
 export class AppHeader extends LitElement {
   @property({ type: String }) title = 'PWA Starter';
@@ -16,6 +17,15 @@ export class AppHeader extends LitElement {
         background: var(--app-color-primary);
         color: white;
         height: 4em;
+        padding-left: 16px;
+        padding-top: 12px;
+
+        position: fixed;
+        left: env(titlebar-area-x, 0);
+        top: env(titlebar-area-y, 0);
+        height: env(titlebar-area-height, 50px);
+        width: env(titlebar-area-width, 100%);
+        -webkit-app-region: drag;
       }
 
       header h1 {
@@ -25,7 +35,7 @@ export class AppHeader extends LitElement {
         font-weight: bold;
       }
 
-      nav fluent-anchor {
+      nav a {
         margin-left: 10px;
       }
 
@@ -33,7 +43,7 @@ export class AppHeader extends LitElement {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 11em;
+        width: 12em;
       }
 
       @media(prefers-color-scheme: light) {
@@ -41,7 +51,7 @@ export class AppHeader extends LitElement {
           color: black;
         }
 
-        nav fluent-anchor::part(control) {
+        nav a {
           color: initial;
         }
       }
@@ -52,20 +62,14 @@ export class AppHeader extends LitElement {
     super();
   }
 
-  updated(changedProperties: any) {
-    if (changedProperties.has('enableBack')) {
-      console.log('enableBack', this.enableBack);
-    }
-  }
-
   render() {
     return html`
       <header>
 
         <div id="back-button-block">
-          ${this.enableBack ? html`<fluent-anchor appearance="accent" href="${(import.meta as any).env.BASE_URL}">
+          ${this.enableBack ? html`<sl-button href="${(import.meta as any).env.BASE_URL}">
             Back
-          </fluent-anchor>` : null}
+          </sl-button>` : null}
 
           <h1>${this.title}</h1>
         </div>
