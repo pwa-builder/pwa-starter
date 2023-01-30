@@ -72,8 +72,9 @@ export class AppIndex extends LitElement {
             component: 'app-about',
             action: async () => {
               await import('./pages/app-about/app-about.js');
-            },
-          }
+            }
+          },
+          /* ROUTE GENERATION MARKER */
         ],
       } as any,
     ]);
