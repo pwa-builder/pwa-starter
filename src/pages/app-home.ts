@@ -30,12 +30,6 @@ export class AppHome extends LitElement {
         padding-top: 0px;
       }
 
-      pwa-install {
-        position: absolute;
-        bottom: 16px;
-        right: 16px;
-      }
-
       sl-card::part(footer) {
         display: flex;
         justify-content: flex-end;
@@ -138,8 +132,6 @@ export class AppHome extends LitElement {
 
           <sl-button href="${(import.meta as any).env.BASE_URL}about" variant="primary">Navigate to About</sl-button>
         </div>
-
-        <pwa-install>Install PWA Starter</pwa-install>
       </main>
     `;
   }
