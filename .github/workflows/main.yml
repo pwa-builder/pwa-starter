@@ -2,7 +2,7 @@ name: Deploy PWA Starter to GitHub Pages
 
 on:
   workflow_dispatch:
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,15 +14,39 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '16.13'
-          
+
       - name: Install Dependencies
         run: npm install
-        
+
+      - name: Rewrite Manifest Path in Index
+        run: sed -i 's@/manifest.json@${{ github.event.repository.name }}/manifest.json@g' ./index.html && cat index.html
+
+      - name: Rewrite Service Worker Path in Index
+        run: sed -i 's@/sw.js@${{ github.event.repository.name }}/sw.js@g' ./index.html && cat ./index.html
+
+      - name: Replace Paths in Manifest
+        run: sed -i 's@"/"@"/${{ github.event.repository.name }}/"@g' ./public/manifest.json && cat ./public/manifest.json
+
       - name: Vite Build
         run: npm run build -- --base=${{ github.event.repository.name }}
-        
-      - name: GitHub Pages action
-        uses: peaceiris/actions-gh-pages@v3.7.3
+
+      - name: Redirect 404 to Index for SPA
+        run: cp dist/index.html dist/404.html
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          publish_dir: ./dist
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          path: dist/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v1
