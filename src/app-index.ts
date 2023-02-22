@@ -6,6 +6,8 @@ import './pages/app-home';
 import './components/header';
 import './styles/global.css';
 
+const BASE_URL: string = (import.meta.env.BASE_URL).length > 2 ? (import.meta.env.BASE_URL).slice(1,-1) : (import.meta.env.BASE_URL);
+
 @customElement('app-index')
 export class AppIndex extends LitElement {
   static get styles() {
@@ -63,7 +65,7 @@ export class AppIndex extends LitElement {
     router.setRoutes([
       // temporarily cast to any because of a Type bug with the router
       {
-        path: (import.meta as any).env.BASE_URL,
+        path: BASE_URL,
         animate: true,
         children: [
           { path: '', component: 'app-home' },
