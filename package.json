@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@pwabuilder/pwainstall": "^1.6.7",
+    "@shoelace-style/shoelace": "^2.2.0",
     "@vaadin/router": "^1.7.4",
     "bootstrap": "^5.2.0-beta1",
     "fa-icons": "^0.2.0",

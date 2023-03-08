@@ -4,11 +4,6 @@ import { about_panels, skills } from '../utils/data'
 
 import '../components/about-panel'
 
-import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.76/dist/components/animation/animation.js';
-import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.76/dist/components/divider/divider.js';
-import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.76/dist/components/icon/icon.js';
-import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.76/dist/components/button/button.js';
-
 @customElement('app-home')
 export class AppHome extends LitElement {
 

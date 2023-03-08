@@ -44,17 +44,7 @@
 
 <body>
   <!-- Our app-index web component. This component is defined in src/pages/app-index.ts-->
-  <fluent-design-system-provider>
-    <app-index></app-index>
-  </fluent-design-system-provider>
-
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register(
-        import.meta.env.MODE === 'production' ? '/sw.js' : '/sw.js?dev-sw'
-      );
-    }
-  </script>
+  <app-index></app-index>
 </body>
 
 </html>
