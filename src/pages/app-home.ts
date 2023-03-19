@@ -69,8 +69,8 @@ export class AppHome extends LitElement {
   share() {
     if ((navigator as any).share) {
       (navigator as any).share({
-        title: 'PWABuilder pwa-starter',
-        text: 'Check out the PWABuilder pwa-starter!',
+        title: 'Cryptonit pwa-app',
+        text: 'Check out the Cryptonit app!',
         url: 'https://github.com/Cryptonit63/pwa-starter.git',
       });
     }
@@ -88,18 +88,19 @@ export class AppHome extends LitElement {
             </div>
 
             <p>
-              For more information on the PWABuilder pwa-starter, check out the
-              <a href="https://docs.pwabuilder.com/#/starter/quick-start">
+            The authorization on the resource will be via blockchain. there are no logins and passwords, there are only keys that will open sets of doors, check out the
+              <a href="https://github.com/Cryptonit63/pwa-starter.git">
                 documentation</a>.
             </p>
 
             <p id="mainInfo">
               Welcome to the
-              <a href="https://pwabuilder.com">PWABuilder</a>
-              pwa-starter! Be sure to head back to
-              <a href="https://pwabuilder.com">PWABuilder</a>
-              when you are ready to ship this PWA to the Microsoft Store, Google Play
-              and the Apple App Store!
+              <a href="https://github.com/Cryptonit63/">Cryptonit profile</a>
+              Cryptonit app! Be sure to head back to
+              <a href="https://t.me/cryptonit63">PWABuilder</a>
+              Launched the development of a proprietary web3.0 platform 
+              will allow you to keep up with the news and make it not only 
+              make finding important information more accessibility, but also will allow!
             </p>
 
             ${'share' in navigator
