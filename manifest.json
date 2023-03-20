@@ -1,7 +1,7 @@
 {
     "id": "/",
     "scope": "/",
-    "name": "Cryptonit",
+    "name": "Cryptonit app",
     "display": "standalone",
     "start_url": "/",
     "short_name": "starter",

@@ -1,7 +1,7 @@
 {
-  "name": "pwa-starter",
+  "name": "Cryptonit app",
   "version": "0.0.1",
-  "description": "A starter kit for building PWAs!",
+  "description": "A starter kit for building pwa-app for repair and data center!",
   "main": "index.js",
   "scripts": {
     "dev-server": "vite --open",
