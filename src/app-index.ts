@@ -6,7 +6,7 @@ import './pages/app-home';
 import './components/header';
 import './styles/global.css';
 
-const BASE_URL: string = (import.meta.env.BASE_URL).length > 2 ? (import.meta.env.BASE_URL).slice(1,-1) : (import.meta.env.BASE_URL);
+const BASE_URL: string = (import.meta.env.BASE_URL).length > 2 ? (import.meta.env.BASE_URL).slice(1, -1) : (import.meta.env.BASE_URL);
 
 @customElement('app-index')
 export class AppIndex extends LitElement {
@@ -19,35 +19,7 @@ export class AppIndex extends LitElement {
       }
 
       #routerOutlet > * {
-        width: 100% !important;
-      }
-
-      #routerOutlet > .leaving {
-        animation: 160ms fadeOut ease-in-out;
-      }
-
-      #routerOutlet > .entering {
-        animation: 160ms fadeIn linear;
-      }
-
-      @keyframes fadeOut {
-        from {
-          opacity: 1;
-        }
-
-        to {
-          opacity: 0;
-        }
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0.2;
-        }
-
-        to {
-          opacity: 1;
-        }
+        width: 97.5% !important;
       }
     `;
   }
@@ -73,6 +45,20 @@ export class AppIndex extends LitElement {
             path: 'about',
             component: 'app-about',
             action: async () => {
+              /*
+                Use the View Transitions API to provide animated page transitions!
+                The code below should be added to any additional pages you add
+                to this router config object.
+
+                For more info on the View Transitions API, including how to customize your transitions
+                check out the docs here: https://developer.chrome.com/docs/web-platform/view-transitions/
+
+                This API is currently supported in Edge 111+ and Chrome 111+
+              */
+              if ("startViewTransition" in document) {
+                await (document as any).startViewTransition();
+              }
+
               await import('./pages/app-about/app-about.js');
             },
           }
