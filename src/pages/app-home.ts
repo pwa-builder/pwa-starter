@@ -97,10 +97,21 @@ export class AppHome extends LitElement {
               Welcome to the
               <a href="https://github.com/Cryptonit63/">Cryptonit profile</a>
               Cryptonit app! Be sure to head back to
-              <a href="https://t.me/cryptonit63">PWABuilder</a>
-              Launched the development of a proprietary web3.0 platform 
-              will allow you to keep up with the news and make it not only 
-              make finding important information more accessibility, but also will allow!
+              <a href="https://t.me/cryptonit63">Cryptonit app</a>
+              Cryptonit app a large-scale decentralized platform integrating a multitude of tools, resources and community driven An experimental information resource capable of creating a decentralized bridge controlled by the community to provide users with reliable and timely information of crypto space and provide possible assistance to investigations of loss of funds.
+
+          About our mission:
+          
+          Launched the development of a proprietary web3.0 platform and governance token will allow you to keep up with the news and make it not only make finding important information more accessibility, but also will allow:
+          
+          keep up with security news in crypto
+          will allow you to post an ad
+          find a job or post your own job
+          compare high and low risc projects
+          hardware sale/purchase/service
+          ratings of service centers and crypto communities based on votes
+          comparison of returns on equipment/pools
+          related products and services marketplace
             </p>
 
             ${'share' in navigator

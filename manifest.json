@@ -3,12 +3,12 @@
     "scope": "/",
     "name": "Cryptonit app",
     "display": "standalone",
-    "start_url": "/",
-    "short_name": "starter",
+    "start_url": "https://www.cryptonit.fun/dev",
+    "short_name": "Cryptonit app",
     "theme_color": "#E1477E",
     "description": "This is a Cryptonit app",
     "orientation": "any",
-    "background_color": "#E1477E",
+    "background_color": "#0FF21E",
     "related_applications": [],
     "prefer_related_applications": false,
     "display_override": ["window-controls-overlay"],
@@ -54,7 +54,7 @@
         "name": "Open Cryptonit app",
         "short_name": "dAppp",
         "description": "Open the app page",
-        "url": "/about",
+        "url": "cryptonit.fun",
         "icons": [{ "src": "assets/icons/192x192.png", "sizes": "192x192" }]
       }
     ]
