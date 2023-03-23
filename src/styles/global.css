@@ -1,32 +1,86 @@
-
-/*
-  This file is used for all of your global styles and CSS variables.
-  Check here https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties for more info on using CSS variables.
-*/
-:root {
-  --font-family: sans-serif;
+/* Set default font and color */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
 }
 
-html, body {
-  font-family: var(--font-family);
-  padding: 0;
+/* Center container */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
   margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-
-  html,
-  body {
-    background-color: #181818;
-    color: white;
-  }
+nav ul li {
+  margin: 0 10px;
 }
 
-@media (prefers-color-scheme: light) {
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s ease;
+}
 
-  html,
-  body {
-    background-color: white;
-    color: black;
-  }
+nav ul li a:hover {
+  color: #666;
+}
+
+/* Main content styles */
+main {
+  padding: 50px 0;
+  text-align: center;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.cta {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.cta:hover {
+  background-color: #666;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
 }
