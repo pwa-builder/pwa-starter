@@ -18,12 +18,12 @@ export const router = new Router({
     routes: [
       {
         path: '/',
-        title: 'login',
+        title: 'Home',
         render: () => html`<app-home></app-home>`
       },
       {
         path: '/about',
-        title: 'home',
+        title: 'About',
         plugins: [
           lazy(() => import('./pages/app-about/app-about.js')),
         ],
