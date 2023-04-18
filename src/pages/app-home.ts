@@ -124,8 +124,8 @@ export class AppHome extends LitElement {
               </li>
 
               <li>
-                <a href="https://vaadin.github.io/vaadin-router/vaadin-router/demo/#vaadin-router-getting-started-demos"
-                  >Vaadin Router</a>
+                <a href="https://github.com/thepassle/app-tools/blob/master/router/README.md"
+                  >App Tools Router</a>
               </li>
             </ul>
           </sl-card>
