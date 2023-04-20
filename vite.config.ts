@@ -20,6 +20,8 @@ export default defineConfig({
           '**/*.{html,js,css,json, png}',
         ],
       },
+      injectRegister: false,
+      manifest: false,
       devOptions: {
         enabled: true
       }

@@ -15,19 +15,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@shoelace-style/shoelace": "^2.0.0-beta.82",
+    "@shoelace-style/shoelace": "^2.4.0",
     "@thepassle/app-tools": "^0.9.0",
-    "@vaadin/router": "^1.7.4",
-    "lit": "^2.3.1",
-    "urlpattern-polyfill": "^6.0.2",
+    "lit": "^2.7.2",
+    "urlpattern-polyfill": "^7.0.0",
     "workbox-build": "^6.5.2",
     "workbox-core": "^6.5.2",
     "workbox-precaching": "^6.5.2"
   },
   "devDependencies": {
-    "typescript": "^4.6.3",
-    "vite": "^2.9.0",
-    "vite-plugin-pwa": "^0.11.13"
+    "typescript": "^5.0.4",
+    "vite": "^4.2.1",
+    "vite-plugin-pwa": "^0.14.7"
   },
   "prettier": {
     "tabWidth": 2,
