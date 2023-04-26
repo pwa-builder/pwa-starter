@@ -19,6 +19,7 @@
     "@thepassle/app-tools": "^0.9.0",
     "lit": "^2.7.2",
     "urlpattern-polyfill": "^7.0.0",
+    "web-push": "^3.5.0",
     "workbox-build": "^6.5.2",
     "workbox-core": "^6.5.2",
     "workbox-precaching": "^6.5.2"

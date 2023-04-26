@@ -19,7 +19,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="PWA Starter" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
+
   <!-- This tag is used by the PWA Starter CLI to identify template projects. Don't remove if you are using the CLI. -->
   <meta name="pwa-starter-template-identity" content="pwa-starter"/>
 
@@ -41,14 +41,61 @@
 
 <body>
   <!-- Our app-index web component. This component is defined in src/pages/app-index.ts-->
-  <app-index></app-index>
-
+  <!-- <app-index></app-index> -->
+  <button class="enable-notifications">Notification</button>
+  <button class="push-alarm">click</button>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register(
         '/sw.js'
       );
     }
+
+    var deferredPrompt;
+    var pushAlarmButton = document.querySelector('.push-alarm');
+    pushAlarmButton.addEventListener('click', (e) => {
+      console.log(e);
+      Notification.requestPermission().then(perm => {
+        if(perm === 'granted'){
+          new Notification("Happy Tomato!")
+        }
+      })
+    })
+
+    async function subscribe() {
+      let sw = await navigator.serviceWorker.ready;
+      let push = await sw.pushManager.subscribe({
+          userVisibleOnly: true,
+          applicationServerKey: 'BD6Y5yIe1LF9VdWqkbvwZny7Y-eScTmHEokauEKektdv6FAzEkUmx8iVOlERTcF_yIWX5y7FZwEBeg-U3o74NPc',
+      })
+      console.log(JSON.stringify(push))
+    }
+
+
+    if (!window.Promise) {
+      window.Promise = Promise;
+    }
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/sw.js')
+        .then( async function subscribe(sw_obj) {
+          console.log(sw_obj);
+          let sw = await navigator.serviceWorker.ready;
+          let push = await sw.pushManager.subscribe({
+              userVisibleOnly: true,
+              applicationServerKey: 'BD6Y5yIe1LF9VdWqkbvwZny7Y-eScTmHEokauEKektdv6FAzEkUmx8iVOlERTcF_yIWX5y7FZwEBeg-U3o74NPc',
+          })
+          console.log(JSON.stringify(push))
+      })
+        .catch(function(err) {
+          console.log(err);
+        });
+
+      if (!window.Promise) {
+        window.Promise = Promise;
+      }
+  }
   </script>
 </body>
 
