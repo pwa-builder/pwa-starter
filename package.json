@@ -17,6 +17,7 @@
   "dependencies": {
     "@shoelace-style/shoelace": "^2.4.0",
     "@thepassle/app-tools": "^0.9.0",
+    "firebase": "^9.21.0",
     "lit": "^2.7.2",
     "urlpattern-polyfill": "^7.0.0",
     "web-push": "^3.5.0",
