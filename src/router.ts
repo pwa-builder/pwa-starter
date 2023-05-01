@@ -14,15 +14,17 @@ import { title } from '@thepassle/app-tools/router/plugins/title.js';
 
 import './pages/app-home.js';
 
+const baseURL: string = (import.meta as any).env.BASE_URL;
+
 export const router = new Router({
     routes: [
       {
-        path: '/',
+        path:baseURL,
         title: 'Home',
         render: () => html`<app-home></app-home>`
       },
       {
-        path: '/about',
+        path: `${baseURL}about`,
         title: 'About',
         plugins: [
           lazy(() => import('./pages/app-about/app-about.js')),
