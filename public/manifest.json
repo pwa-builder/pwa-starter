@@ -60,7 +60,7 @@
   ],
   "widgets": [
     {
-      "name": "Starter Widget aahhhh",
+      "name": "Starter Widget",
       "tag": "starterWidget",
       "ms_ac_template": "widget/ac.json",
       "data": "widget/data.json",
