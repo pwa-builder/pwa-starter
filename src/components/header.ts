@@ -68,7 +68,7 @@ export class AppHeader extends LitElement {
 
         <div id="back-button-block">
           ${this.enableBack ? html`<sl-button href="${(import.meta as any).env.BASE_URL}">
-            Back
+            Home
           </sl-button>` : null}
 
           <h1>${this.title}</h1>
