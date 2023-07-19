@@ -19,12 +19,12 @@ const baseURL: string = (import.meta as any).env.BASE_URL;
 export const router = new Router({
     routes: [
       {
-        path:baseURL,
+        path: resolveRouterPath(),
         title: 'Home',
         render: () => html`<app-home></app-home>`
       },
       {
-        path: `${baseURL}about`,
+        path: resolveRouterPath('about'),
         title: 'About',
         plugins: [
           lazy(() => import('./pages/app-about/app-about.js')),
@@ -33,3 +33,16 @@ export const router = new Router({
       }
     ]
   });
+
+  // This function will resolve a path with whatever Base URL was passed to the vite build process.
+  // Use of this function throughout the starter is not required, but highly recommended, especially if you plan to use GitHub Pages to deploy.
+  // If no arg is passed to this function, it will return the base URL.
+
+  export function resolveRouterPath(unresolvedPath?: string) {
+    var resolvedPath = baseURL;
+    if(unresolvedPath) {
+      resolvedPath = resolvedPath + unresolvedPath;
+    }
+
+    return resolvedPath;
+  }
