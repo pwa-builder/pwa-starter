@@ -12,6 +12,9 @@
   "related_applications": [],
   "prefer_related_applications": false,
   "display_override": ["window-controls-overlay"],
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
   "icons": [
     {
       "src": "assets/icons/512x512.png",
