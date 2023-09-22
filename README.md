@@ -1,6 +1,26 @@
-[Documentation](https://docs.pwabuilder.com/#/starter/quick-start)
+# PWA Starter
 
-The PWABuilder pwa-starter is our opinionated, best practices, production tested starter that we use to build all of our PWAs, including [PWABuilder itself](https://blog.pwabuilder.com/posts/introducing-the-brand-new-pwa-builder/)! The pwa-starter is a starter codebase, just like create-react-app or the Angular CLI can generate, that uses the PWABuilder team&#39;s preferred front-end tech stack.
+[**Straight to Full Documentation**](https://docs.pwabuilder.com/#/starter/quick-start)
+
+The PWABuilder pwa-starter is our opinionated, best practices, production tested starter that we use to build all of our PWAs, including [PWABuilder itself](https://blog.pwabuilder.com/posts/introducing-the-brand-new-pwa-builder/)! The pwa-starter is a starter codebase, just like create-react-app or the Angular CLI can generate, that uses the PWABuilder team&#39;s preferred front-end tech stack. We also have a CLI tool to allow you to create a PWA template from the command line.
+
+## Jump Right In
+
+Install the PWABuilder CLI:
+
+`npm i -g @pwabuilder/cli`
+
+And create a new app with this command:
+
+`pwa create`
+
+And start your app locally with:
+
+`pwa start`
+
+And that's it! Good luck on your Progressive Web App adventure!
+
+## More Info
 
 [![Get started with the pwa-starter!](https://img.youtube.com/vi/u3pWKpmic_k/0.jpg)](https://www.youtube.com/watch?v=u3pWKpmic_k)
 
