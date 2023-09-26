@@ -8,26 +8,18 @@ import { router } from './router';
 
 @customElement('app-index')
 export class AppIndex extends LitElement {
-  static get styles() {
-    return css`
-      main {
-        padding-left: 16px;
-        padding-right: 16px;
-        padding-bottom: 16px;
-      }
-    `;
-  }
-
-  constructor() {
-    super();
-  }
+  static styles = css`
+    main {
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-bottom: 16px;
+    }
+  `;
 
   firstUpdated() {
     router.addEventListener('route-changed', () => {
       if ("startViewTransition" in document) {
-        return (document as any).startViewTransition(() => {
-          this.requestUpdate();
-        });
+        (document as any).startViewTransition(() => this.requestUpdate());
       }
       else {
         this.requestUpdate();
