@@ -16,10 +16,6 @@ export class AppAbout extends LitElement {
     styles
   ]
 
-  constructor() {
-    super();
-  }
-
   render() {
     return html`
       <app-header ?enableBack="${true}"></app-header>
@@ -39,7 +35,7 @@ export class AppAbout extends LitElement {
               href="https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/handle-files">these
               docs</a> to learn more about the advanced features that you can use in your PWA</p>
         </sl-card>
-  </main>
+      </main>
     `;
   }
 }

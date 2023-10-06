@@ -14,52 +14,46 @@ export class AppHome extends LitElement {
   // check out this link https://lit.dev/docs/components/properties/
   @property() message = 'Welcome!';
 
-  static get styles() {
-    return [
-      styles,
-      css`
+  static styles = [
+    styles,
+    css`
+    #welcomeBar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #welcomeCard,
+    #infoCard {
+      padding: 18px;
+      padding-top: 0px;
+    }
+
+    sl-card::part(footer) {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    @media(min-width: 750px) {
+      sl-card {
+        width: 70vw;
+      }
+    }
+
+
+    @media (horizontal-viewport-segments: 2) {
       #welcomeBar {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
       }
 
-      #welcomeCard,
-      #infoCard {
-        padding: 18px;
-        padding-top: 0px;
+      #welcomeCard {
+        margin-right: 64px;
       }
-
-      sl-card::part(footer) {
-        display: flex;
-        justify-content: flex-end;
-      }
-
-      @media(min-width: 750px) {
-        sl-card {
-          width: 70vw;
-        }
-      }
-
-
-      @media (horizontal-viewport-segments: 2) {
-        #welcomeBar {
-          flex-direction: row;
-          align-items: flex-start;
-          justify-content: space-between;
-        }
-
-        #welcomeCard {
-          margin-right: 64px;
-        }
-      }
-    `];
-  }
-
-  constructor() {
-    super();
-  }
+    }
+  `];
 
   async firstUpdated() {
     // this method is a lifecycle even in lit
