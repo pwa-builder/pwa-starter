@@ -1,0 +1,38 @@
+{
+  "plugins": [
+    "@typescript-eslint",
+    "wc",
+    "lit"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:wc/best-practice",
+    "plugin:lit/recommended"
+  ],
+  "env": {
+    "browser": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "overrides": [
+    {
+      "extends": [
+        "plugin:@typescript-eslint/recommended-type-checked"
+      ],
+      "parserOptions": {
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+      },
+      "files": ["src/**/*.ts"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/unbound-method": "off"
+      }
+    }
+  ],
+  "rules": {
+  }
+}

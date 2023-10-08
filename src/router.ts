@@ -9,12 +9,9 @@ if (!(globalThis as any).URLPattern) {
 import { Router } from '@thepassle/app-tools/router.js';
 import { lazy } from '@thepassle/app-tools/router/plugins/lazy.js';
 
-// @ts-ignore
-import { title } from '@thepassle/app-tools/router/plugins/title.js';
-
 import './pages/app-home.js';
 
-const baseURL: string = (import.meta as any).env.BASE_URL;
+const baseURL: string = import.meta.env.BASE_URL;
 
 export const router = new Router({
     routes: [
@@ -39,7 +36,7 @@ export const router = new Router({
   // If no arg is passed to this function, it will return the base URL.
 
   export function resolveRouterPath(unresolvedPath?: string) {
-    var resolvedPath = baseURL;
+    let resolvedPath = baseURL;
     if(unresolvedPath) {
       resolvedPath = resolvedPath + unresolvedPath;
     }

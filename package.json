@@ -10,7 +10,8 @@
     "deploy": "npx @azure/static-web-apps-cli login --no-use-keychain && npx @azure/static-web-apps-cli deploy",
     "build": "tsc && vite build",
     "start": "npm run dev",
-    "start-remote": "vite --host"
+    "start-remote": "vite --host",
+    "lint": "eslint src"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +25,10 @@
     "workbox-precaching": "^6.5.2"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "eslint": "^8.51.0",
+    "eslint-plugin-lit": "^1.9.1",
+    "eslint-plugin-wc": "^2.0.4",
     "typescript": "^5.0.4",
     "vite": "^4.2.1",
     "vite-plugin-pwa": "^0.14.7"
