@@ -16,14 +16,13 @@ export class AppHeader extends LitElement {
       align-items: center;
       background: var(--app-color-primary);
       color: white;
-      height: 4em;
-      padding-left: 16px;
-      padding-top: 12px;
+      padding: 12px;
+      padding-top: 4px;
 
       position: fixed;
       left: env(titlebar-area-x, 0);
       top: env(titlebar-area-y, 0);
-      height: env(titlebar-area-height, 50px);
+      height: env(titlebar-area-height, 30px);
       width: env(titlebar-area-width, 100%);
       -webkit-app-region: drag;
     }
@@ -31,7 +30,7 @@ export class AppHeader extends LitElement {
     header h1 {
       margin-top: 0;
       margin-bottom: 0;
-      font-size: 20px;
+      font-size: 12px;
       font-weight: bold;
     }
 
@@ -43,7 +42,7 @@ export class AppHeader extends LitElement {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 12em;
+      gap: 8px;
     }
 
     @media(prefers-color-scheme: light) {
@@ -62,7 +61,7 @@ export class AppHeader extends LitElement {
       <header>
 
         <div id="back-button-block">
-          ${this.enableBack ? html`<sl-button href="${resolveRouterPath()}">
+          ${this.enableBack ? html`<sl-button size="small" href="${resolveRouterPath()}">
             Back
           </sl-button>` : null}
 
