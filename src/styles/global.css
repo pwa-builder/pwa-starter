@@ -11,6 +11,8 @@ html, body {
   font-family: var(--font-family);
   padding: 0;
   margin: 0;
+
+  height: 100%;
 }
 
 @media (prefers-color-scheme: dark) {

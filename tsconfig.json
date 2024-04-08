@@ -5,6 +5,7 @@
       "lib": ["es2017", "esnext", "dom", "dom.iterable"],
       "declaration": true,
       "emitDeclarationOnly": true,
+      "skipLibCheck": true,
       "outDir": "./types",
       "strict": true,
       "noUnusedLocals": true,

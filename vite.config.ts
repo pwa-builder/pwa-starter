@@ -7,7 +7,9 @@ export default defineConfig({
   build: {
     sourcemap: true,
     assetsDir: "code",
-    target: ["esnext", "edge100", "firefox100", "chrome100", "safari18"],
+    target: ["esnext"],
+    cssMinify: true,
+    lib: false
   },
   plugins: [
     VitePWA({

@@ -10,6 +10,7 @@ export const styles = css`
   }
 
   main {
-    margin-top: 80px;
+    margin-top: 34px;
+    padding: 12px;
   }
 `;
