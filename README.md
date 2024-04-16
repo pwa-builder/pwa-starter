@@ -1,23 +1,24 @@
-# PWA Starter
+# PWA Whisper Starter
 
 [**Straight to Full Documentation**](https://docs.pwabuilder.com/#/starter/quick-start)
 
-The PWABuilder pwa-starter is our opinionated, best practices, production tested starter that we use to build all of our PWAs, including [PWABuilder itself](https://blog.pwabuilder.com/posts/introducing-the-brand-new-pwa-builder/)! The pwa-starter is a starter codebase, just like create-react-app or the Angular CLI can generate, that uses the PWABuilder team&#39;s preferred front-end tech stack. We also have a CLI tool to allow you to create a PWA template from the command line.
+The PWABuilder Whisper pwa-starter is based on our opinionated, best practices, production tested starter that we use to build all of our PWAs, including [PWABuilder itself](https://blog.pwabuilder.com/posts/introducing-the-brand-new-pwa-builder/)! The pwa-starter is a starter codebase, just like create-react-app or the Angular CLI can generate, that uses the PWABuilder team&#39;s preferred front-end tech stack. We also have a CLI tool to allow you to create a PWA template from the command line.
+
+This "Whisper" version of the starter sets you up with all the code you need to use Whisper to transcribe audio and video, on your device using [transformers.js](https://huggingface.co/docs/transformers.js/index), which uses [Onnxruntime](https://onnxruntime.ai/) to run Whisper client-side on your device, no cloud needed.
 
 ## Jump Right In
 
-Install the PWABuilder CLI:
+After you have cloned this starter to your machine, run through the following steps.
 
-`npm i -g @pwabuilder/cli`
+Install Dependencies:
 
-And create a new app with this command:
+`npm install`
 
-`pwa create`
+And then start developing your app with:
 
-And start your app locally with:
+`npm run dev`
 
-`pwa start`
-
+With that command, the app will open in the browser and will update when you make changes to the code.
 And that's it! Good luck on your Progressive Web App adventure!
 
 ## More Info
