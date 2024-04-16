@@ -26,11 +26,10 @@ export class AppHome extends LitElement {
   static styles = [
     styles,
     css`
-
       main {
-        display: grid;
-        grid-template-columns: 1fr 6fr;
-        column-gap: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
       }
 
       fluent-text-area {
@@ -47,12 +46,41 @@ export class AppHome extends LitElement {
 
       #actions-menu {
         display: flex;
-        flex-direction: column;
+        gap: 8px;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      #main-action-block {
+        display: flex;
+        align-items: center;
         gap: 8px;
       }
 
-      #main-action {
-        margin-bottom: 8px;
+      #file-data-block {
+        display: flex;
+        gap: 4px;
+      }
+
+      #file-size {
+        color: grey;
+        font-size: 10px;
+      }
+
+      #file-name {
+        color: grey;
+        font-size: 12px;
+        font-weight: bold;
+
+        max-width: 169px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow-x: hidden;
+      }
+
+      #file-data-block {
+        display: flex;
+        flex-direction: column;
       }
 
       @media(prefers-color-scheme: dark) {
@@ -116,7 +144,11 @@ export class AppHome extends LitElement {
     // get file contents
     const fileData = await fileHandle.getFile();
 
-    this.currentFileData = fileData;
+    const { bytesToSize } = await import('../services/utils');
+    this.currentFileData = {
+      name: fileData.name,
+      size: bytesToSize(fileData.size) || "0kb",
+    };
 
     await this.handleTranscribing(fileData);
   }
@@ -169,17 +201,30 @@ export class AppHome extends LitElement {
 
       <main>
         <div id="actions-menu">
-          <fluent-button @click="${this.transcribeFile}" appearance="accent" ?disabled="${this.transcribing}" id="main-action">Upload a File</fluent-button>
+          <div id="main-action-block">
+            <fluent-button @click="${this.transcribeFile}" appearance="accent" ?disabled="${this.transcribing}" id="main-action">Upload a File</fluent-button>
 
-          ${
-            this.copied ? html`
-              <fluent-button ?disabled="${true}">Copied</fluent-button>
-            ` : html`
-              <fluent-button ?disabled="${this.transcribing || this.transcribedText.length === 0}" @click="${this.copyTranscript}">Copy</fluent-button>
-            `
-          }
-          <fluent-button ?disabled="${this.transcribing || this.transcribedText.length === 0}" @click="${this.shareTranscript}">Share</fluent-button>
-          <fluent-button ?disabled="${this.transcribing || this.transcribedText.length === 0}" @click="${this.downloadTranscript}">Download</fluent-button>
+            ${
+              this.currentFileData ? html`
+                <div id="file-data-block">
+                  <span id="file-name">${this.currentFileData.name}</span>
+                  <span id="file-size">${this.currentFileData.size}</span>
+                </div>
+              ` : null
+            }
+          </div>
+
+          <div>
+            ${
+              this.copied ? html`
+                <fluent-button ?disabled="${true}">Copied</fluent-button>
+              ` : html`
+                <fluent-button ?disabled="${this.transcribing || this.transcribedText.length === 0}" @click="${this.copyTranscript}">Copy</fluent-button>
+              `
+            }
+            <fluent-button ?disabled="${this.transcribing || this.transcribedText.length === 0}" @click="${this.shareTranscript}">Share</fluent-button>
+            <fluent-button ?disabled="${this.transcribing || this.transcribedText.length === 0}" @click="${this.downloadTranscript}">Download</fluent-button>
+          </div>
         </div>
         <fluent-text-area placeholder="Transcription will start when you upload a file" readonly .value="${this.transcribedText || ""}"></fluent-text-area>
       </main>
