@@ -28,7 +28,7 @@ export async function loadTranscriber(model: "tiny" | "base"): Promise<void> {
     return new Promise(async (resolve) => {
         if (!transcriber) {
             try {
-                transcriber = await pipeline('automatic-speech-recognition', "Xenova/whisper-tiny");
+                transcriber = await pipeline('automatic-speech-recognition', `Xenova/whisper-${model}`);
                 console.log("Transcriber loaded", transcriber)
             }
             catch (err) {
