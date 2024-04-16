@@ -5,7 +5,7 @@ import { resolveRouterPath } from '../router';
 import '@shoelace-style/shoelace/dist/components/button/button.js';
 @customElement('app-header')
 export class AppHeader extends LitElement {
-  @property({ type: String }) title = 'PWA AI Starter';
+  @property({ type: String }) title = 'PWA Whisper Starter';
 
   @property({ type: Boolean}) enableBack: boolean = false;
 
