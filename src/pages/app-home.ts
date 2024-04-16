@@ -32,6 +32,11 @@ export class AppHome extends LitElement {
         gap: 8px;
       }
 
+      fluent-button svg {
+        width: 11px;
+        height: 11px;
+      }
+
       fluent-text-area {
         width: 100%;
         height: 100%;
@@ -219,11 +224,20 @@ export class AppHome extends LitElement {
               this.copied ? html`
                 <fluent-button ?disabled="${true}">Copied</fluent-button>
               ` : html`
-                <fluent-button ?disabled="${this.transcribing || this.transcribedText.length === 0}" @click="${this.copyTranscript}">Copy</fluent-button>
+                <fluent-button ?disabled="${this.transcribing || this.transcribedText.length === 0}" @click="${this.copyTranscript}">
+                  <svg slot="start" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/><path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+                  Copy
+                </fluent-button>
               `
             }
-            <fluent-button ?disabled="${this.transcribing || this.transcribedText.length === 0}" @click="${this.shareTranscript}">Share</fluent-button>
-            <fluent-button ?disabled="${this.transcribing || this.transcribedText.length === 0}" @click="${this.downloadTranscript}">Download</fluent-button>
+            <fluent-button ?disabled="${this.transcribing || this.transcribedText.length === 0}" @click="${this.shareTranscript}">
+              <svg slot="start" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><circle cx="128" cy="256" r="48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><circle cx="384" cy="112" r="48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><circle cx="384" cy="400" r="48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M169.83 279.53l172.34 96.94M342.17 135.53l-172.34 96.94"/></svg>
+              Share
+            </fluent-button>
+            <fluent-button ?disabled="${this.transcribing || this.transcribedText.length === 0}" @click="${this.downloadTranscript}">
+              <svg slot="start" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M320 336h76c55 0 100-21.21 100-75.6s-53-73.47-96-75.6C391.11 99.74 329 48 256 48c-69 0-113.44 45.79-128 91.2-60 5.7-112 35.88-112 98.4S70 336 136 336h56M192 400.1l64 63.9 64-63.9M256 224v224.03" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+              Download
+            </fluent-button>
           </div>
         </div>
         <fluent-text-area placeholder="Transcription will start when you upload a file" readonly .value="${this.transcribedText || ""}"></fluent-text-area>
