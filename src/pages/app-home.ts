@@ -169,19 +169,19 @@ export class AppHome extends LitElement {
 
       <main>
         <div id="actions-menu">
-          <fluent-button @click="${this.transcribeFile}" appearance="accent" ?disabled="${this.transcribing}" id="main-action">Transcribe a File</fluent-button>
+          <fluent-button @click="${this.transcribeFile}" appearance="accent" ?disabled="${this.transcribing}" id="main-action">Upload a File</fluent-button>
 
           ${
             this.copied ? html`
               <fluent-button ?disabled="${true}">Copied</fluent-button>
             ` : html`
-              <fluent-button ?disabled="${this.transcribing || this.transcribedText.length === 0}" @click="${this.copyTranscript}">Copy Transcript</fluent-button>
+              <fluent-button ?disabled="${this.transcribing || this.transcribedText.length === 0}" @click="${this.copyTranscript}">Copy</fluent-button>
             `
           }
-          <fluent-button ?disabled="${this.transcribing || this.transcribedText.length === 0}" @click="${this.shareTranscript}">Share Transcript</fluent-button>
-          <fluent-button ?disabled="${this.transcribing || this.transcribedText.length === 0}" @click="${this.downloadTranscript}">Download Transcript</fluent-button>
+          <fluent-button ?disabled="${this.transcribing || this.transcribedText.length === 0}" @click="${this.shareTranscript}">Share</fluent-button>
+          <fluent-button ?disabled="${this.transcribing || this.transcribedText.length === 0}" @click="${this.downloadTranscript}">Download</fluent-button>
         </div>
-        <fluent-text-area placeholder="Transcription will start when you choose a file" readonly .value="${this.transcribedText || ""}"></fluent-text-area>
+        <fluent-text-area placeholder="Transcription will start when you upload a file" readonly .value="${this.transcribedText || ""}"></fluent-text-area>
       </main>
     `;
   }
