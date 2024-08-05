@@ -98,7 +98,10 @@ export class AppHome extends LitElement {
             </p>
 
             ${'share' in navigator
-              ? html`<sl-button slot="footer" variant="primary" @click="${this.share}">Share this Starter!</sl-button>`
+              ? html`<sl-button slot="footer" variant="default" @click="${this.share}">
+                        <sl-icon slot="prefix" name="share"></sl-icon>
+                        Share this Starter!
+                      </sl-button>`
               : null}
           </sl-card>
 
