@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@shoelace-style/shoelace": "^2.15.0",
+    "@shoelace-style/shoelace": "^2.16.0",
     "@thepassle/app-tools": "^0.9.12",
     "lit": "^3.1.2",
     "urlpattern-polyfill": "^10.0.0",
