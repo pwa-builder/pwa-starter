@@ -1,5 +1,5 @@
 importScripts(
-    'https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js'
+    'https://storage.googleapis.com/workbox-cdn/releases/7.3.0/workbox-sw.js'
 );
 
 // This is your Service Worker, you can put any of your custom Service Worker
