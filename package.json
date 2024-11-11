@@ -15,17 +15,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@shoelace-style/shoelace": "^2.17.1",
+    "@shoelace-style/shoelace": "^2.18.0",
     "@thepassle/app-tools": "^0.9.12",
     "lit": "^3.2.1",
     "urlpattern-polyfill": "^10.0.0",
-    "workbox-build": "^7.1.1",
-    "workbox-core": "^7.1.0",
-    "workbox-precaching": "^7.1.0"
+    "workbox-build": "^7.3.0",
+    "workbox-core": "^7.3.0",
+    "workbox-precaching": "^7.3.0"
   },
   "devDependencies": {
-    "typescript": "^5.6.2",
-    "vite": "^5.4.8",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
     "vite-plugin-pwa": "^0.20.5"
   },
   "prettier": {
