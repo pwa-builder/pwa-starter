@@ -30,15 +30,18 @@
   <link rel="manifest" href="manifest.json" />
 
   <!-- light mode and dark mode CSS -->
-  <link rel="stylesheet" media="(prefers-color-scheme:light)"
-    href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/dist/themes/light.css">
-  <link rel="stylesheet" media="(prefers-color-scheme:dark)"
-    href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/dist/themes/dark.css"
-    onload="document.documentElement.classList.add('sl-theme-dark');">
+  <link rel="stylesheet" media="(prefers-color-scheme:light)">
+  <link rel="stylesheet" media="(prefers-color-scheme:dark)" onload="document.documentElement.classList.add('sl-theme-dark');">
 
   <script type="module">
+    const lightTheme = document.querySelector('link[media="(prefers-color-scheme:light)"]');
+    lightTheme.href = `https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@${__SHOELACE_VERSION__}/dist/themes/light.css`;
+
+    const darkTheme = document.querySelector('link[media="(prefers-color-scheme:dark)"]');
+    darkTheme.href = `https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@${__SHOELACE_VERSION__}/dist/themes/dark.css`;
+    
     import { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path.js';
-    setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/');
+    setBasePath(`https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@${__SHOELACE_VERSION__}/cdn/`);
   </script>
 
   <script type="module" src="/src/app-index.ts"></script>
