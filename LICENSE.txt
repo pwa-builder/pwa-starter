@@ -1,13 +1,136 @@
-ManifoldJS
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lapak Asteroid – Suntik Sosmed & PPOB</title>
+<style>
+:root{--bg:#120b3a;--bg2:#1c1260;--card:#241a6e;--line:#3a2f94;--tx:#f3f1ff;--mu:#a9a3dd;--or:#ff8a1f;--pu:#6c4cff;--ok:#2fd18b;--wa:#f5b942;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}html,body{height:100%}
+body{font:14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:radial-gradient(circle at 20% 0,#2b1c8a,#0b0724 70%);color:var(--tx);display:flex;justify-content:center}
+#app{width:100%;max-width:480px;height:100%;display:flex;flex-direction:column;position:relative;background:var(--bg);overflow:hidden}
+.scr{flex:1;overflow-y:auto;padding:16px 16px 90px}
+button{font:inherit;color:inherit;cursor:pointer;border:0}
+input,select{font:inherit;width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:#170f4f;color:var(--tx);margin:4px 0 10px}
+label{font-size:12px;color:var(--mu)}
+.btn{width:100%;padding:13px;border-radius:12px;background:linear-gradient(90deg,#ff8a1f,#ff6a00);font-weight:700;color:#fff}
+.btn.pu{background:linear-gradient(90deg,#6c4cff,#4a35d8)}.btn.ghost{background:transparent;border:1px solid var(--line)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px}
+.row{display:flex;align-items:center;gap:10px}.sp{justify-content:space-between}.mu{color:var(--mu)}.sm{font-size:12px}
+.h{font-size:20px;font-weight:800;margin-bottom:6px}
+.saldo{background:linear-gradient(120deg,#5b3df0,#8a4bff);border:0}.saldo b{font-size:28px}
+.chip{display:inline-block;padding:7px 14px;border-radius:20px;background:#170f4f;border:1px solid var(--line);margin:0 6px 8px 0;font-size:13px}
+.chip.on{background:var(--pu);border-color:var(--pu)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;text-align:center;font-size:11px}
+.grid div{cursor:pointer}.ic{width:52px;height:52px;border-radius:16px;background:#2d2182;margin:0 auto 4px;display:grid;place-items:center;font-size:24px}
+.item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:14px;background:var(--card);border:1px solid var(--line);margin-bottom:8px;cursor:pointer}
+.item .ic{margin:0;width:44px;height:44px;font-size:20px;flex:none}.item>div:nth-child(2){flex:1}
+.nav{position:absolute;bottom:0;left:0;right:0;display:flex;background:#0e0830;border-top:1px solid var(--line);padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px))}
+.nav button{flex:1;background:none;font-size:11px;color:var(--mu);padding:4px}.nav button i{display:block;font-style:normal;font-size:20px}
+.nav button.on{color:var(--or)}.nav .mid i{background:var(--or);color:#fff;border-radius:50%;width:46px;height:46px;line-height:46px;margin:-22px auto 2px;box-shadow:0 4px 14px #ff8a1f66}
+.badge{padding:2px 8px;border-radius:8px;font-size:11px;background:#134d3a;color:var(--ok)}.badge.p{background:#5a4210;color:var(--wa)}
+.top{display:flex;align-items:center;gap:10px;margin-bottom:14px}.top button{background:#241a6e;border-radius:10px;width:36px;height:36px}
+.auth{display:flex;flex-direction:column;justify-content:center;min-height:100%;padding:24px}
+.auth .box{background:#ffffff12;border:1px solid #ffffff22;border-radius:22px;padding:22px;backdrop-filter:blur(8px)}
+.logo{text-align:center;font-size:26px;font-weight:900;color:var(--or)}.logo span{display:block;font-size:44px}
+.gbtn{background:#fff;color:#333;font-weight:600}.or{text-align:center;color:var(--mu);margin:12px 0;font-size:12px}
+a,.lk{color:var(--or);font-weight:600;cursor:pointer;text-decoration:none}
+.splash{height:100%;display:grid;place-items:center;text-align:center}.splash .r{font-size:80px;animation:fl 2s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-12px) rotate(8deg)}}
+#toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#fff;color:#222;padding:10px 16px;border-radius:12px;display:none;z-index:9;max-width:90%}
+.qr{width:180px;height:180px;margin:10px auto;background:#fff;border-radius:12px;padding:10px;display:grid;grid-template-columns:repeat(15,1fr)}
+.qr i{background:#111}.qr i.w{background:#fff}
+table{width:100%;border-collapse:collapse;font-size:12px}td,th{padding:6px;border-bottom:1px solid var(--line);text-align:left}
+</style></head><body><div id="app"></div><div id="toast"></div>
+<script>
+// ====== KONFIGURASI ======
+const CFG={
+  WA:"6283133596681",            // WhatsApp admin (083133596681)
+  DEV_EMAIL:"risy12170@gmail.com", // developer = otomatis admin
+  GOOGLE_CLIENT_ID:""            // isi Client ID Google OAuth agar login Google asli aktif
+};
+const CATALOG={
+ Instagram:{ic:"📸",kat:{Followers:[["Followers Real",12000,100,50000,"1-3 jam"],["Followers Murah",8000,100,100000,"1-6 jam"]],Likes:[["Likes Instan",8000,100,100000,"1-6 jam"]],Views:[["Reels Views",6000,1000,1000000,"Instan"]]}},
+ TikTok:{ic:"🎵",kat:{Followers:[["Followers TikTok",15000,100,100000,"1-3 jam"]],Likes:[["Likes TikTok",10000,100,100000,"1-6 jam"]],Views:[["Views TikTok",3000,1000,1000000,"Instan"]]}},
+ YouTube:{ic:"▶️",kat:{Subscribers:[["Subscribers",25000,50,50000,"1-24 jam"]],Views:[["Views YouTube",20000,500,500000,"1-12 jam"]]}}
+};
+const PPOB={Pulsa:["Telkomsel","Indosat","XL","Axis","Tri","Smartfren"],"Paket Data":["Telkomsel","Indosat","XL"],"Token PLN":["PLN"],"E-Wallet":["DANA","OVO","GoPay","ShopeePay"],Game:["Mobile Legends","Free Fire"],Tagihan:["BPJS","PDAM","Internet"]};
+const fmt=n=>"Rp "+Number(n).toLocaleString("id-ID");
+// ====== STATE ======
+let S={user:null,view:"splash",tab:"home",sub:null,plat:"Instagram",kat:null,svc:null,hist:[],users:[]};
+function load(){try{const d=JSON.parse(localStorage.getItem("lapak")||"{}");Object.assign(S,d)}catch(e){}}
+function save(){try{localStorage.setItem("lapak",JSON.stringify({user:S.user,hist:S.hist,users:S.users}))}catch(e){}}
+function toast(t){const e=document.getElementById("toast");e.textContent=t;e.style.display="block";setTimeout(()=>e.style.display="none",2600)}
+const $=s=>document.querySelector(s),app=$("#app");
+const isAdmin=()=>S.user&&S.user.email.toLowerCase()===CFG.DEV_EMAIL;
+function go(o){Object.assign(S,o);render()}
+// ====== AUTH ======
+function loginOK(u){S.user=Object.assign({saldo:0,wa:"",name:"Pengguna"},u);if(!S.users.find(x=>x.email===u.email))S.users.push({email:u.email,name:S.user.name});save();go({view:"app",tab:"home",sub:null})}
+function doLogin(){const e=$("#em").value.trim().toLowerCase(),p=$("#pw").value;if(!e||!p)return toast("Isi email & password");
+ const a=JSON.parse(localStorage.getItem("lapak_acc")||"{}");if(a[e]&&a[e].pw!==btoa(p))return toast("Password salah");
+ loginOK(a[e]?{...a[e].u}:{email:e,name:e.split("@")[0],saldo:isAdmin()?1000000:0})}
+function doReg(){const n=$("#nm").value.trim(),w=$("#wa").value.trim(),e=$("#em").value.trim().toLowerCase(),p=$("#pw").value;
+ if(!n||!w||!e||p.length<6||!$("#ag").checked)return toast("Lengkapi data, password min 6 & setujui syarat");
+ const u={email:e,name:n,wa:w,saldo:isAdmin()?1000000:0};const a=JSON.parse(localStorage.getItem("lapak_acc")||"{}");a[e]={pw:btoa(p),u};
+ try{localStorage.setItem("lapak_acc",JSON.stringify(a))}catch(x){}loginOK(u)}
+function doGoogle(){
+ if(CFG.GOOGLE_CLIENT_ID&&window.google){google.accounts.id.initialize({client_id:CFG.GOOGLE_CLIENT_ID,callback:r=>{const p=JSON.parse(atob(r.credential.split(".")[1].replace(/-/g,"+").replace(/_/g,"/")));loginOK({email:p.email,name:p.name})}});google.accounts.id.prompt();return}
+ const e=prompt("Mode demo Google – masukkan email Google kamu:");if(e&&/\S+@\S+/.test(e))loginOK({email:e.toLowerCase(),name:e.split("@")[0],saldo:e.toLowerCase()===CFG.DEV_EMAIL?1000000:0})}
+function logout(){S.user=null;save();go({view:"auth",mode:"login"})}
+const GB=`<button class="btn gbtn" onclick="doGoogle()">G&nbsp; Lanjut dengan Google</button>`;
+function authView(){const r=S.mode==="reg";return `<div class="auth"><div class="logo"><span>🚀</span>Lapak Asteroid</div><p class="mu" style="text-align:center;margin:4px 0 18px">Suntik Sosmed & PPOB · Top Up Satu Saldo</p><div class="box">
+<div class="h" style="text-align:center">${r?"Buat Akun Baru":"Selamat Datang!"}</div>
+${r?`<input id="nm" placeholder="Nama Lengkap"><input id="wa" placeholder="Nomor WhatsApp" inputmode="tel">`:""}
+<input id="em" type="email" placeholder="Email atau No. HP"><input id="pw" type="password" placeholder="Password">
+${r?`<label><input type="checkbox" id="ag" style="width:auto;margin:0 6px 0 0">Saya setuju dengan Syarat & Ketentuan</label><br><br>`:`<div style="text-align:right;margin-bottom:10px"><a class="sm" onclick="wa('Halo admin, saya lupa password akun Lapak Asteroid')">Lupa password?</a></div>`}
+<button class="btn" onclick="${r?"doReg()":"doLogin()"}">${r?"Daftar Sekarang":"Masuk"}</button>
+<div class="or">atau</div>${GB}
+<p class="sm mu" style="text-align:center;margin-top:14px">${r?`Sudah punya akun? <a onclick="go({mode:'login'})">Login</a>`:`Belum punya akun? <a onclick="go({mode:'reg'})">Daftar sekarang</a>`}<br>Butuh bantuan? <a onclick="wa('Halo admin Lapak Asteroid')">Hubungi Admin</a></p></div></div>`}
+function wa(t){window.open("https://wa.me/"+CFG.WA+"?text="+encodeURIComponent(t),"_blank")}
+// ====== VIEWS ======
+function head(t){return `<div class="top"><button onclick="go({sub:null})">←</button><div class="h" style="margin:0">${t}</div></div>`}
+function home(){const u=S.user;return `<div class="row sp" style="margin-bottom:14px"><div><div class="h" style="margin:0">Halo, ${u.name} 👋</div><div class="sm mu">Selamat datang di Lapak Asteroid</div></div><span style="font-size:28px">🚀</span></div>
+<div class="card saldo"><div class="sm">Saldo Tersedia</div><b>${fmt(u.saldo)}</b><div class="row" style="margin-top:10px"><button class="btn" style="width:auto;padding:8px 18px" onclick="go({sub:'topup'})">Top Up Saldo</button><button class="btn ghost" style="width:auto;padding:8px 18px" onclick="go({tab:'riwayat'})">Riwayat</button></div></div>
+<div class="card"><div class="grid">${[["📱","Sosmed","sosmed"],["📞","Pulsa","ppob:Pulsa"],["📶","Paket Data","ppob:Paket Data"],["⚡","Token PLN","ppob:Token PLN"],["🧾","Tagihan","ppob:Tagihan"],["👛","E-Wallet","ppob:E-Wallet"],["🎮","Game","ppob:Game"],["💬","Bantuan","wa"]].map(x=>`<div onclick="menu('${x[2]}')"><div class="ic">${x[0]}</div>${x[1]}</div>`).join("")}</div></div>
+<div class="card" style="background:linear-gradient(90deg,#ff8a1f,#ff4f81);border:0"><b>🎁 PROMO SPESIAL</b><div class="sm">Top up saldo dapat bonus 10% (min. Rp 50.000)</div></div>
+<div class="h" style="font-size:16px">Produk Populer</div>${Object.keys(CATALOG).map(p=>`<div class="item" onclick="go({sub:'sosmed',plat:'${p}',kat:null})"><div class="ic">${CATALOG[p].ic}</div><div><b>${p}</b><div class="sm mu">Followers · Likes · Views</div></div>›</div>`).join("")}`}
+function menu(k){if(k==="wa")return wa("Halo admin Lapak Asteroid");if(k.startsWith("ppob:"))return go({sub:"ppob",pp:k.slice(5)});go({sub:k})}
+function sosmed(){const P=CATALOG[S.plat],K=Object.keys(P.kat);const k=S.kat&&P.kat[S.kat]?S.kat:K[0];
+ return head("Suntik Sosmed")+Object.keys(CATALOG).map(p=>`<span class="chip ${p===S.plat?"on":""}" onclick="go({plat:'${p}',kat:null})">${p}</span>`).join("")+"<br>"+
+ K.map(x=>`<span class="chip ${x===k?"on":""}" onclick="go({kat:'${x}'})">${x}</span>`).join("")+
+ P.kat[k].map((s,i)=>`<div class="item" onclick="go({sub:'order',svc:[${JSON.stringify(S.plat)},${JSON.stringify(k)},${i}]})"><div class="ic">${P.ic}</div><div><b>${S.plat} ${s[0]}</b><div class="sm mu">${fmt(s[1])} / 1K · Min ${s[2]}–Max ${s[3].toLocaleString("id-ID")} · ${s[4]}</div></div>›</div>`).join("")}
+function order(){const [p,k,i]=S.svc,s=CATALOG[p].kat[k][i];return head("Pesan Layanan")+`<div class="card row"><div class="ic" style="margin:0">${CATALOG[p].ic}</div><div><b>${p} ${s[0]}</b><div class="sm mu">${fmt(s[1])} / 1K · Min ${s[2]}–Max ${s[3].toLocaleString("id-ID")}</div></div></div>
+<label>Target / Link Akun</label><input id="tg" placeholder="https://instagram.com/username"><label>Jumlah Pesanan</label><input id="qt" type="number" value="${s[2]}" min="${s[2]}" max="${s[3]}" oninput="tot()">
+<div class="card row sp"><span>Total Harga</span><b id="tt" style="color:var(--or)">${fmt(s[1]*s[2]/1000)}</b></div><button class="btn" onclick="buy()">Bayar dengan Saldo</button>`}
+function tot(){const [p,k,i]=S.svc,s=CATALOG[p].kat[k][i];$("#tt").textContent=fmt(Math.round(s[1]*(+$("#qt").value||0)/1000))}
+function buy(){const [p,k,i]=S.svc,s=CATALOG[p].kat[k][i],q=+$("#qt").value,t=$("#tg").value.trim();
+ if(!t)return toast("Isi target/link");if(q<s[2]||q>s[3])return toast("Jumlah di luar batas");const h=Math.round(s[1]*q/1000);
+ if(S.user.saldo<h){toast("Saldo kurang, silakan top up");return go({sub:"topup"})}
+ S.user.saldo-=h;addHist("Sosmed",p+" "+s[0],h,"Pending");save();toast("Pesanan berhasil dibuat ✓");go({sub:null,tab:"riwayat"})}
+function addHist(j,pr,n,st){S.hist.unshift({id:"TRX"+Date.now().toString().slice(-9),j,pr,n,st,t:new Date().toLocaleString("id-ID",{dateStyle:"short",timeStyle:"short"}),u:S.user.email})}
+function topup(){return head("Top Up Saldo")+`<label>Pilih Nominal</label><div style="margin:6px 0">${[10000,25000,50000,100000,200000,500000].map(n=>`<span class="chip" onclick="$('#nom').value=${n}">${fmt(n)}</span>`).join("")}</div>
+<input id="nom" type="number" placeholder="Masukkan nominal (min. 1.000)"><label>Metode Pembayaran</label>
+<div class="item"><div class="ic">🔳</div><div><b>QRIS</b><div class="sm mu">Semua bank & e-wallet</div></div>✓</div>
+<button class="btn" onclick="mkQR()">Buat QRIS</button><div id="qrbox"></div>`}
+function mkQR(){const n=+$("#nom").value;if(n<1000)return toast("Minimal Rp 1.000");let c="";for(let i=0;i<225;i++){const r=Math.sin(i*12.9898+n)*43758;c+=`<i class="${r-Math.floor(r)>.5?"w":""}"></i>`}
+ $("#qrbox").innerHTML=`<div class="card" style="margin-top:12px;text-align:center"><b>${fmt(n)}</b><div class="qr">${c}</div><div class="sm mu">QR contoh untuk tampilan. Pembayaran asli perlu gateway (Tripay/Midtrans/dll).</div><br><button class="btn pu" onclick="paid(${n})">Simulasi: Sudah Bayar</button><br><br><button class="btn ghost" onclick="wa('Halo admin, saya sudah top up ${fmt(n)} atas nama ${S.user.email}')">Konfirmasi ke Admin (WA)</button></div>`}
+function paid(n){S.user.saldo+=n;addHist("Top Up","Top Up Saldo",n,"Berhasil");save();toast("Saldo bertambah (simulasi)");go({sub:null,tab:"home"})}
+function ppob(){const p=S.pp,ops=PPOB[p];return head("PPOB – "+p)+`<label>Pilih Operator / Produk</label><select id="op">${ops.map(o=>`<option>${o}</option>`).join("")}</select><label>Nomor / ID Tujuan</label><input id="no" placeholder="0812 3456 7890" inputmode="tel">
+<label>Nominal</label><select id="nl">${[5000,10000,20000,50000,100000].map(n=>`<option value="${n}">${fmt(n)}</option>`).join("")}</select><button class="btn" onclick="buyP()">Bayar dengan Saldo</button>`}
+function buyP(){const n=+$("#nl").value+500;if(!$("#no").value.trim())return toast("Isi nomor tujuan");if(S.user.saldo<n){toast("Saldo kurang");return go({sub:"topup"})}
+ S.user.saldo-=n;addHist("PPOB",S.pp+" "+$("#op").value,n,"Berhasil");save();toast("Transaksi berhasil ✓");go({sub:null,tab:"riwayat"})}
+function riwayat(){const L=S.hist.filter(h=>h.u===S.user.email);return `<div class="h">Riwayat Transaksi</div>`+(L.length?L.map(h=>`<div class="item" style="cursor:default"><div class="ic">${h.j==="Sosmed"?"📸":h.j==="PPOB"?"📱":"💰"}</div><div><b>${h.pr}</b><div class="sm mu">#${h.id} · ${h.t}</div></div><div style="text-align:right"><b>${fmt(h.n)}</b><br><span class="badge ${h.st==="Pending"?"p":""}">${h.st}</span></div></div>`).join(""):`<div class="card mu" style="text-align:center">Belum ada transaksi</div>`)}
+function info(){return `<div class="h">Informasi</div><div class="card"><b>🚀 Selamat datang di Lapak Asteroid</b><p class="sm mu">Top up satu saldo untuk Suntik Sosmed, Pulsa, Paket Data, Token PLN, E-Wallet, Game & Tagihan.</p></div><div class="card"><b>Jam layanan</b><p class="sm mu">Layanan 24 jam. Proses cepat, harga terbaik, transaksi terjamin.</p></div><button class="btn" onclick="wa('Halo admin Lapak Asteroid')">💬 Hubungi Admin via WhatsApp</button>`}
+function akun(){const u=S.user;return `<div class="card row"><div class="ic" style="margin:0">🧑‍🚀</div><div><b>${u.name}</b><div class="sm mu">${u.email}</div>${isAdmin()?'<span class="badge">Developer / Admin</span>':""}</div></div>
+${[["👤","Informasi Akun","toast('Nama: "+u.name+"')"],["🛡️","Keamanan","toast('Fitur segera hadir')"],["🧾","Riwayat Transaksi","go({tab:'riwayat'})"],["❓","Bantuan","wa('Halo admin Lapak Asteroid')"]].concat(isAdmin()?[["⚙️","Admin Panel","go({sub:'admin'})"]]:[]).concat([["🚪","Keluar","logout()"]]).map(x=>`<div class="item" onclick="${x[2]}"><div class="ic">${x[0]}</div><div>${x[1]}</div>›</div>`).join("")}`}
+function admin(){const all=S.hist,tot=all.filter(h=>h.j!=="Top Up").reduce((a,h)=>a+h.n,0);return head("Admin Panel")+`<div class="grid" style="grid-template-columns:1fr 1fr;gap:10px"><div class="card"><div class="sm mu">Total Pengguna</div><b>${S.users.length}</b></div><div class="card"><div class="sm mu">Total Transaksi</div><b>${all.length}</b></div><div class="card"><div class="sm mu">Penjualan</div><b>${fmt(tot)}</b></div><div class="card"><div class="sm mu">Developer</div><b class="sm">${CFG.DEV_EMAIL}</b></div></div>
+<div class="card"><b>Transaksi Terbaru</b><table>${all.slice(0,8).map(h=>`<tr><td>${h.pr}</td><td>${fmt(h.n)}</td><td>${h.st}</td></tr>`).join("")||"<tr><td class=mu>Belum ada</td></tr>"}</table></div>
+<div class="card"><b>Pengguna</b><table>${S.users.map(x=>`<tr><td>${x.name}</td><td>${x.email}</td></tr>`).join("")}</table></div>
+<button class="btn" onclick="wa('Halo developer')">WhatsApp Admin: 083133596681</button>`}
+function nav(){return `<div class="nav">${[["home","🏠","Beranda"],["riwayat","🕘","Riwayat"],["saldo","💰","Saldo","mid"],["info","🔔","Informasi"],["akun","👤","Akun"]].map(x=>`<button class="${x[3]||""} ${S.tab===x[0]&&!S.sub?"on":""}" onclick="${x[0]==="saldo"?"go({sub:'topup'})":`go({tab:'${x[0]}',sub:null})`}"><i>${x[1]}</i>${x[2]}</button>`).join("")}</div>`}
+function render(){
+ if(S.view==="splash"){app.innerHTML=`<div class="splash"><div><div class="r">🚀</div><div class="logo">Lapak Asteroid</div><p class="mu">Suntik Sosmed & PPOB<br>Top Up Satu Saldo</p><br><button class="btn" style="width:220px" onclick="go({view:'auth',mode:'login'})">Mulai Sekarang →</button></div></div>`;return}
+ if(S.view==="auth"||!S.user){app.innerHTML=authView();return}
+ const V={sosmed,order,topup,ppob,admin};const body=S.sub?V[S.sub]():({home,riwayat,info,akun})[S.tab]();
+ app.innerHTML=`<div class="scr">${body}</div>${nav()}`}
+load();S.view=S.user?"app":"splash";S.mode="login";render();
+</script></body></html>
 
-Copyright (c) Microsoft Corporation
-
-All rights reserved.
-
-MIT License
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ""Software""), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED *AS IS*, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
